@@ -1,1 +1,39 @@
-hi :)
+# ganesh talluri
+
+applied ai + computational bio. build, measure, delete, repeat.
+
+links → [site](https://ganeshtalluri.com) · [lab](https://luxenai.org) · [nodes](https://nodes.luxenai.org)
+
+---
+
+### now
+- stain-robust histology inference; micro-CT bone segmentation tools
+- agentic RPA to restock/checkout; low-friction founder matching
+- ship small, instrument everything, keep receipts
+
+### shipping
+- **flux** — sweat-patch signals → simple models · prototype
+- **varyn** — skin-scan, auditable pipeline · wip
+- **kalo** — pantry vision + restock agent · active
+- **ardus** — internship/scholarship autofill agents · active
+- **nodes** — 1:1 founder matching (video) · live
+
+### working rules
+- benchmarks > vibes
+- small surface area, harsh tests
+- make failures legible
+- delete cleverness, keep clarity
+
+### stack
+python · pytorch · fastapi · opencv · yolov8 · onnx/tensorrt  
+typescript · next.js · react · tailwind · playwright  
+postgres · redis · docker · k8s · terraform  
+gcp/aws · ci/cd · eval harnesses
+
+### research
+- stain-consistency for domain generalization (no extra params; inference-time focus)
+- large-batch micro-CT segmentation with clean metrics (dice/iou/ece)
+- target: reliable under shift, cheap to run
+
+### contact
+ganeshtalluri.com · luxenai.org
