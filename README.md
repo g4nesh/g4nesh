@@ -6,7 +6,7 @@
 
 **now**  
 - stain-robust histology inference  
-- micro-CT bone segmentation tools  
-- api-based agents *(most proud of this — launching soon)*
+- micro-CT bone segmentation tools
+- building the future of agentic ai
 
 ---
