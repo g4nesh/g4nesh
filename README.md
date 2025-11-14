@@ -1,5 +1,5 @@
 # hi, i'm ganesh 👋  
-### applied ai + computational biology  
+### applied ai & computational biology  
 📍 phoenix, az  
 
 ---
