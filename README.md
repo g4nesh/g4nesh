@@ -5,8 +5,7 @@
 ---
 
 **now**  
-- stain-robust histology inference  
-- micro-CT bone segmentation tools
+- generalization and ood models
 - building the future of agentic ai
 
 ---
