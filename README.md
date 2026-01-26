@@ -10,4 +10,4 @@
 - generalization and effecient training methods of large scale models
 ---
 
-feel free to contact me if my work sounds interesting at hi@ganeshtalluri.com 😄
+feel free to contact me if my work sounds interesting at [hi@ganeshtalluri.com](https://ganeshtalluri.com) 
