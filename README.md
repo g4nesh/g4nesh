@@ -9,4 +9,4 @@
 - ood and generalization
 ---
 
-feel free to contact me if my work sounds interesting at https://ganeshtalluri.com/contact
+find more of my work at https://ganeshtalluri.com
