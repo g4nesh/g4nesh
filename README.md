@@ -4,8 +4,8 @@ find more of my work at https://ganeshtalluri.com
 ```text
 codex usage
 +-------------+-----------------------------+
-| tokens      | 2,421,951,584 (2.42B)       |
-| cost        | $2,792.72                   |
+| tokens      | 2,422,823,211 (2.42B)       |
+| cost        | $2,793.73                   |
 | active days | 86                          |
 | sessions    | 361                         |
 | top model   | gpt-5.4                     |
