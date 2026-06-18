@@ -189,7 +189,7 @@ function renderSvg(payload) {
   <rect width="${width}" height="${height}" rx="16" fill="#ffffff" filter="url(#shadow)"/>
   <rect x="0" y="0" width="8" height="${height}" rx="4" fill="url(#accent)"/>
   <text x="32" y="40" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="18" font-weight="700">Codex token counter</text>
-  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from ${xml(range)}; refreshed every 4 hours.</text>
+  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from ${xml(range)}; refreshed every 24 hours.</text>
   <text x="32" y="120" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="44" font-weight="800">${xml(total)}</text>
   <text x="32" y="144" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">${xml(exactTotal)} total tokens</text>
   <g transform="translate(310 96)">
@@ -253,7 +253,7 @@ codex usage
 ${border}
 ${body}
 ${border}
-auto-refresh: every 4h via ccusage
+auto-refresh: every 24h via ccusage
 \`\`\``;
 }
 

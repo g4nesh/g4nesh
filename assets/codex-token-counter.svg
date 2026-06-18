@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="190" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
   <title id="title">Codex token usage since January 1, 2026</title>
-  <desc id="desc">2,420,691,701 Codex tokens tracked from Jan 1, 2026 - Jun 18, 2026. Updated Jun 18, 2026, 4:29 PM MST.</desc>
+  <desc id="desc">2,421,951,584 Codex tokens tracked from Jan 1, 2026 - Jun 18, 2026. Updated Jun 18, 2026, 4:31 PM MST.</desc>
   <defs>
     <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#2f80ed"/>
@@ -13,9 +13,9 @@
   <rect width="720" height="190" rx="16" fill="#ffffff" filter="url(#shadow)"/>
   <rect x="0" y="0" width="8" height="190" rx="4" fill="url(#accent)"/>
   <text x="32" y="40" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="18" font-weight="700">Codex token counter</text>
-  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from Jan 1, 2026 - Jun 18, 2026; refreshed every 4 hours.</text>
+  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from Jan 1, 2026 - Jun 18, 2026; refreshed every 24 hours.</text>
   <text x="32" y="120" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="44" font-weight="800">2.42B</text>
-  <text x="32" y="144" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">2,420,691,701 total tokens</text>
+  <text x="32" y="144" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">2,421,951,584 total tokens</text>
   <g transform="translate(310 96)">
     <g transform="translate(0 0)">
       <text x="0" y="0" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="22" font-weight="750">86</text>
@@ -26,10 +26,10 @@
       <text x="0" y="22" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Sessions</text>
     </g>
     <g transform="translate(240 0)">
-      <text x="0" y="0" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="22" font-weight="750">$2,791.03</text>
+      <text x="0" y="0" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="22" font-weight="750">$2,792.72</text>
       <text x="0" y="22" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Est. cost</text>
     </g>
   </g>
   <text x="310" y="156" fill="#374151" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Top model: gpt-5.4</text>
-  <text x="310" y="176" fill="#9ca3af" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Updated Jun 18, 2026, 4:29 PM MST</text>
+  <text x="310" y="176" fill="#9ca3af" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Updated Jun 18, 2026, 4:31 PM MST</text>
 </svg>
