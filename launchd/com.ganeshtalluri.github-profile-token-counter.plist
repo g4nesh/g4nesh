@@ -7,9 +7,8 @@
 
   <key>ProgramArguments</key>
   <array>
-    <string>/usr/bin/env</string>
-    <string>node</string>
-    <string>/Users/ganeshtalluri/Documents/g4nesh/scripts/update-codex-token-counter.mjs</string>
+    <string>/bin/zsh</string>
+    <string>/Users/ganeshtalluri/Documents/g4nesh/scripts/update-codex-token-counter.sh</string>
   </array>
 
   <key>WorkingDirectory</key>
@@ -23,6 +22,8 @@
     <string>America/Phoenix</string>
     <key>TOKEN_COUNTER_START_DATE</key>
     <string>2026-01-01</string>
+    <key>GIT_TERMINAL_PROMPT</key>
+    <string>0</string>
   </dict>
 
   <key>RunAtLoad</key>
