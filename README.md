@@ -2,7 +2,7 @@ find more of my work at https://ganeshtalluri.com
 
 <!-- codex-token-counter:start -->
 ```text
-codex usage
+tokenmaxxing stats
 +-------------+-----------------------------+
 | tokens      | 2,422,823,211 (2.42B)       |
 | cost        | $2,793.73                   |

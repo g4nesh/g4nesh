@@ -175,7 +175,7 @@ function renderSvg(payload) {
   const sessions = integer(payload.totals.sessions);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
-  <title id="title">Codex token usage since January 1, 2026</title>
+  <title id="title">Tokenmaxxing stats since January 1, 2026</title>
   <desc id="desc">${xml(`${exactTotal} Codex tokens tracked from ${range}. Updated ${updated}.`)}</desc>
   <defs>
     <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
@@ -188,7 +188,7 @@ function renderSvg(payload) {
   </defs>
   <rect width="${width}" height="${height}" rx="16" fill="#ffffff" filter="url(#shadow)"/>
   <rect x="0" y="0" width="8" height="${height}" rx="4" fill="url(#accent)"/>
-  <text x="32" y="40" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="18" font-weight="700">Codex token counter</text>
+  <text x="32" y="40" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="18" font-weight="700">Tokenmaxxing stats</text>
   <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from ${xml(range)}; refreshed every 24 hours.</text>
   <text x="32" y="120" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="44" font-weight="800">${xml(total)}</text>
   <text x="32" y="144" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">${xml(exactTotal)} total tokens</text>
@@ -249,7 +249,7 @@ function renderReadmeCounter(payload) {
     .join('\n');
 
   return `\`\`\`text
-codex usage
+tokenmaxxing stats
 ${border}
 ${body}
 ${border}
