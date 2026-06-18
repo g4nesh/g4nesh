@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import { execFileSync, spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, '..');
+const readmePath = path.join(repoRoot, 'README.md');
 const dataPath = path.join(repoRoot, 'data', 'codex-token-usage.json');
 const svgPath = path.join(repoRoot, 'assets', 'codex-token-counter.svg');
 const codexHome = process.env.CODEX_HOME || path.join(os.homedir(), '.codex');
@@ -25,8 +26,9 @@ mkdirSync(path.dirname(dataPath), { recursive: true });
 mkdirSync(path.dirname(svgPath), { recursive: true });
 writeFileSync(dataPath, `${JSON.stringify(payload, null, 2)}\n`);
 writeFileSync(svgPath, `${renderSvg(payload)}\n`);
+writeFileSync(readmePath, updateReadme(readFileSync(readmePath, 'utf8'), payload));
 
-console.log(`Generated ${path.relative(repoRoot, dataPath)} and ${path.relative(repoRoot, svgPath)}`);
+console.log(`Generated README counter, ${path.relative(repoRoot, dataPath)}, and ${path.relative(repoRoot, svgPath)}`);
 console.log(`Range: ${payload.range.startDate} to ${payload.range.endDate}`);
 console.log(`Total tokens: ${payload.totals.totalTokens.toLocaleString('en-US')}`);
 console.log(`Estimated cost: $${payload.totals.totalCost.toFixed(2)}`);
@@ -207,6 +209,54 @@ function metric(label, value, x) {
     </g>`;
 }
 
+function updateReadme(current, payload) {
+  const block = renderReadmeCounter(payload);
+  const start = '<!-- codex-token-counter:start -->';
+  const end = '<!-- codex-token-counter:end -->';
+  const blockWithMarkers = `${start}\n${block}\n${end}`;
+  const markerPattern = new RegExp(`${escapeRegExp(start)}[\\s\\S]*?${escapeRegExp(end)}`);
+
+  if (markerPattern.test(current)) {
+    return `${current.replace(markerPattern, blockWithMarkers).trimEnd()}\n`;
+  }
+
+  const oldImagePattern = /\n*<p>\s*\n\s*<img src="\.\/assets\/codex-token-counter\.svg"[^>]*>\s*\n<\/p>\s*/;
+  if (oldImagePattern.test(current)) {
+    return `${current.replace(oldImagePattern, `\n\n${blockWithMarkers}\n`).trimEnd()}\n`;
+  }
+
+  return `${current.trimEnd()}\n\n${blockWithMarkers}\n`;
+}
+
+function renderReadmeCounter(payload) {
+  const updated = formatTimestamp(payload.generatedAt, timezone);
+  const range = `${displayDate(payload.range.startDate)} -> ${displayDate(payload.range.endDate)}`;
+  const favorite = payload.totals.favoriteModel?.name || 'unknown';
+  const rows = [
+    ['tokens', `${integer(payload.totals.totalTokens)} (${compact(payload.totals.totalTokens)})`],
+    ['cost', money(payload.totals.totalCost)],
+    ['active days', integer(payload.totals.activeDays)],
+    ['sessions', integer(payload.totals.sessions)],
+    ['top model', favorite],
+    ['range', range],
+    ['updated', updated]
+  ];
+  const labelWidth = Math.max(...rows.map(([label]) => label.length));
+  const valueWidth = Math.max(...rows.map(([, value]) => value.length));
+  const border = `+${'-'.repeat(labelWidth + 2)}+${'-'.repeat(valueWidth + 2)}+`;
+  const body = rows
+    .map(([label, value]) => `| ${label.padEnd(labelWidth)} | ${value.padEnd(valueWidth)} |`)
+    .join('\n');
+
+  return `\`\`\`text
+codex usage
+${border}
+${body}
+${border}
+auto-refresh: every 4h via ccusage
+\`\`\``;
+}
+
 function commitAndPush() {
   const paths = ['README.md', 'assets/codex-token-counter.svg', 'data/codex-token-usage.json', 'scripts/update-codex-token-counter.mjs', 'launchd/com.ganeshtalluri.github-profile-token-counter.plist'];
   git(['add', ...paths.filter((filePath) => existsSync(path.join(repoRoot, filePath)))]);
@@ -357,6 +407,10 @@ function xml(value) {
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;');
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function resolveCcusageCommand() {
