@@ -8,11 +8,11 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/zsh</string>
-    <string>/Users/ganeshtalluri/Documents/g4nesh/scripts/update-codex-token-counter.sh</string>
+    <string>/Users/ganeshtalluri/.local/share/github-profile-token-counter/g4nesh/scripts/update-codex-token-counter.sh</string>
   </array>
 
   <key>WorkingDirectory</key>
-  <string>/Users/ganeshtalluri/Documents/g4nesh</string>
+  <string>/Users/ganeshtalluri/.local/share/github-profile-token-counter/g4nesh</string>
 
   <key>EnvironmentVariables</key>
   <dict>
@@ -33,9 +33,9 @@
   <integer>14400</integer>
 
   <key>StandardOutPath</key>
-  <string>/Users/ganeshtalluri/Documents/g4nesh/logs/token-counter.out.log</string>
+  <string>/Users/ganeshtalluri/.local/state/github-profile-token-counter/launchd.out.log</string>
 
   <key>StandardErrorPath</key>
-  <string>/Users/ganeshtalluri/Documents/g4nesh/logs/token-counter.err.log</string>
+  <string>/Users/ganeshtalluri/.local/state/github-profile-token-counter/launchd.err.log</string>
 </dict>
 </plist>

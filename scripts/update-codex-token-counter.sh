@@ -1,11 +1,13 @@
 #!/bin/zsh
 set -u
 
-REPO="/Users/ganeshtalluri/Documents/g4nesh"
+SCRIPT_PATH="${0:A}"
+SCRIPT_DIR="${SCRIPT_PATH:h}"
+REPO="${SCRIPT_DIR:h}"
 NODE="/usr/local/bin/node"
 GIT="/usr/bin/git"
-LOG_DIR="$REPO/logs"
-LOCK_DIR="$REPO/logs/token-counter.lock"
+LOG_DIR="/Users/ganeshtalluri/.local/state/github-profile-token-counter"
+LOCK_DIR="$LOG_DIR/token-counter.lock"
 
 export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export TZ="${TZ:-America/Phoenix}"
