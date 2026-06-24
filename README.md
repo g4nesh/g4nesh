@@ -4,13 +4,13 @@ find more of my work at https://ganeshtalluri.com
 ```text
 tokenmaxxing stats
 +-------------+-----------------------------+
-| tokens      | 2,765,466,701 (2.77B)       |
-| cost        | $3,525.53                   |
-| active days | 89                          |
-| sessions    | 380                         |
+| tokens      | 2,845,298,167 (2.85B)       |
+| cost        | $3,694.04                   |
+| active days | 91                          |
+| sessions    | 384                         |
 | top model   | gpt-5.4                     |
-| range       | Jan 1, 2026 -> Jun 21, 2026 |
-| updated     | Jun 21, 2026, 10:15 PM MST  |
+| range       | Jan 1, 2026 -> Jun 23, 2026 |
+| updated     | Jun 23, 2026, 10:00 PM MST  |
 +-------------+-----------------------------+
 auto-refresh: every 24h via ccusage
 ```
