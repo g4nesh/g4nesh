@@ -9,15 +9,46 @@ prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank
 <!-- codex-token-counter:start -->
 #### my yearly codex usage
 
-| stat | value |
-| --- | --- |
-| tokens | 2,971,040,259 (2.97B) |
-| cost | $3,989.16 |
-| active days | 94 |
-| sessions | 403 |
-| top model | gpt-5.4 |
-| range | Jan 1, 2026 -> Jun 26, 2026 |
-| updated | Jun 26, 2026, 1:55 PM MST |
+<table>
+  <thead>
+    <tr>
+      <th align="left">stat</th>
+      <th align="left">value</th>
+      <th align="left">tokens over time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tokens</td>
+      <td>2,971,040,259 (2.97B)</td>
+      <td rowspan="7" valign="middle" align="center"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="360"></td>
+    </tr>
+    <tr>
+      <td>cost</td>
+      <td>$3,989.16</td>
+    </tr>
+    <tr>
+      <td>active days</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>sessions</td>
+      <td>403</td>
+    </tr>
+    <tr>
+      <td>top model</td>
+      <td>gpt-5.4</td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td>Jan 1, 2026 -> Jun 26, 2026</td>
+    </tr>
+    <tr>
+      <td>updated</td>
+      <td>Jun 26, 2026, 1:55 PM MST</td>
+    </tr>
+  </tbody>
+</table>
 
-<sub>auto-refreshes every 24h via ccusage</sub>
+<sub>auto-refreshes every 24h via ccusage; graph updates with the table</sub>
 <!-- codex-token-counter:end -->

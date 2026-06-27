@@ -10,6 +10,7 @@ const repoRoot = path.resolve(scriptDir, '..');
 const readmePath = path.join(repoRoot, 'README.md');
 const dataPath = path.join(repoRoot, 'data', 'codex-token-usage.json');
 const svgPath = path.join(repoRoot, 'assets', 'codex-token-counter.svg');
+const trendSvgPath = path.join(repoRoot, 'assets', 'codex-token-trend.svg');
 const codexHome = process.env.CODEX_HOME || path.join(os.homedir(), '.codex');
 const startDate = process.env.TOKEN_COUNTER_START_DATE || '2026-01-01';
 const timezone = process.env.TZ || 'America/Phoenix';
@@ -26,9 +27,10 @@ mkdirSync(path.dirname(dataPath), { recursive: true });
 mkdirSync(path.dirname(svgPath), { recursive: true });
 writeFileSync(dataPath, `${JSON.stringify(payload, null, 2)}\n`);
 writeFileSync(svgPath, `${renderSvg(payload)}\n`);
+writeFileSync(trendSvgPath, `${renderTrendSvg(payload)}\n`);
 writeFileSync(readmePath, updateReadme(readFileSync(readmePath, 'utf8'), payload));
 
-console.log(`Generated README counter, ${path.relative(repoRoot, dataPath)}, and ${path.relative(repoRoot, svgPath)}`);
+console.log(`Generated README counter, ${path.relative(repoRoot, dataPath)}, ${path.relative(repoRoot, svgPath)}, and ${path.relative(repoRoot, trendSvgPath)}`);
 console.log(`Range: ${payload.range.startDate} to ${payload.range.endDate}`);
 console.log(`Total tokens: ${payload.totals.totalTokens.toLocaleString('en-US')}`);
 console.log(`Estimated cost: $${payload.totals.totalCost.toFixed(2)}`);
@@ -209,6 +211,98 @@ function metric(label, value, x) {
     </g>`;
 }
 
+function renderTrendSvg(payload) {
+  const width = 380;
+  const height = 226;
+  const pad = { top: 34, right: 18, bottom: 36, left: 34 };
+  const days = payload.daily.filter((day) => day.totalTokens > 0);
+  let runningTotal = 0;
+  const series = days.map((day) => {
+    runningTotal += day.totalTokens;
+    return { date: day.date, totalTokens: runningTotal };
+  });
+  const max = Math.max(1, ...series.map((day) => day.totalTokens));
+  const plotWidth = width - pad.left - pad.right;
+  const plotHeight = height - pad.top - pad.bottom;
+  const baseY = pad.top + plotHeight;
+  const points = series.map((day, index) => {
+    const x = pad.left + (series.length === 1 ? plotWidth / 2 : (index / (series.length - 1)) * plotWidth);
+    const y = pad.top + plotHeight - (day.totalTokens / max) * plotHeight;
+    return { x, y, day };
+  });
+  const line = smoothPath(points);
+  const area = points.length > 1
+    ? `${line} L ${points.at(-1).x.toFixed(1)} ${baseY.toFixed(1)} L ${points[0].x.toFixed(1)} ${baseY.toFixed(1)} Z`
+    : '';
+  const grid = [0, 0.25, 0.5, 0.75, 1]
+    .map((step) => {
+      const y = pad.top + plotHeight * step;
+      return `<line x1="${pad.left}" y1="${y.toFixed(1)}" x2="${width - pad.right}" y2="${y.toFixed(1)}" stroke="#21262d" stroke-width="1"/>`;
+    })
+    .join('\n    ');
+  const start = days[0]?.date ? displayShortDate(days[0].date) : 'n/a';
+  const end = days.at(-1)?.date ? displayShortDate(days.at(-1).date) : 'n/a';
+  const total = compact(max);
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
+  <title id="title">Codex tokens over time</title>
+  <desc id="desc">${xml(`Line graph of cumulative Codex tokens from ${start} to ${end}, ending at ${total}.`)}</desc>
+  <defs>
+    <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset=".55" stop-color="#c084fc"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#a855f7" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="plot">
+      <rect x="${pad.left}" y="${pad.top}" width="${plotWidth}" height="${plotHeight}"/>
+    </clipPath>
+  </defs>
+  <rect width="${width}" height="${height}" rx="8" fill="#0d1117"/>
+  <rect x=".5" y=".5" width="${width - 1}" height="${height - 1}" rx="8" fill="none" stroke="#30363d"/>
+  <text x="${pad.left}" y="22" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13" font-weight="650">tokens over time</text>
+  <text x="${width - pad.right}" y="22" text-anchor="end" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="11">${xml(total)}</text>
+  <g>
+    ${grid}
+    <line x1="${pad.left}" y1="${baseY}" x2="${width - pad.right}" y2="${baseY}" stroke="#30363d" stroke-width="1"/>
+  </g>
+  <g clip-path="url(#plot)">
+    ${area ? `<path d="${area}" fill="url(#area)"/>` : ''}
+    ${line ? `<path d="${line}" fill="none" stroke="url(#line)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>` : ''}
+    ${points[0] ? `<circle cx="${points[0].x.toFixed(1)}" cy="${points[0].y.toFixed(1)}" r="2.5" fill="#8b5cf6"/>` : ''}
+    ${points.at(-1) ? `<circle cx="${points.at(-1).x.toFixed(1)}" cy="${points.at(-1).y.toFixed(1)}" r="2.8" fill="#e9d5ff"/>` : ''}
+  </g>
+  <text x="${pad.left}" y="${height - 14}" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="11">${xml(start)}</text>
+  <text x="${width - pad.right}" y="${height - 14}" text-anchor="end" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="11">${xml(end)}</text>
+</svg>`;
+}
+
+function smoothPath(points) {
+  if (points.length === 0) {
+    return '';
+  }
+  if (points.length === 1) {
+    return `M ${points[0].x.toFixed(1)} ${points[0].y.toFixed(1)}`;
+  }
+
+  let pathData = `M ${points[0].x.toFixed(1)} ${points[0].y.toFixed(1)}`;
+  for (let index = 0; index < points.length - 1; index += 1) {
+    const p0 = points[index - 1] || points[index];
+    const p1 = points[index];
+    const p2 = points[index + 1];
+    const p3 = points[index + 2] || p2;
+    const cp1x = p1.x + (p2.x - p0.x) / 6;
+    const cp1y = p1.y + (p2.y - p0.y) / 6;
+    const cp2x = p2.x - (p3.x - p1.x) / 6;
+    const cp2y = p2.y - (p3.y - p1.y) / 6;
+    pathData += ` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)}, ${cp2x.toFixed(1)} ${cp2y.toFixed(1)}, ${p2.x.toFixed(1)} ${p2.y.toFixed(1)}`;
+  }
+  return pathData;
+}
+
 function updateReadme(current, payload) {
   const block = renderReadmeCounter(payload);
   const start = '<!-- codex-token-counter:start -->';
@@ -242,20 +336,33 @@ function renderReadmeCounter(payload) {
     ['updated', updated]
   ];
   const body = rows
-    .map(([label, value]) => `| ${md(label)} | ${md(value)} |`)
+    .map(([label, value], index) => `    <tr>
+      <td>${html(label)}</td>
+      <td>${html(value)}</td>
+      ${index === 0 ? `<td rowspan="${rows.length}" valign="middle" align="center"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="360"></td>` : ''}
+    </tr>`)
     .join('\n');
 
   return `#### my yearly codex usage
 
-| stat | value |
-| --- | --- |
+<table>
+  <thead>
+    <tr>
+      <th align="left">stat</th>
+      <th align="left">value</th>
+      <th align="left">tokens over time</th>
+    </tr>
+  </thead>
+  <tbody>
 ${body}
+  </tbody>
+</table>
 
-<sub>auto-refreshes every 24h via ccusage</sub>`;
+<sub>auto-refreshes every 24h via ccusage; graph updates with the table</sub>`;
 }
 
 function commitAndPush() {
-  const paths = ['README.md', 'assets/codex-token-counter.svg', 'data/codex-token-usage.json', 'scripts/update-codex-token-counter.mjs', 'launchd/com.ganeshtalluri.github-profile-token-counter.plist'];
+  const paths = ['README.md', 'assets/codex-token-counter.svg', 'assets/codex-token-trend.svg', 'data/codex-token-usage.json', 'scripts/update-codex-token-counter.mjs', 'launchd/com.ganeshtalluri.github-profile-token-counter.plist'];
   git(['add', ...paths.filter((filePath) => existsSync(path.join(repoRoot, filePath)))]);
 
   if (!hasStagedChanges()) {
@@ -379,6 +486,18 @@ function displayDate(value) {
   }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
+function displayShortDate(value) {
+  if (!value) {
+    return 'n/a';
+  }
+  const [year, month, day] = value.split('-').map(Number);
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC'
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+
 function integer(value) {
   return new Intl.NumberFormat('en-US').format(Number(value || 0));
 }
@@ -404,6 +523,10 @@ function xml(value) {
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;');
+}
+
+function html(value) {
+  return xml(value);
 }
 
 function md(value) {
