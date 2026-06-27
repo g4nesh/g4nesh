@@ -241,20 +241,17 @@ function renderReadmeCounter(payload) {
     ['range', range],
     ['updated', updated]
   ];
-  const labelWidth = Math.max(...rows.map(([label]) => label.length));
-  const valueWidth = Math.max(...rows.map(([, value]) => value.length));
-  const border = `+${'-'.repeat(labelWidth + 2)}+${'-'.repeat(valueWidth + 2)}+`;
   const body = rows
-    .map(([label, value]) => `| ${label.padEnd(labelWidth)} | ${value.padEnd(valueWidth)} |`)
+    .map(([label, value]) => `| ${md(label)} | ${md(value)} |`)
     .join('\n');
 
-  return `\`\`\`text
-tokenmaxxing stats
-${border}
+  return `#### tokenmaxxing stats
+
+| stat | value |
+| --- | --- |
 ${body}
-${border}
-auto-refresh: every 24h via ccusage
-\`\`\``;
+
+<sub>auto-refreshes every 24h via ccusage</sub>`;
 }
 
 function commitAndPush() {
@@ -407,6 +404,10 @@ function xml(value) {
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;');
+}
+
+function md(value) {
+  return String(value).replaceAll('|', '\\|');
 }
 
 function escapeRegExp(value) {
