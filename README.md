@@ -1,5 +1,5 @@
 <p>
-  <img src="./assets/g4nesh-ascii.svg" alt="ascii plasma animation">
+  <img src="./assets/g4nesh-ascii.gif" alt="ascii plasma animation">
 </p>
 
 hi! i'm ganesh and below you can find most of the projects i've worked on through the years (all the way back to 2021!)
