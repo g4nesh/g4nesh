@@ -20,12 +20,12 @@ prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank
   <tbody>
     <tr>
       <td width="18%">tokens</td>
-      <td width="36%">2,971,040,259 (2.97B)</td>
+      <td width="36%">3,001,446,573 (3B)</td>
       <td rowspan="7" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>
     </tr>
     <tr>
       <td>cost</td>
-      <td>$3,989.16</td>
+      <td>$4,060.97</td>
     </tr>
     <tr>
       <td>active days</td>
@@ -33,7 +33,7 @@ prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank
     </tr>
     <tr>
       <td>sessions</td>
-      <td>403</td>
+      <td>401</td>
     </tr>
     <tr>
       <td>top model</td>
@@ -41,14 +41,14 @@ prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank
     </tr>
     <tr>
       <td>range</td>
-      <td>Jan 1, 2026 -> Jun 26, 2026</td>
+      <td>Jan 1, 2026 -&gt; Jun 26, 2026</td>
     </tr>
     <tr>
       <td>updated</td>
-      <td>Jun 26, 2026, 1:55 PM MST</td>
+      <td>Jun 26, 2026, 11:08 PM MST</td>
     </tr>
   </tbody>
 </table>
 
-<sub>auto-refreshes every 24h via ccusage; graph updates with the table</sub>
+<sub>auto-refreshes every 24h via ccusage; graph and banner colors randomize daily</sub>
 <!-- codex-token-counter:end -->

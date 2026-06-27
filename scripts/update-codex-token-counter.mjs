@@ -11,6 +11,9 @@ const readmePath = path.join(repoRoot, 'README.md');
 const dataPath = path.join(repoRoot, 'data', 'codex-token-usage.json');
 const svgPath = path.join(repoRoot, 'assets', 'codex-token-counter.svg');
 const trendSvgPath = path.join(repoRoot, 'assets', 'codex-token-trend.svg');
+const asciiGifPath = path.join(repoRoot, 'assets', 'g4nesh-ascii.gif');
+const asciiSourceGifPath = path.join(repoRoot, 'assets', 'g4nesh-ascii-source.gif');
+const asciiRecolorScriptPath = path.join(scriptDir, 'recolor-ascii-gif.py');
 const codexHome = process.env.CODEX_HOME || path.join(os.homedir(), '.codex');
 const startDate = process.env.TOKEN_COUNTER_START_DATE || '2026-01-01';
 const timezone = process.env.TZ || 'America/Phoenix';
@@ -21,19 +24,24 @@ const noPush = process.argv.includes('--no-push');
 const ccusage = resolveCcusageCommand();
 const dailyRaw = runCcusage('daily');
 const sessionRaw = runCcusage('session');
-const payload = buildPayload(dailyRaw, sessionRaw);
+const payload = {
+  ...buildPayload(dailyRaw, sessionRaw),
+  theme: dailyTheme(endDate)
+};
 
 mkdirSync(path.dirname(dataPath), { recursive: true });
 mkdirSync(path.dirname(svgPath), { recursive: true });
 writeFileSync(dataPath, `${JSON.stringify(payload, null, 2)}\n`);
-writeFileSync(svgPath, `${renderSvg(payload)}\n`);
-writeFileSync(trendSvgPath, `${renderTrendSvg(payload)}\n`);
+writeFileSync(svgPath, `${renderSvg(payload, payload.theme)}\n`);
+writeFileSync(trendSvgPath, `${renderTrendSvg(payload, payload.theme)}\n`);
+recolorAsciiGif(payload.theme);
 writeFileSync(readmePath, updateReadme(readFileSync(readmePath, 'utf8'), payload));
 
-console.log(`Generated README counter, ${path.relative(repoRoot, dataPath)}, ${path.relative(repoRoot, svgPath)}, and ${path.relative(repoRoot, trendSvgPath)}`);
+console.log(`Generated README counter, ${path.relative(repoRoot, dataPath)}, ${path.relative(repoRoot, svgPath)}, ${path.relative(repoRoot, trendSvgPath)}, and ${path.relative(repoRoot, asciiGifPath)}`);
 console.log(`Range: ${payload.range.startDate} to ${payload.range.endDate}`);
 console.log(`Total tokens: ${payload.totals.totalTokens.toLocaleString('en-US')}`);
 console.log(`Estimated cost: $${payload.totals.totalCost.toFixed(2)}`);
+console.log(`Daily theme: ${payload.theme.name} (${payload.theme.hex})`);
 
 if (!noCommit) {
   commitAndPush();
@@ -164,7 +172,7 @@ function modelTotals(days) {
   return [...modelMap.values()].sort((a, b) => b.totalTokens - a.totalTokens);
 }
 
-function renderSvg(payload) {
+function renderSvg(payload, theme) {
   const width = 720;
   const height = 190;
   const updated = formatTimestamp(payload.generatedAt, timezone);
@@ -181,8 +189,8 @@ function renderSvg(payload) {
   <desc id="desc">${xml(`${exactTotal} Codex tokens tracked from ${range}. Updated ${updated}.`)}</desc>
   <defs>
     <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#2f80ed"/>
-      <stop offset="100%" stop-color="#27ae60"/>
+      <stop offset="0%" stop-color="${xml(theme.light)}"/>
+      <stop offset="100%" stop-color="${xml(theme.hex)}"/>
     </linearGradient>
     <filter id="shadow" x="-5%" y="-10%" width="110%" height="120%">
       <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.14"/>
@@ -211,7 +219,7 @@ function metric(label, value, x) {
     </g>`;
 }
 
-function renderTrendSvg(payload) {
+function renderTrendSvg(payload, theme) {
   const width = 380;
   const height = 226;
   const pad = { top: 34, right: 18, bottom: 36, left: 34 };
@@ -249,13 +257,13 @@ function renderTrendSvg(payload) {
   <desc id="desc">${xml(`Line graph of cumulative Codex tokens from ${start} to ${end}, ending at ${total}.`)}</desc>
   <defs>
     <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#8b5cf6"/>
-      <stop offset=".55" stop-color="#c084fc"/>
-      <stop offset="1" stop-color="#a855f7"/>
+      <stop offset="0" stop-color="${xml(theme.dark)}"/>
+      <stop offset=".55" stop-color="${xml(theme.light)}"/>
+      <stop offset="1" stop-color="${xml(theme.hex)}"/>
     </linearGradient>
     <linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0" stop-color="#a855f7" stop-opacity=".28"/>
-      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+      <stop offset="0" stop-color="${xml(theme.hex)}" stop-opacity=".28"/>
+      <stop offset="1" stop-color="${xml(theme.hex)}" stop-opacity="0"/>
     </linearGradient>
     <clipPath id="plot">
       <rect x="${pad.left}" y="${pad.top}" width="${plotWidth}" height="${plotHeight}"/>
@@ -272,8 +280,8 @@ function renderTrendSvg(payload) {
   <g clip-path="url(#plot)">
     ${area ? `<path d="${area}" fill="url(#area)"/>` : ''}
     ${line ? `<path d="${line}" fill="none" stroke="url(#line)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>` : ''}
-    ${points[0] ? `<circle cx="${points[0].x.toFixed(1)}" cy="${points[0].y.toFixed(1)}" r="2.5" fill="#8b5cf6"/>` : ''}
-    ${points.at(-1) ? `<circle cx="${points.at(-1).x.toFixed(1)}" cy="${points.at(-1).y.toFixed(1)}" r="2.8" fill="#e9d5ff"/>` : ''}
+    ${points[0] ? `<circle cx="${points[0].x.toFixed(1)}" cy="${points[0].y.toFixed(1)}" r="2.5" fill="${xml(theme.dark)}"/>` : ''}
+    ${points.at(-1) ? `<circle cx="${points.at(-1).x.toFixed(1)}" cy="${points.at(-1).y.toFixed(1)}" r="2.8" fill="${xml(theme.light)}"/>` : ''}
   </g>
   <text x="${pad.left}" y="${height - 14}" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="11">${xml(start)}</text>
   <text x="${width - pad.right}" y="${height - 14}" text-anchor="end" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="11">${xml(end)}</text>
@@ -336,11 +344,16 @@ function renderReadmeCounter(payload) {
     ['updated', updated]
   ];
   const body = rows
-    .map(([label, value], index) => `    <tr>
-      <td${index === 0 ? ' width="18%"' : ''}>${html(label)}</td>
-      <td${index === 0 ? ' width="36%"' : ''}>${html(value)}</td>
-      ${index === 0 ? `<td rowspan="${rows.length}" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>` : ''}
-    </tr>`)
+    .map(([label, value], index) => {
+      const cells = [
+        `      <td${index === 0 ? ' width="18%"' : ''}>${html(label)}</td>`,
+        `      <td${index === 0 ? ' width="36%"' : ''}>${html(value)}</td>`
+      ];
+      if (index === 0) {
+        cells.push(`      <td rowspan="${rows.length}" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>`);
+      }
+      return `    <tr>\n${cells.join('\n')}\n    </tr>`;
+    })
     .join('\n');
 
   return `#### my yearly codex usage
@@ -358,11 +371,11 @@ ${body}
   </tbody>
 </table>
 
-<sub>auto-refreshes every 24h via ccusage; graph updates with the table</sub>`;
+<sub>auto-refreshes every 24h via ccusage; graph and banner colors randomize daily</sub>`;
 }
 
 function commitAndPush() {
-  const paths = ['README.md', 'assets/codex-token-counter.svg', 'assets/codex-token-trend.svg', 'data/codex-token-usage.json', 'scripts/update-codex-token-counter.mjs', 'launchd/com.ganeshtalluri.github-profile-token-counter.plist'];
+  const paths = ['README.md', 'assets/codex-token-counter.svg', 'assets/codex-token-trend.svg', 'assets/g4nesh-ascii.gif', 'assets/g4nesh-ascii-source.gif', 'data/codex-token-usage.json', 'scripts/recolor-ascii-gif.py', 'scripts/update-codex-token-counter.mjs', 'launchd/com.ganeshtalluri.github-profile-token-counter.plist'];
   git(['add', ...paths.filter((filePath) => existsSync(path.join(repoRoot, filePath)))]);
 
   if (!hasStagedChanges()) {
@@ -397,6 +410,45 @@ function gitOutput(args) {
     cwd: repoRoot,
     encoding: 'utf8'
   });
+}
+
+function recolorAsciiGif(theme) {
+  if (!existsSync(asciiSourceGifPath)) {
+    throw new Error(`Missing ASCII source GIF: ${asciiSourceGifPath}`);
+  }
+  if (!existsSync(asciiRecolorScriptPath)) {
+    throw new Error(`Missing ASCII recolor script: ${asciiRecolorScriptPath}`);
+  }
+
+  const python = resolvePythonWithPillow();
+  execFileSync(python, [asciiRecolorScriptPath, asciiSourceGifPath, asciiGifPath, theme.hex], {
+    cwd: repoRoot,
+    stdio: 'inherit'
+  });
+}
+
+function resolvePythonWithPillow() {
+  const candidates = [
+    process.env.PYTHON_WITH_PIL,
+    process.env.PYTHON,
+    '/Library/Frameworks/Python.framework/Versions/3.12/bin/python3',
+    '/opt/homebrew/bin/python3',
+    '/usr/local/bin/python3',
+    '/usr/bin/python3',
+    'python3'
+  ].filter(Boolean);
+
+  for (const candidate of candidates) {
+    const result = spawnSync(candidate, ['-c', 'import PIL'], {
+      cwd: repoRoot,
+      stdio: 'ignore'
+    });
+    if (result.status === 0) {
+      return candidate;
+    }
+  }
+
+  throw new Error('Could not find a Python 3 executable with Pillow installed. Set PYTHON_WITH_PIL to one before running the updater.');
 }
 
 function modelBreakdowns(row) {
@@ -459,6 +511,71 @@ function currentDate(targetTimezone) {
   }).formatToParts(new Date());
   const get = (type) => parts.find((part) => part.type === type)?.value;
   return `${get('year')}-${get('month')}-${get('day')}`;
+}
+
+function dailyTheme(date) {
+  const ranges = [
+    { start: 25, end: 64, name: 'amber' },
+    { start: 78, end: 166, name: 'green' },
+    { start: 178, end: 254, name: 'blue' }
+  ];
+  const seed = hashText(date);
+  const totalHueSlots = ranges.reduce((sum, range) => sum + range.end - range.start + 1, 0);
+  let slot = seed % totalHueSlots;
+  let hue = ranges[0].start;
+  let family = ranges[0].name;
+
+  for (const range of ranges) {
+    const size = range.end - range.start + 1;
+    if (slot < size) {
+      hue = range.start + slot;
+      family = range.name;
+      break;
+    }
+    slot -= size;
+  }
+
+  const saturation = 76 + ((seed >>> 8) % 14);
+  const lightness = 52 + ((seed >>> 16) % 9);
+
+  return {
+    date,
+    name: `${family} ${hue}`,
+    hue,
+    saturation,
+    lightness,
+    hex: hslToHex(hue, saturation, lightness),
+    light: hslToHex(hue, Math.max(62, saturation - 6), Math.min(82, lightness + 18)),
+    dark: hslToHex(hue, Math.min(92, saturation + 8), Math.max(28, lightness - 18))
+  };
+}
+
+function hashText(value) {
+  let hash = 2166136261;
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function hslToHex(hue, saturation, lightness) {
+  const s = saturation / 100;
+  const l = lightness / 100;
+  const c = (1 - Math.abs(2 * l - 1)) * s;
+  const hp = hue / 60;
+  const x = c * (1 - Math.abs((hp % 2) - 1));
+  const [r1, g1, b1] =
+    hp < 1 ? [c, x, 0] :
+    hp < 2 ? [x, c, 0] :
+    hp < 3 ? [0, c, x] :
+    hp < 4 ? [0, x, c] :
+    hp < 5 ? [x, 0, c] :
+    [c, 0, x];
+  const m = l - c / 2;
+  return `#${[r1, g1, b1]
+    .map((channel) => Math.round((channel + m) * 255).toString(16).padStart(2, '0'))
+    .join('')}`;
 }
 
 function formatTimestamp(value, targetTimezone) {
