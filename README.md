@@ -1,5 +1,5 @@
 <p>
-  <img src="./assets/g4nesh-ascii.gif" alt="ascii plasma animation">
+  <img src="./assets/g4nesh-ascii.gif" alt="ascii plasma animation" width="100%">
 </p>
 
 hi! i'm ganesh and below you can find most of the projects i've worked on throughout the years (all the way back to 2021!)
@@ -9,19 +9,19 @@ prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank
 <!-- codex-token-counter:start -->
 #### my yearly codex usage
 
-<table>
+<table width="100%">
   <thead>
     <tr>
-      <th align="left">stat</th>
-      <th align="left">value</th>
-      <th align="left">tokens over time</th>
+      <th align="left" width="18%">stat</th>
+      <th align="left" width="36%">value</th>
+      <th align="right" width="46%">tokens over time</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>tokens</td>
-      <td>2,971,040,259 (2.97B)</td>
-      <td rowspan="7" valign="middle" align="center"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="360"></td>
+      <td width="18%">tokens</td>
+      <td width="36%">2,971,040,259 (2.97B)</td>
+      <td rowspan="7" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>
     </tr>
     <tr>
       <td>cost</td>

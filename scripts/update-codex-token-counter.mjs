@@ -337,20 +337,20 @@ function renderReadmeCounter(payload) {
   ];
   const body = rows
     .map(([label, value], index) => `    <tr>
-      <td>${html(label)}</td>
-      <td>${html(value)}</td>
-      ${index === 0 ? `<td rowspan="${rows.length}" valign="middle" align="center"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="360"></td>` : ''}
+      <td${index === 0 ? ' width="18%"' : ''}>${html(label)}</td>
+      <td${index === 0 ? ' width="36%"' : ''}>${html(value)}</td>
+      ${index === 0 ? `<td rowspan="${rows.length}" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>` : ''}
     </tr>`)
     .join('\n');
 
   return `#### my yearly codex usage
 
-<table>
+<table width="100%">
   <thead>
     <tr>
-      <th align="left">stat</th>
-      <th align="left">value</th>
-      <th align="left">tokens over time</th>
+      <th align="left" width="18%">stat</th>
+      <th align="left" width="36%">value</th>
+      <th align="right" width="46%">tokens over time</th>
     </tr>
   </thead>
   <tbody>
