@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="78" viewBox="0 0 420 78" role="img" aria-label="g4nesh">
+  <style>
+    .panel { fill: #0d1117; }
+    .dim { fill: #7d8590; font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .name { fill: #e6edf3; font: 700 23px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 1px; }
+    .line { fill: #9da7b3; font: 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .cursor { fill: #58a6ff; animation: blink 1.15s steps(1, end) infinite; }
+    .tick { animation: tick 4.2s steps(1, end) infinite; }
+    .t2 { animation-delay: .7s; }
+    .t3 { animation-delay: 1.4s; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes tick {
+      0%, 23% { opacity: .25; }
+      24%, 46% { opacity: .7; }
+      47%, 100% { opacity: .25; }
+    }
+  </style>
+  <rect class="panel" width="420" height="78" rx="6"/>
+  <text class="dim" x="18" y="22">~/profile</text>
+  <text class="name" x="18" y="48">&gt; g4nesh</text>
+  <rect class="cursor" x="148" y="29" width="9" height="23" rx="1"/>
+  <text class="line" x="18" y="67">build<span class="tick">.</span><span class="tick t2">.</span><span class="tick t3">.</span> research systems, ship useful tools</text>
+</svg>
