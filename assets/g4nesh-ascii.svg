@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="150" viewBox="0 0 960 150" role="img" aria-label="ascii plasma animation">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260" role="img" aria-label="ascii plasma animation">
   <style>
     .bg { fill: #05060b; }
     .glyphs {
-      font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      letter-spacing: .35px;
+      font: 20px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: .2px;
       white-space: pre;
       dominant-baseline: text-before-edge;
     }
@@ -39,17 +39,17 @@
   </style>
   <defs>
     <filter id="soft" x="-20%" y="-80%" width="140%" height="260%">
-      <feGaussianBlur stdDeviation="24"/>
+      <feGaussianBlur stdDeviation="34"/>
     </filter>
     <radialGradient id="magenta" cx="50%" cy="50%" r="55%">
       <stop offset="0" stop-color="#f0abfc"/>
       <stop offset=".34" stop-color="#d946ef"/>
       <stop offset="1" stop-color="#4c1d95" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="cyan" cx="50%" cy="50%" r="58%">
-      <stop offset="0" stop-color="#67e8f9"/>
-      <stop offset=".36" stop-color="#0891b2"/>
-      <stop offset="1" stop-color="#0e7490" stop-opacity="0"/>
+    <radialGradient id="purple" cx="50%" cy="50%" r="58%">
+      <stop offset="0" stop-color="#e9d5ff"/>
+      <stop offset=".36" stop-color="#9333ea"/>
+      <stop offset="1" stop-color="#2e1065" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="violet" cx="50%" cy="50%" r="60%">
       <stop offset="0" stop-color="#c084fc"/>
@@ -57,46 +57,46 @@
       <stop offset="1" stop-color="#312e81" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="base" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#7e22ce"/>
-      <stop offset=".24" stop-color="#d946ef"/>
-      <stop offset=".48" stop-color="#8b5cf6"/>
-      <stop offset=".72" stop-color="#06b6d4"/>
-      <stop offset="1" stop-color="#a855f7"/>
+      <stop offset="0" stop-color="#2e1065"/>
+      <stop offset=".24" stop-color="#7e22ce"/>
+      <stop offset=".52" stop-color="#d946ef"/>
+      <stop offset=".76" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
     </linearGradient>
     <linearGradient id="sweep" x1="0" x2="1" y1="0" y2="0">
       <stop offset="0" stop-color="#05060b" stop-opacity="0"/>
-      <stop offset=".18" stop-color="#22d3ee" stop-opacity=".42"/>
+      <stop offset=".18" stop-color="#7e22ce" stop-opacity=".46"/>
       <stop offset=".46" stop-color="#e879f9" stop-opacity=".86"/>
       <stop offset=".72" stop-color="#8b5cf6" stop-opacity=".48"/>
       <stop offset="1" stop-color="#05060b" stop-opacity="0"/>
     </linearGradient>
     <mask id="glyph-mask" maskUnits="userSpaceOnUse">
-      <rect width="960" height="150" fill="black"/>
+      <rect width="960" height="260" fill="black"/>
       <g class="glyphs" fill="white">
-        <text x="10" y="6">@@@@@@@@@@@@@@@@%%%%%%%#####******++++++++==================+++++++++++++++++++++++++++++++++++=++++++++++++++******######%%%%%%%@@@@@</text>
-        <text x="10" y="17">@@@@@@@@@%%%%%%%#####*****++++++===========================++++++++++++++++++++++++++++++++++++++++===++++++++++++******#####%%%%%%@@@</text>
-        <text x="10" y="28">%%###########********+++++++++====================+++++++++********######################**********+++++++++++++++++++++++*******#####</text>
-        <text x="10" y="39">*************++++++++++++++++=======================++++++++********#############################*********++++++++++++========++++++++</text>
-        <text x="10" y="50">++++++++++++++++++++++++=========------------------------=======++++++++*******************************++++++++++++=============------</text>
-        <text x="10" y="61">=====++++++++++++++=======-----::::::::........::::::::------=======++++++++++++++++++++====================================----------</text>
-        <text x="10" y="72">====++++++++++++++======-----::::::::....::::::::----=====+++++*****************+++++======-------------------------============------</text>
-        <text x="10" y="83">=++++++++*****++++++++=====--------:::--------====++++****#######%%%%%%%%%######****++++====------::::::::---------===================</text>
-        <text x="10" y="94">++*******########*******+++++================+++++****######%%%%%%%%%%%%%%%%####****++++=====-----------------=======+++++++++++++++++</text>
-        <text x="10" y="105">****#####%%%%%%%%%%%%######******++++++++++++++++++********###############*******++++++======================++++++++*****************</text>
-        <text x="10" y="116">***#####%%%%%%%%%@@%%%%%%%%%%######*******+++++++++++++++++++++**********+++++++++++++++++++++++++++++++++++++****************########</text>
-        <text x="10" y="127">****########%%%%%%%%%%%%%%%%%#########************++++++++++***************************************++++++++++++**********************#</text>
+        <text x="14" y="10">@@@@@@@@@@@@%%%%####****++++++=============+++++++++++++++++++++++++=++++++++++****####%%%%%@@@@</text>
+        <text x="14" y="29">@@@@@@%%%%%####****++++====================++++++++++++++++++++++++++++===++++++++****####%%%%@@</text>
+        <text x="14" y="48">%%#######******++++++===============++++++******################*******+++++++++++++++++*****###</text>
+        <text x="14" y="67">**********+++++++++++================++++++******#####################******+++++++++======+++++</text>
+        <text x="14" y="86">+++++++++++++++++======------------------=====++++++**********************++++++++==========----</text>
+        <text x="14" y="105">====++++++++++=====----:::::......::::::----=====++++++++++++++==========================-------</text>
+        <text x="14" y="124">===++++++++++====----:::::....:::::---===++++************++++=====-----------------=========----</text>
+        <text x="14" y="143">=+++++****++++++===------::------===+++***#####%%%%%%####***+++===-----:::::-------=============</text>
+        <text x="14" y="162">++****######*****++++===========++++***####%%%%%%%%%%%####***++===-------------=====++++++++++++</text>
+        <text x="14" y="181">***####%%%%%%%%#####****+++++++++++++******###########****++++================++++++************</text>
+        <text x="14" y="200">**####%%%%%%@@%%%%%%%####*****+++++++++++++++********++++++++++++++++++++++++++***********######</text>
+        <text x="14" y="219">***######%%%%%%%%%%%%######*********+++++++****************************++++++++*****************</text>
       </g>
     </mask>
   </defs>
-  <rect class="bg" width="960" height="150" rx="8"/>
+  <rect class="bg" width="960" height="260" rx="8"/>
   <g class="field">
-    <rect width="960" height="150" fill="url(#base)" opacity=".62"/>
+    <rect width="960" height="260" fill="url(#base)" opacity=".7"/>
     <g filter="url(#soft)">
-      <circle class="b1" cx="190" cy="30" r="150" fill="url(#magenta)" opacity=".95"/>
-      <circle class="b2" cx="720" cy="86" r="170" fill="url(#cyan)" opacity=".85"/>
-      <circle class="b3" cx="465" cy="115" r="190" fill="url(#violet)" opacity=".92"/>
-      <circle class="b4" cx="930" cy="20" r="145" fill="url(#magenta)" opacity=".74"/>
+      <circle class="b1" cx="180" cy="50" r="210" fill="url(#magenta)" opacity=".95"/>
+      <circle class="b2" cx="720" cy="142" r="235" fill="url(#purple)" opacity=".9"/>
+      <circle class="b3" cx="465" cy="190" r="260" fill="url(#violet)" opacity=".92"/>
+      <circle class="b4" cx="930" cy="46" r="205" fill="url(#magenta)" opacity=".74"/>
     </g>
-    <rect class="wash" x="-420" y="0" width="840" height="150" fill="url(#sweep)" opacity=".72"/>
+    <rect class="wash" x="-420" y="0" width="840" height="260" fill="url(#sweep)" opacity=".78"/>
   </g>
 </svg>
