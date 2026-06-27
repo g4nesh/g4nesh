@@ -1,5 +1,7 @@
 find more of my work at https://ganeshtalluri.com
 
+prev. [Axon](https://www.axon.com/), [SoftBank](https://group.softbank/en), [Midwestern University](https://www.midwestern.edu/)
+
 <!-- codex-token-counter:start -->
 ```text
 tokenmaxxing stats
