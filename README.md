@@ -2,9 +2,9 @@
   <img src="./assets/g4nesh-ascii.svg" alt="g4nesh ascii banner">
 </p>
 
-building useful ai systems, research tooling, and small products that compound.
+hi! i'm ganesh and below you can find most of the projects i've worked on through the years (all the way back to 2021!)
 
-find more of my work at https://ganeshtalluri.com
+find more of my work at [https://ganeshtalluri.com](https://ganeshtalluri.com/)
 
 prev. [Axon](https://www.axon.com/), [SoftBank](https://group.softbank/en), [Midwestern University](https://www.midwestern.edu/)
 

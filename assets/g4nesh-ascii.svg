@@ -1,23 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="78" viewBox="0 0 420 78" role="img" aria-label="g4nesh">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="124" viewBox="0 0 720 124" role="img" aria-label="g4nesh ascii plasma banner">
   <style>
-    .panel { fill: #0d1117; }
-    .dim { fill: #7d8590; font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .name { fill: #e6edf3; font: 700 23px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 1px; }
-    .line { fill: #9da7b3; font: 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .cursor { fill: #58a6ff; animation: blink 1.15s steps(1, end) infinite; }
-    .tick { animation: tick 4.2s steps(1, end) infinite; }
-    .t2 { animation-delay: .7s; }
-    .t3 { animation-delay: 1.4s; }
-    @keyframes blink { 50% { opacity: 0; } }
-    @keyframes tick {
-      0%, 23% { opacity: .25; }
-      24%, 46% { opacity: .7; }
-      47%, 100% { opacity: .25; }
+    .bg { fill: #06070c; }
+    .frame { fill: none; stroke: #242938; stroke-width: 1; }
+    .ascii {
+      font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: 1px;
+      white-space: pre;
+      dominant-baseline: text-before-edge;
+    }
+    .hot {
+      fill: #d946ef;
+      opacity: .62;
+      animation: drift-left 8s linear infinite, breathe 3.4s ease-in-out infinite;
+    }
+    .cool {
+      fill: #38bdf8;
+      opacity: .24;
+      animation: drift-right 11s linear infinite;
+    }
+    .spark {
+      fill: #f0abfc;
+      opacity: .42;
+      animation: shimmer 2.8s steps(2, end) infinite;
+    }
+    .veil { fill: url(#veil); }
+    .tag { fill: rgba(6, 7, 12, .72); stroke: rgba(148, 163, 184, .22); stroke-width: 1; }
+    .prompt { fill: #a78bfa; font: 700 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .name { fill: #f8fafc; font: 800 34px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 1.5px; }
+    .sub { fill: #94a3b8; font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .cursor { fill: #c084fc; animation: blink 1.1s steps(1, end) infinite; }
+    @keyframes drift-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-108px); }
+    }
+    @keyframes drift-right {
+      from { transform: translateX(-92px); }
+      to { transform: translateX(0); }
+    }
+    @keyframes breathe {
+      0%, 100% { opacity: .50; }
+      50% { opacity: .72; }
+    }
+    @keyframes shimmer {
+      0%, 100% { opacity: .25; }
+      50% { opacity: .58; }
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hot, .cool, .spark, .cursor { animation: none; }
     }
   </style>
-  <rect class="panel" width="420" height="78" rx="6"/>
-  <text class="dim" x="18" y="22">~/profile</text>
-  <text class="name" x="18" y="48">&gt; g4nesh</text>
-  <rect class="cursor" x="148" y="29" width="9" height="23" rx="1"/>
-  <text class="line" x="18" y="67">build<span class="tick">.</span><span class="tick t2">.</span><span class="tick t3">.</span> research systems, ship useful tools</text>
+  <defs>
+    <linearGradient id="veil" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#06070c" stop-opacity=".96"/>
+      <stop offset=".32" stop-color="#06070c" stop-opacity=".58"/>
+      <stop offset=".62" stop-color="#06070c" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#06070c" stop-opacity=".78"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <rect x="1" y="1" width="718" height="122" rx="8"/>
+    </clipPath>
+  </defs>
+  <rect class="bg" width="720" height="124" rx="8"/>
+  <g clip-path="url(#clip)">
+    <g class="ascii hot">
+      <text x="-28" y="10">::::---===+++***###%%%%###***+++===---::::---===+++***###%%%%###***+++===---::::---===+++***###%%%%###***+++===---</text>
+      <text x="-16" y="24">::---===+++**###%%@@%%###**+++===---::::---===+++**###%%@@%%###**+++===---::::---===+++**###%%@@%%###**+++===---</text>
+      <text x="-40" y="38">---===+++***###%%%%###***+++===---::::---===+++***###%%%%###***+++===---::::---===+++***###%%%%###***+++===---::</text>
+      <text x="-22" y="52">===+++***###%%%###***+++===---::::---===+++***###%%%###***+++===---::::---===+++***###%%%###***+++===---::::---</text>
+      <text x="-34" y="66">+++***###%%%%###***+++===---::::---===+++***###%%%%###***+++===---::::---===+++***###%%%%###***+++===---::::---=</text>
+      <text x="-10" y="80">**###%%@@%%###**+++===---::::---===+++**###%%@@%%###**+++===---::::---===+++**###%%@@%%###**+++===---::::---===</text>
+      <text x="-44" y="94">###%%%%###***+++===---::::---===+++***###%%%%###***+++===---::::---===+++***###%%%%###***+++===---::::---===+++</text>
+      <text x="-26" y="108">%%###***+++===---::::---===+++***###%%%###***+++===---::::---===+++***###%%%###***+++===---::::---===+++***###</text>
+    </g>
+    <g class="ascii cool">
+      <text x="-86" y="16">....::::----====++++====----::::....::::----====++++====----::::....::::----====++++====----::::....::::----====</text>
+      <text x="-102" y="32">..::::---===++****++===---::::..::::---===++****++===---::::..::::---===++****++===---::::..::::---===++****++=</text>
+      <text x="-76" y="48">::::---==++**##**++==---::::---==++**##**++==---::::---==++**##**++==---::::---==++**##**++==---::::---==++**</text>
+      <text x="-96" y="64">---===++**####**++===---::::---===++**####**++===---::::---===++**####**++===---::::---===++**####**++===---::</text>
+      <text x="-70" y="80">==++**##%%##**++==---::::---==++**##%%##**++==---::::---==++**##%%##**++==---::::---==++**##%%##**++==---::::</text>
+      <text x="-88" y="96">++**##%%%%##**++==---::::---==++**##%%%%##**++==---::::---==++**##%%%%##**++==---::::---==++**##%%%%##**++==</text>
+    </g>
+    <g class="ascii spark">
+      <text x="32" y="13">        *     +        .        *       +        .        *       +        .        *       +</text>
+      <text x="88" y="43">   +         .       *       +       .       *       +       .       *       +       .</text>
+      <text x="18" y="73">      .       *        +        .       *        +        .       *        +        .</text>
+      <text x="122" y="103"> *        +       .        *       +        .       *       +        .       *</text>
+    </g>
+    <rect class="veil" width="720" height="124"/>
+  </g>
+  <rect class="frame" x=".5" y=".5" width="719" height="123" rx="8"/>
+  <rect class="tag" x="28" y="28" width="286" height="68" rx="7"/>
+  <text class="prompt" x="47" y="56">&gt;</text>
+  <text class="name" x="78" y="62">g4nesh</text>
+  <rect class="cursor" x="220" y="35" width="9" height="34" rx="1"/>
+  <text class="sub" x="48" y="83">ascii plasma // profile</text>
 </svg>
