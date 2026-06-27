@@ -2,11 +2,9 @@
   <img src="./assets/g4nesh-ascii.gif" alt="ascii plasma animation">
 </p>
 
-<h3>hi! i'm ganesh and below you can find most of the projects i've worked on through the years (all the way back to 2021!)</h3>
+hi! i'm ganesh and below you can find most of the projects i've worked on through the years (all the way back to 2021!)
 
-<h3>find more of my work at <a href="https://ganeshtalluri.com/">https://ganeshtalluri.com</a></h3>
-
-<h3>prev. <a href="https://www.axon.com/">Axon</a>, <a href="https://group.softbank/en">SoftBank</a>, <a href="https://www.midwestern.edu/">Midwestern University</a></h3>
+prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank/en), and [Midwestern University](https://www.midwestern.edu/)
 
 <!-- codex-token-counter:start -->
 ```text
