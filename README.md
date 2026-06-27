@@ -20,12 +20,12 @@ prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank
   <tbody>
     <tr>
       <td width="18%">tokens</td>
-      <td width="36%">3,006,068,806 (3.01B)</td>
+      <td width="36%">3,019,828,713 (3.02B)</td>
       <td rowspan="7" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>
     </tr>
     <tr>
       <td>cost</td>
-      <td>$1,846.44</td>
+      <td>$4,188.24</td>
     </tr>
     <tr>
       <td>active days</td>
@@ -33,7 +33,7 @@ prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank
     </tr>
     <tr>
       <td>sessions</td>
-      <td>405</td>
+      <td>406</td>
     </tr>
     <tr>
       <td>top model</td>
@@ -45,7 +45,7 @@ prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank
     </tr>
     <tr>
       <td>updated</td>
-      <td>Jun 27, 2026, 12:31 PM MST</td>
+      <td>Jun 27, 2026, 3:14 PM MST</td>
     </tr>
   </tbody>
 </table>
