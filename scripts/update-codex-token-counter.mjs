@@ -245,7 +245,7 @@ function renderReadmeCounter(payload) {
     .map(([label, value]) => `| ${md(label)} | ${md(value)} |`)
     .join('\n');
 
-  return `#### tokenmaxxing stats
+  return `#### my yearly codex usage
 
 | stat | value |
 | --- | --- |

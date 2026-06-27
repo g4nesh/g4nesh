@@ -7,7 +7,7 @@ hi! i'm ganesh and below you can find most of the projects i've worked on throug
 prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank/en), and [Midwestern University](https://www.midwestern.edu/)
 
 <!-- codex-token-counter:start -->
-#### tokenmaxxing stats
+#### my yearly codex usage
 
 | stat | value |
 | --- | --- |
