@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T02:37:15.291Z",
+  "generatedAt": "2026-06-28T03:16:35.820Z",
   "source": "ccusage codex daily/session --json",
   "scope": "codex usage since 2026-01-01",
   "range": {
@@ -9,13 +9,13 @@
     "lastTrackedDay": "2026-06-27"
   },
   "totals": {
-    "totalTokens": 3049340456,
-    "totalCost": 4256.7007699999995,
-    "inputTokens": 182562705,
-    "outputTokens": 18102167,
-    "cacheReadTokens": 2848675584,
+    "totalTokens": 3067845341,
+    "totalCost": 4291.612867499999,
+    "inputTokens": 183157112,
+    "outputTokens": 18171237,
+    "cacheReadTokens": 2866516992,
     "cacheCreationTokens": 0,
-    "reasoningOutputTokens": 8914881,
+    "reasoningOutputTokens": 8938186,
     "activeDays": 95,
     "sessions": 406,
     "favoriteModel": {
@@ -42,13 +42,13 @@
     },
     {
       "name": "gpt-5.5",
-      "totalTokens": 1139510852,
-      "totalCost": 2350.222925,
-      "inputTokens": 61287448,
-      "outputTokens": 4289964,
-      "cacheReadTokens": 1073933440,
+      "totalTokens": 1158015737,
+      "totalCost": 2385.1350224999996,
+      "inputTokens": 61881855,
+      "outputTokens": 4359034,
+      "cacheReadTokens": 1091774848,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 1413704
+      "reasoningOutputTokens": 1437009
     },
     {
       "name": "gpt-5.3-codex",
@@ -2682,13 +2682,13 @@
     },
     {
       "date": "2026-06-27",
-      "totalTokens": 46867781,
-      "totalCost": 109.90221,
-      "inputTokens": 2710770,
-      "outputTokens": 282323,
-      "cacheReadTokens": 43874688,
+      "totalTokens": 65372666,
+      "totalCost": 144.81430749999998,
+      "inputTokens": 3305177,
+      "outputTokens": 351393,
+      "cacheReadTokens": 61716096,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 121902,
+      "reasoningOutputTokens": 145207,
       "modelsUsed": [
         "gpt-5.5"
       ],
@@ -2696,13 +2696,13 @@
       "modelBreakdowns": [
         {
           "modelName": "gpt-5.5",
-          "cost": 109.90221,
-          "inputTokens": 2710770,
-          "outputTokens": 282323,
-          "cacheReadTokens": 43874688,
+          "cost": 144.81430749999998,
+          "inputTokens": 3305177,
+          "outputTokens": 351393,
+          "cacheReadTokens": 61716096,
           "cacheCreationTokens": 0,
-          "reasoningOutputTokens": 121902,
-          "totalTokens": 46867781
+          "reasoningOutputTokens": 145207,
+          "totalTokens": 65372666
         }
       ]
     }
