@@ -22,6 +22,10 @@
     <string>America/Phoenix</string>
     <key>TOKEN_COUNTER_START_DATE</key>
     <string>2026-01-01</string>
+    <key>CODEX_USAGE_SPEED</key>
+    <string>fast</string>
+    <key>CCUSAGE_VERSION</key>
+    <string>20.0.14</string>
     <key>GIT_TERMINAL_PROMPT</key>
     <string>0</string>
   </dict>

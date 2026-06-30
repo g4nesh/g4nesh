@@ -12,6 +12,8 @@ LOCK_DIR="$LOG_DIR/token-counter.lock"
 export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export TZ="${TZ:-America/Phoenix}"
 export TOKEN_COUNTER_START_DATE="${TOKEN_COUNTER_START_DATE:-2026-01-01}"
+export CODEX_USAGE_SPEED="${CODEX_USAGE_SPEED:-fast}"
+export CCUSAGE_VERSION="${CCUSAGE_VERSION:-20.0.14}"
 export GIT_TERMINAL_PROMPT=0
 
 mkdir -p "$LOG_DIR"

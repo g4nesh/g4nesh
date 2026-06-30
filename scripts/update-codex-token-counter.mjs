@@ -18,6 +18,8 @@ const codexHome = process.env.CODEX_HOME || path.join(os.homedir(), '.codex');
 const startDate = process.env.TOKEN_COUNTER_START_DATE || '2026-01-01';
 const timezone = process.env.TZ || 'America/Phoenix';
 const endDate = process.env.TOKEN_COUNTER_END_DATE || currentDate(timezone);
+const codexUsageSpeed = codexSpeedTier(process.env.CODEX_USAGE_SPEED || 'fast');
+const ccusageVersion = process.env.CCUSAGE_VERSION || '20.0.14';
 const noCommit = process.argv.includes('--no-commit');
 const noPush = process.argv.includes('--no-push');
 
@@ -48,7 +50,7 @@ if (!noCommit) {
 }
 
 function runCcusage(report) {
-  const stdout = execFileSync(ccusage.command, [...ccusage.args, 'codex', report, '--json'], {
+  const stdout = execFileSync(ccusage.command, [...ccusage.args, 'codex', report, '--json', '--speed', codexUsageSpeed], {
     cwd: repoRoot,
     encoding: 'utf8',
     env: {
@@ -89,7 +91,11 @@ function buildPayload(dailyRaw, sessionRaw) {
 
   return {
     generatedAt: new Date().toISOString(),
-    source: 'ccusage codex daily/session --json',
+    source: `ccusage codex daily/session --json --speed ${codexUsageSpeed}`,
+    pricing: {
+      codexSpeed: codexUsageSpeed,
+      ccusageVersion
+    },
     scope: 'codex usage since 2026-01-01',
     range: {
       startDate,
@@ -659,8 +665,12 @@ function resolveCcusageCommand() {
     return splitCommand(process.env.CCUSAGE_COMMAND);
   }
 
-  const cachedCli = '/Users/ganeshtalluri/.npm/_npx/b8bc0fb451ae8722/node_modules/ccusage/dist/cli.js';
-  if (existsSync(cachedCli)) {
+  const cachedCliCandidates = [
+    '/Users/ganeshtalluri/.npm/_npx/b8bc0fb451ae8722/node_modules/ccusage/src/cli.js',
+    '/Users/ganeshtalluri/.npm/_npx/b8bc0fb451ae8722/node_modules/ccusage/dist/cli.js'
+  ];
+  const cachedCli = cachedCliCandidates.find((candidate) => existsSync(candidate));
+  if (cachedCli) {
     return {
       command: process.execPath,
       args: [cachedCli]
@@ -669,8 +679,16 @@ function resolveCcusageCommand() {
 
   return {
     command: 'npx',
-    args: ['--yes', 'ccusage@latest']
+    args: ['--yes', `ccusage@${ccusageVersion}`]
   };
+}
+
+function codexSpeedTier(value) {
+  if (['auto', 'standard', 'fast'].includes(value)) {
+    return value;
+  }
+
+  throw new Error(`Invalid CODEX_USAGE_SPEED "${value}". Expected auto, standard, or fast.`);
 }
 
 function splitCommand(commandText) {
