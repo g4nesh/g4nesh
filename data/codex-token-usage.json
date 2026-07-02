@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T17:40:54.083Z",
+  "generatedAt": "2026-07-02T03:26:56.163Z",
   "source": "ccusage codex daily/session --json --speed fast",
   "pricing": {
     "codexSpeed": "fast",
