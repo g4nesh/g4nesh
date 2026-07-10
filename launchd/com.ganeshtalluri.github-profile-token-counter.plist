@@ -34,7 +34,10 @@
   <true/>
 
   <key>StartInterval</key>
-  <integer>86400</integer>
+  <integer>3600</integer>
+
+  <key>ProcessType</key>
+  <string>Background</string>
 
   <key>StandardOutPath</key>
   <string>/Users/ganeshtalluri/.local/state/github-profile-token-counter/launchd.out.log</string>

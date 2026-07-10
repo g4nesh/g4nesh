@@ -22,20 +22,20 @@ for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
   <tbody>
     <tr>
       <td width="18%">tokens</td>
-      <td width="36%">3,613,242,962 (3.61B)</td>
+      <td width="36%">3,948,500,379 (3.95B)</td>
       <td rowspan="7" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>
     </tr>
     <tr>
       <td>cost</td>
-      <td>$5,516.84</td>
+      <td>$5,751.21</td>
     </tr>
     <tr>
       <td>active days</td>
-      <td>105</td>
+      <td>108</td>
     </tr>
     <tr>
       <td>sessions</td>
-      <td>481</td>
+      <td>552</td>
     </tr>
     <tr>
       <td>top model</td>
@@ -43,14 +43,14 @@ for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
     </tr>
     <tr>
       <td>range</td>
-      <td>Jan 1, 2026 -&gt; Jul 7, 2026</td>
+      <td>Jan 1, 2026 -&gt; Jul 10, 2026</td>
     </tr>
     <tr>
       <td>updated</td>
-      <td>Jul 7, 2026, 2:40 PM MST</td>
+      <td>Jul 10, 2026, 11:57 AM MST</td>
     </tr>
   </tbody>
 </table>
 
-<sub>auto-refreshes every 24h via ccusage; graph and banner colors randomize daily</sub>
+<sub>auto-refreshes once daily when this Mac is available via ccusage; graph and banner colors randomize daily</sub>
 <!-- codex-token-counter:end -->
