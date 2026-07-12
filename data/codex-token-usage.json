@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T15:13:50.059Z",
+  "generatedAt": "2026-07-12T07:52:19.835Z",
   "source": "ccusage codex daily/session --json --speed fast",
   "pricing": {
     "codexSpeed": "fast",
@@ -8,41 +8,41 @@
   "scope": "codex usage since 2026-01-01",
   "range": {
     "startDate": "2026-01-01",
-    "endDate": "2026-07-11",
+    "endDate": "2026-07-12",
     "firstTrackedDay": "2026-01-06",
-    "lastTrackedDay": "2026-07-10"
+    "lastTrackedDay": "2026-07-11"
   },
   "totals": {
-    "totalTokens": 4171211270,
-    "totalCost": 6489.607756199999,
-    "inputTokens": 247818376,
-    "outputTokens": 21829886,
-    "cacheReadTokens": 3901563008,
+    "totalTokens": 4221127257,
+    "totalCost": 6575.7625376999995,
+    "inputTokens": 250404421,
+    "outputTokens": 22034068,
+    "cacheReadTokens": 3948688768,
     "cacheCreationTokens": 0,
-    "reasoningOutputTokens": 10358871,
-    "activeDays": 108,
-    "sessions": 567,
+    "reasoningOutputTokens": 10447378,
+    "activeDays": 109,
+    "sessions": 577,
     "favoriteModel": {
       "name": "gpt-5.5",
-      "totalTokens": 1806964680,
+      "totalTokens": 1808505455,
       "totalCost": 3780.9825700000006,
-      "inputTokens": 107828246,
-      "outputTokens": 6584754,
-      "cacheReadTokens": 1692551680,
+      "inputTokens": 108037177,
+      "outputTokens": 6588982,
+      "cacheReadTokens": 1693879296,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 2287087
+      "reasoningOutputTokens": 2288359
     }
   },
   "models": [
     {
       "name": "gpt-5.5",
-      "totalTokens": 1806964680,
+      "totalTokens": 1808505455,
       "totalCost": 3780.9825700000006,
-      "inputTokens": 107828246,
-      "outputTokens": 6584754,
-      "cacheReadTokens": 1692551680,
+      "inputTokens": 108037177,
+      "outputTokens": 6588982,
+      "cacheReadTokens": 1693879296,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 2287087
+      "reasoningOutputTokens": 2288359
     },
     {
       "name": "gpt-5.4",
@@ -56,13 +56,13 @@
     },
     {
       "name": "gpt-5.6-sol",
-      "totalTokens": 454047839,
+      "totalTokens": 502423051,
       "totalCost": 0,
-      "inputTokens": 18531924,
-      "outputTokens": 1432587,
-      "cacheReadTokens": 434083328,
+      "inputTokens": 20909038,
+      "outputTokens": 1632541,
+      "cacheReadTokens": 479881472,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 570477
+      "reasoningOutputTokens": 657712
     },
     {
       "name": "gpt-5.3-codex",
@@ -3100,6 +3100,43 @@
           "totalTokens": 293372874
         }
       ]
+    },
+    {
+      "date": "2026-07-11",
+      "totalTokens": 49915987,
+      "totalCost": 86.15478150000001,
+      "inputTokens": 2586045,
+      "outputTokens": 204182,
+      "cacheReadTokens": 47125760,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 88507,
+      "modelsUsed": [
+        "gpt-5.5",
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "modelBreakdowns": [
+        {
+          "modelName": "gpt-5.5",
+          "cost": 0,
+          "inputTokens": 208931,
+          "outputTokens": 4228,
+          "cacheReadTokens": 1327616,
+          "cacheCreationTokens": 0,
+          "reasoningOutputTokens": 1272,
+          "totalTokens": 1540775
+        },
+        {
+          "modelName": "gpt-5.6-sol",
+          "cost": 0,
+          "inputTokens": 2377114,
+          "outputTokens": 199954,
+          "cacheReadTokens": 45798144,
+          "cacheCreationTokens": 0,
+          "reasoningOutputTokens": 87235,
+          "totalTokens": 48375212
+        }
+      ]
     }
   ],
   "sessions": [
@@ -3478,7 +3515,7 @@
       "agent": "codex"
     },
     {
-      "index": 574,
+      "index": 584,
       "date": "2026-02-13",
       "lastActivity": "2026-02-13T23:00:43.177Z",
       "totalTokens": 120192,
@@ -3495,7 +3532,7 @@
       "agent": "codex"
     },
     {
-      "index": 575,
+      "index": 585,
       "date": "2026-02-14",
       "lastActivity": "2026-02-14T23:00:33.815Z",
       "totalTokens": 194343,
@@ -3546,7 +3583,7 @@
       "agent": "codex"
     },
     {
-      "index": 576,
+      "index": 586,
       "date": "2026-02-15",
       "lastActivity": "2026-02-15T23:00:34.304Z",
       "totalTokens": 205452,
@@ -3631,7 +3668,7 @@
       "agent": "codex"
     },
     {
-      "index": 577,
+      "index": 587,
       "date": "2026-02-18",
       "lastActivity": "2026-02-18T16:11:48.484Z",
       "totalTokens": 219892,
@@ -3699,7 +3736,7 @@
       "agent": "codex"
     },
     {
-      "index": 578,
+      "index": 588,
       "date": "2026-02-19",
       "lastActivity": "2026-02-19T15:03:00.308Z",
       "totalTokens": 154470,
@@ -3750,7 +3787,7 @@
       "agent": "codex"
     },
     {
-      "index": 579,
+      "index": 589,
       "date": "2026-02-24",
       "lastActivity": "2026-02-24T02:11:10.140Z",
       "totalTokens": 165997,
@@ -3784,7 +3821,7 @@
       "agent": "codex"
     },
     {
-      "index": 580,
+      "index": 590,
       "date": "2026-02-24",
       "lastActivity": "2026-02-24T23:28:37.422Z",
       "totalTokens": 129029,
@@ -3801,7 +3838,7 @@
       "agent": "codex"
     },
     {
-      "index": 581,
+      "index": 591,
       "date": "2026-02-25",
       "lastActivity": "2026-02-25T23:00:49.931Z",
       "totalTokens": 167440,
@@ -4720,7 +4757,7 @@
       "agent": "codex"
     },
     {
-      "index": 582,
+      "index": 592,
       "date": "2026-04-06",
       "lastActivity": "2026-04-06T23:00:59.997Z",
       "totalTokens": 135954,
@@ -5111,7 +5148,7 @@
       "agent": "codex"
     },
     {
-      "index": 585,
+      "index": 595,
       "date": "2026-04-18",
       "lastActivity": "2026-04-18T06:28:23.273Z",
       "totalTokens": 280564,
@@ -5128,7 +5165,7 @@
       "agent": "codex"
     },
     {
-      "index": 584,
+      "index": 594,
       "date": "2026-04-18",
       "lastActivity": "2026-04-18T06:28:31.076Z",
       "totalTokens": 596794,
@@ -5145,7 +5182,7 @@
       "agent": "codex"
     },
     {
-      "index": 583,
+      "index": 593,
       "date": "2026-04-18",
       "lastActivity": "2026-04-18T06:34:55.029Z",
       "totalTokens": 528924,
@@ -5162,7 +5199,7 @@
       "agent": "codex"
     },
     {
-      "index": 588,
+      "index": 598,
       "date": "2026-04-18",
       "lastActivity": "2026-04-18T06:51:54.427Z",
       "totalTokens": 351041,
@@ -5179,7 +5216,7 @@
       "agent": "codex"
     },
     {
-      "index": 587,
+      "index": 597,
       "date": "2026-04-18",
       "lastActivity": "2026-04-18T06:51:59.812Z",
       "totalTokens": 521166,
@@ -5197,7 +5234,7 @@
       "agent": "codex"
     },
     {
-      "index": 586,
+      "index": 596,
       "date": "2026-04-18",
       "lastActivity": "2026-04-18T06:52:59.884Z",
       "totalTokens": 545939,
@@ -10214,23 +10251,6 @@
       "agent": "codex"
     },
     {
-      "index": 424,
-      "date": "2026-06-29",
-      "lastActivity": "2026-06-29T20:31:17.747Z",
-      "totalTokens": 621510,
-      "totalCost": 2.1776125000000004,
-      "inputTokens": 98503,
-      "outputTokens": 3967,
-      "cacheReadTokens": 519040,
-      "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 1017,
-      "modelsUsed": [
-        "gpt-5.5"
-      ],
-      "topModel": "gpt-5.5",
-      "agent": "codex"
-    },
-    {
       "index": 429,
       "date": "2026-06-29",
       "lastActivity": "2026-06-29T21:35:31.096Z",
@@ -12718,14 +12738,14 @@
     {
       "index": 573,
       "date": "2026-07-11",
-      "lastActivity": "2026-07-11T05:38:37.758Z",
-      "totalTokens": 26515,
-      "totalCost": 0.1736475,
-      "inputTokens": 11519,
-      "outputTokens": 148,
-      "cacheReadTokens": 14848,
+      "lastActivity": "2026-07-11T15:37:33.864Z",
+      "totalTokens": 82387,
+      "totalCost": 0.5733300000000001,
+      "inputTokens": 40150,
+      "outputTokens": 253,
+      "cacheReadTokens": 41984,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 112,
+      "reasoningOutputTokens": 181,
       "modelsUsed": [
         "gpt-5.5"
       ],
@@ -12735,14 +12755,202 @@
     {
       "index": 559,
       "date": "2026-07-11",
-      "lastActivity": "2026-07-11T05:39:09.905Z",
-      "totalTokens": 34178816,
-      "totalCost": 49.939432,
-      "inputTokens": 1294572,
-      "outputTokens": 69652,
-      "cacheReadTokens": 32814592,
+      "lastActivity": "2026-07-11T15:38:08.168Z",
+      "totalTokens": 36793604,
+      "totalCost": 56.662778,
+      "inputTokens": 1678515,
+      "outputTokens": 80721,
+      "cacheReadTokens": 35034368,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 27731,
+      "reasoningOutputTokens": 31352,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex"
+    },
+    {
+      "index": 574,
+      "date": "2026-07-11",
+      "lastActivity": "2026-07-11T19:58:02.376Z",
+      "totalTokens": 70531,
+      "totalCost": 0.2940875,
+      "inputTokens": 16495,
+      "outputTokens": 276,
+      "cacheReadTokens": 53760,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 204,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex"
+    },
+    {
+      "index": 576,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T02:10:27.874Z",
+      "totalTokens": 1289286,
+      "totalCost": 2.581268,
+      "inputTokens": 68794,
+      "outputTokens": 11404,
+      "cacheReadTokens": 1209088,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 4142,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex"
+    },
+    {
+      "index": 577,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T02:11:28.036Z",
+      "totalTokens": 1934110,
+      "totalCost": 3.7320180000000005,
+      "inputTokens": 106659,
+      "outputTokens": 14203,
+      "cacheReadTokens": 1813248,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 5665,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex"
+    },
+    {
+      "index": 424,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T02:11:48.843Z",
+      "totalTokens": 16675544,
+      "totalCost": 27.335614,
+      "inputTokens": 776161,
+      "outputTokens": 49271,
+      "cacheReadTokens": 15850112,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 19176,
+      "modelsUsed": [
+        "gpt-5.5",
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex"
+    },
+    {
+      "index": 578,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T02:15:22.300Z",
+      "totalTokens": 4038888,
+      "totalCost": 7.409386,
+      "inputTokens": 231923,
+      "outputTokens": 21749,
+      "cacheReadTokens": 3785216,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 11594,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex"
+    },
+    {
+      "index": 580,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T02:15:55.574Z",
+      "totalTokens": 783660,
+      "totalCost": 1.5343300000000002,
+      "inputTokens": 39715,
+      "outputTokens": 6665,
+      "cacheReadTokens": 737280,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 3330,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex"
+    },
+    {
+      "index": 581,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T02:29:20.591Z",
+      "totalTokens": 319012,
+      "totalCost": 0.8351740000000001,
+      "inputTokens": 26573,
+      "outputTokens": 4695,
+      "cacheReadTokens": 287744,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1844,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex"
+    },
+    {
+      "index": 582,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T02:30:36.671Z",
+      "totalTokens": 686259,
+      "totalCost": 1.555364,
+      "inputTokens": 39016,
+      "outputTokens": 8779,
+      "cacheReadTokens": 638464,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 4358,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex"
+    },
+    {
+      "index": 579,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T02:34:32.791Z",
+      "totalTokens": 898271,
+      "totalCost": 2.2339399999999996,
+      "inputTokens": 90026,
+      "outputTokens": 1333,
+      "cacheReadTokens": 806912,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 845,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex"
+    },
+    {
+      "index": 575,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T02:35:00.314Z",
+      "totalTokens": 15067061,
+      "totalCost": 24.683044000000002,
+      "inputTokens": 721988,
+      "outputTokens": 52849,
+      "cacheReadTokens": 14292224,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 21925,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex"
+    },
+    {
+      "index": 583,
+      "date": "2026-07-12",
+      "lastActivity": "2026-07-12T03:13:14.284Z",
+      "totalTokens": 6104215,
+      "totalCost": 9.015139999999999,
+      "inputTokens": 154624,
+      "outputTokens": 25751,
+      "cacheReadTokens": 5923840,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 12751,
       "modelsUsed": [
         "gpt-5.6-sol"
       ],
@@ -12751,13 +12959,13 @@
     }
   ],
   "theme": {
-    "date": "2026-07-11",
-    "name": "green 106",
-    "hue": 106,
-    "saturation": 85,
-    "lightness": 54,
-    "hex": "#55ed26",
-    "light": "#9af07f",
-    "dark": "#2fb007"
+    "date": "2026-07-12",
+    "name": "green 159",
+    "hue": 159,
+    "saturation": 81,
+    "lightness": 57,
+    "hex": "#39eaac",
+    "light": "#8fefce",
+    "dark": "#0bbc7e"
   }
 }
