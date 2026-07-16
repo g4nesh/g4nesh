@@ -4,8 +4,6 @@
 
 hi! i'm ganesh and below you can find most of the projects i've worked on throughout the years (all the way back to 2021!)
 
-prev. ML R&D at [Axon](https://www.axon.com/), [SoftBank](https://group.softbank/en), and [Midwestern University](https://www.midwestern.edu/)
-
 for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
 
 <!-- codex-token-counter:start -->
