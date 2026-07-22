@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T07:04:04.164Z",
+  "generatedAt": "2026-07-22T17:18:33.125Z",
   "source": "ccusage codex daily/session --json --speed fast",
   "pricing": {
     "codexSpeed": "fast",
@@ -8,7 +8,7 @@
   "scope": "codex usage since 2026-01-01",
   "range": {
     "startDate": "2026-01-01",
-    "endDate": "2026-07-21",
+    "endDate": "2026-07-22",
     "firstTrackedDay": "2026-01-06",
     "lastTrackedDay": "2026-07-20"
   },
@@ -19340,13 +19340,13 @@
     }
   ],
   "theme": {
-    "date": "2026-07-21",
-    "name": "blue 218",
-    "hue": 218,
-    "saturation": 86,
-    "lightness": 56,
-    "hex": "#2e75ef",
-    "light": "#88aff2",
-    "dark": "#0849ba"
+    "date": "2026-07-22",
+    "name": "green 156",
+    "hue": 156,
+    "saturation": 76,
+    "lightness": 60,
+    "hex": "#4be7a9",
+    "light": "#a0eecf",
+    "dark": "#11c57d"
   }
 }

@@ -41,11 +41,11 @@ for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
     </tr>
     <tr>
       <td>range</td>
-      <td>Jan 1, 2026 -&gt; Jul 21, 2026</td>
+      <td>Jan 1, 2026 -&gt; Jul 22, 2026</td>
     </tr>
     <tr>
       <td>updated</td>
-      <td>Jul 21, 2026, 12:04 AM MST</td>
+      <td>Jul 22, 2026, 10:18 AM MST</td>
     </tr>
   </tbody>
 </table>
