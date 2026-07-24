@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="190" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
   <title id="title">Tokenmaxxing stats since January 1, 2026</title>
-  <desc id="desc">9,278,720,862 Codex tokens tracked from Jan 1, 2026 - Jul 23, 2026. Updated Jul 23, 2026, 7:16 AM MST.</desc>
+  <desc id="desc">9,278,720,862 Codex tokens tracked from Jan 1, 2026 - Jul 24, 2026. Updated Jul 24, 2026, 2:00 AM MST.</desc>
   <defs>
     <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#a1ec88"/>
-      <stop offset="100%" stop-color="#5fe732"/>
+      <stop offset="0%" stop-color="#f2d597"/>
+      <stop offset="100%" stop-color="#edb640"/>
     </linearGradient>
     <filter id="shadow" x="-5%" y="-10%" width="110%" height="120%">
       <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.14"/>
@@ -13,7 +13,7 @@
   <rect width="720" height="190" rx="16" fill="#ffffff" filter="url(#shadow)"/>
   <rect x="0" y="0" width="8" height="190" rx="4" fill="url(#accent)"/>
   <text x="32" y="40" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="18" font-weight="700">Tokenmaxxing stats</text>
-  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from Jan 1, 2026 - Jul 23, 2026; refreshed once daily when available.</text>
+  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from Jan 1, 2026 - Jul 24, 2026; refreshed once daily when available.</text>
   <text x="32" y="120" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="44" font-weight="800">9.28B</text>
   <text x="32" y="144" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">9,278,720,862 total tokens</text>
   <g transform="translate(310 96)">
@@ -31,5 +31,5 @@
     </g>
   </g>
   <text x="310" y="156" fill="#374151" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Top model: gpt-5.6-sol</text>
-  <text x="310" y="176" fill="#9ca3af" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Updated Jul 23, 2026, 7:16 AM MST</text>
+  <text x="310" y="176" fill="#9ca3af" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Updated Jul 24, 2026, 2:00 AM MST</text>
 </svg>
