@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T21:05:02.440Z",
+  "generatedAt": "2026-07-27T21:55:36.868Z",
   "source": "ccusage codex daily/session --json --speed fast; cumulative machine snapshots",
   "pricing": {
     "codexSpeed": "fast",
@@ -13,46 +13,46 @@
     "lastTrackedDay": "2026-07-27"
   },
   "totals": {
-    "totalTokens": 9327652560,
-    "totalCost": 12777.374048399999,
-    "inputTokens": 408123759,
-    "outputTokens": 39244676,
-    "cacheReadTokens": 8880284125,
+    "totalTokens": 9331562495,
+    "totalCost": 12821.5880689,
+    "inputTokens": 408424918,
+    "outputTokens": 39257060,
+    "cacheReadTokens": 8883880517,
     "cacheCreationTokens": 0,
-    "reasoningOutputTokens": 17921722,
+    "reasoningOutputTokens": 17926044,
     "sessions": 942,
     "activeDays": 122,
     "favoriteModel": {
       "name": "gpt-5.6-sol",
-      "totalTokens": 4051837320,
+      "totalTokens": 4055234175,
       "totalCost": 1.225155,
-      "inputTokens": 123684962,
-      "outputTokens": 13665481,
-      "cacheReadTokens": 3914486877,
+      "inputTokens": 123894770,
+      "outputTokens": 13677000,
+      "cacheReadTokens": 3917662405,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 5805643
+      "reasoningOutputTokens": 5809521
     }
   },
   "models": [
     {
       "name": "gpt-5.6-sol",
-      "totalTokens": 4051837320,
+      "totalTokens": 4055234175,
       "totalCost": 1.225155,
-      "inputTokens": 123684962,
-      "outputTokens": 13665481,
-      "cacheReadTokens": 3914486877,
+      "inputTokens": 123894770,
+      "outputTokens": 13677000,
+      "cacheReadTokens": 3917662405,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 5805643
+      "reasoningOutputTokens": 5809521
     },
     {
       "name": "gpt-5.5",
-      "totalTokens": 1938256956,
+      "totalTokens": 1938770036,
       "totalCost": 3780.9825700000006,
-      "inputTokens": 122133543,
-      "outputTokens": 6702997,
-      "cacheReadTokens": 1809420416,
+      "inputTokens": 122224894,
+      "outputTokens": 6703862,
+      "cacheReadTokens": 1809841280,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 2341425
+      "reasoningOutputTokens": 2341869
     },
     {
       "name": "gpt-5.4",
@@ -3677,32 +3677,32 @@
       "modelBreakdowns": [
         {
           "modelName": "gpt-5.6-sol",
-          "totalTokens": 22447834,
+          "totalTokens": 25844689,
           "totalCost": 0,
-          "inputTokens": 828706,
-          "outputTokens": 112038,
-          "cacheReadTokens": 21507090,
+          "inputTokens": 1038514,
+          "outputTokens": 123557,
+          "cacheReadTokens": 24682618,
           "cacheCreationTokens": 0,
-          "reasoningOutputTokens": 45163
+          "reasoningOutputTokens": 49041
         },
         {
           "modelName": "gpt-5.5",
-          "totalTokens": 898085,
+          "totalTokens": 1411165,
           "totalCost": 0,
-          "inputTokens": 120199,
-          "outputTokens": 3230,
-          "cacheReadTokens": 774656,
+          "inputTokens": 211550,
+          "outputTokens": 4095,
+          "cacheReadTokens": 1195520,
           "cacheCreationTokens": 0,
-          "reasoningOutputTokens": 1825
+          "reasoningOutputTokens": 2269
         }
       ],
-      "totalTokens": 23345919,
-      "totalCost": 2.7130575,
-      "inputTokens": 948905,
-      "outputTokens": 115268,
-      "cacheReadTokens": 22281746,
+      "totalTokens": 27255854,
+      "totalCost": 46.927078,
+      "inputTokens": 1250064,
+      "outputTokens": 127652,
+      "cacheReadTokens": 25878138,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 46988
+      "reasoningOutputTokens": 51310
     }
   ],
   "sessions": [
@@ -19583,7 +19583,7 @@
       "date": "2026-07-27",
       "lastActivity": "2026-07-27T20:14:57.861Z",
       "totalTokens": 2307839,
-      "totalCost": 0,
+      "totalCost": 4.329899,
       "inputTokens": 173245,
       "outputTokens": 7845,
       "cacheReadTokens": 2126749,
@@ -19621,7 +19621,7 @@
       "date": "2026-07-27",
       "lastActivity": "2026-07-27T20:22:37.815Z",
       "totalTokens": 3692352,
-      "totalCost": 0,
+      "totalCost": 5.544999000000001,
       "inputTokens": 136328,
       "outputTokens": 10605,
       "cacheReadTokens": 3545419,
@@ -19640,7 +19640,7 @@
       "date": "2026-07-27",
       "lastActivity": "2026-07-27T20:28:37.870Z",
       "totalTokens": 2260361,
-      "totalCost": 0,
+      "totalCost": 3.776739,
       "inputTokens": 107959,
       "outputTokens": 9233,
       "cacheReadTokens": 2143169,
@@ -19678,7 +19678,7 @@
       "date": "2026-07-27",
       "lastActivity": "2026-07-27T20:52:21.102Z",
       "totalTokens": 2624466,
-      "totalCost": 0,
+      "totalCost": 4.117263,
       "inputTokens": 94378,
       "outputTokens": 10905,
       "cacheReadTokens": 2519183,
@@ -19716,7 +19716,7 @@
       "date": "2026-07-27",
       "lastActivity": "2026-07-27T21:03:48.686Z",
       "totalTokens": 3594065,
-      "totalCost": 0,
+      "totalCost": 6.1172640000000005,
       "inputTokens": 155046,
       "outputTokens": 19115,
       "cacheReadTokens": 3419904,
@@ -19733,14 +19733,14 @@
       "index": 941,
       "sessionId": "2026/07/27/rollout-2026-07-27T13-51-36-019fa558-eec0-75e1-ac3f-b523764ecda3",
       "date": "2026-07-27",
-      "lastActivity": "2026-07-27T21:04:56.843Z",
-      "totalTokens": 773542,
-      "totalCost": 1.9668725,
-      "inputTokens": 75727,
-      "outputTokens": 2007,
-      "cacheReadTokens": 695808,
+      "lastActivity": "2026-07-27T21:55:32.831Z",
+      "totalTokens": 1286622,
+      "totalCost": 3.6997150000000003,
+      "inputTokens": 167078,
+      "outputTokens": 2872,
+      "cacheReadTokens": 1116672,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 1066,
+      "reasoningOutputTokens": 1510,
       "modelsUsed": [
         "gpt-5.5"
       ],
@@ -19752,14 +19752,14 @@
       "index": 942,
       "sessionId": "2026/07/27/rollout-2026-07-27T13-50-20-019fa557-c62d-7d82-82ed-819b041f501d",
       "date": "2026-07-27",
-      "lastActivity": "2026-07-27T21:04:56.973Z",
-      "totalTokens": 7968751,
-      "totalCost": 0,
-      "inputTokens": 161750,
-      "outputTokens": 54335,
-      "cacheReadTokens": 7752666,
+      "lastActivity": "2026-07-27T21:55:32.914Z",
+      "totalTokens": 11365606,
+      "totalCost": 18.595014,
+      "inputTokens": 371558,
+      "outputTokens": 65854,
+      "cacheReadTokens": 10928194,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 19409,
+      "reasoningOutputTokens": 23287,
       "modelsUsed": [
         "gpt-5.6-sol"
       ],
@@ -19784,48 +19784,48 @@
     "legacyBaselineGeneratedAt": "2026-07-27T07:31:25.480Z",
     "machines": {
       "ganstlr-macbook-2026": {
-        "generatedAt": "2026-07-27T21:05:02.440Z",
+        "generatedAt": "2026-07-27T21:55:36.868Z",
         "totals": {
-          "totalTokens": 23345919,
-          "totalCost": 2.7130575,
-          "inputTokens": 948905,
-          "outputTokens": 115268,
-          "cacheReadTokens": 22281746,
+          "totalTokens": 27255854,
+          "totalCost": 46.927078,
+          "inputTokens": 1250064,
+          "outputTokens": 127652,
+          "cacheReadTokens": 25878138,
           "cacheCreationTokens": 0,
-          "reasoningOutputTokens": 46988
+          "reasoningOutputTokens": 51310
         },
         "models": [
           {
             "name": "gpt-5.6-sol",
-            "totalTokens": 22447834,
+            "totalTokens": 25844689,
             "totalCost": 0,
-            "inputTokens": 828706,
-            "outputTokens": 112038,
-            "cacheReadTokens": 21507090,
+            "inputTokens": 1038514,
+            "outputTokens": 123557,
+            "cacheReadTokens": 24682618,
             "cacheCreationTokens": 0,
-            "reasoningOutputTokens": 45163
+            "reasoningOutputTokens": 49041
           },
           {
             "name": "gpt-5.5",
-            "totalTokens": 898085,
+            "totalTokens": 1411165,
             "totalCost": 0,
-            "inputTokens": 120199,
-            "outputTokens": 3230,
-            "cacheReadTokens": 774656,
+            "inputTokens": 211550,
+            "outputTokens": 4095,
+            "cacheReadTokens": 1195520,
             "cacheCreationTokens": 0,
-            "reasoningOutputTokens": 1825
+            "reasoningOutputTokens": 2269
           }
         ],
         "daily": [
           {
             "date": "2026-07-27",
-            "totalTokens": 23345919,
-            "totalCost": 2.7130575,
-            "inputTokens": 948905,
-            "outputTokens": 115268,
-            "cacheReadTokens": 22281746,
+            "totalTokens": 27255854,
+            "totalCost": 46.927078,
+            "inputTokens": 1250064,
+            "outputTokens": 127652,
+            "cacheReadTokens": 25878138,
             "cacheCreationTokens": 0,
-            "reasoningOutputTokens": 46988,
+            "reasoningOutputTokens": 51310,
             "modelsUsed": [
               "gpt-5.5",
               "gpt-5.6-sol"
@@ -19835,22 +19835,22 @@
               {
                 "modelName": "gpt-5.5",
                 "cost": 0,
-                "inputTokens": 120199,
-                "outputTokens": 3230,
-                "cacheReadTokens": 774656,
+                "inputTokens": 211550,
+                "outputTokens": 4095,
+                "cacheReadTokens": 1195520,
                 "cacheCreationTokens": 0,
-                "reasoningOutputTokens": 1825,
-                "totalTokens": 898085
+                "reasoningOutputTokens": 2269,
+                "totalTokens": 1411165
               },
               {
                 "modelName": "gpt-5.6-sol",
                 "cost": 0,
-                "inputTokens": 828706,
-                "outputTokens": 112038,
-                "cacheReadTokens": 21507090,
+                "inputTokens": 1038514,
+                "outputTokens": 123557,
+                "cacheReadTokens": 24682618,
                 "cacheCreationTokens": 0,
-                "reasoningOutputTokens": 45163,
-                "totalTokens": 22447834
+                "reasoningOutputTokens": 49041,
+                "totalTokens": 25844689
               }
             ]
           }
