@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { mergeCumulativeUsage } from './merge-cumulative-usage.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, '..');
@@ -20,16 +21,19 @@ const timezone = process.env.TZ || 'America/Phoenix';
 const endDate = process.env.TOKEN_COUNTER_END_DATE || currentDate(timezone);
 const codexUsageSpeed = codexSpeedTier(process.env.CODEX_USAGE_SPEED || 'fast');
 const ccusageVersion = process.env.CCUSAGE_VERSION || '20.0.14';
+const machineId = process.env.CODEX_USAGE_MACHINE_ID || os.hostname();
 const noCommit = process.argv.includes('--no-commit');
 const noPush = process.argv.includes('--no-push');
 
 const ccusage = resolveCcusageCommand();
 const dailyRaw = runCcusage('daily');
 const sessionRaw = runCcusage('session');
-const payload = {
+const localPayload = {
   ...buildPayload(dailyRaw, sessionRaw),
   theme: dailyTheme(endDate)
 };
+const previousPayload = readExistingPayload();
+const payload = mergeCumulativeUsage(previousPayload, localPayload, machineId);
 
 mkdirSync(path.dirname(dataPath), { recursive: true });
 mkdirSync(path.dirname(svgPath), { recursive: true });
@@ -40,6 +44,7 @@ recolorAsciiGif(payload.theme);
 writeFileSync(readmePath, updateReadme(readFileSync(readmePath, 'utf8'), payload));
 
 console.log(`Generated README counter, ${path.relative(repoRoot, dataPath)}, ${path.relative(repoRoot, svgPath)}, ${path.relative(repoRoot, trendSvgPath)}, and ${path.relative(repoRoot, asciiGifPath)}`);
+console.log(`Cumulative machine: ${machineId}`);
 console.log(`Range: ${payload.range.startDate} to ${payload.range.endDate}`);
 console.log(`Total tokens: ${payload.totals.totalTokens.toLocaleString('en-US')}`);
 console.log(`Estimated cost: $${payload.totals.totalCost.toFixed(2)}`);
@@ -62,6 +67,20 @@ function runCcusage(report) {
     maxBuffer: 128 * 1024 * 1024
   });
   return JSON.parse(stdout);
+}
+
+function readExistingPayload() {
+  if (!existsSync(dataPath)) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(readFileSync(dataPath, 'utf8'));
+  } catch (error) {
+    throw new Error(
+      `Unable to read cumulative usage baseline at ${dataPath}: ${error.message}`
+    );
+  }
 }
 
 function buildPayload(dailyRaw, sessionRaw) {
@@ -132,6 +151,7 @@ function normalizeSession(row, index) {
   const date = dateFromPeriod(row.period || row.sessionId || row.directory, row.lastActivity || row.metadata?.lastActivity || row.startTime);
   return {
     index: index + 1,
+    sessionId: row.sessionId || row.period || row.sessionFile || null,
     date,
     lastActivity: row.lastActivity || row.metadata?.lastActivity || row.startTime || null,
     totalTokens: tokenTotal(row),
@@ -437,6 +457,7 @@ function resolvePythonWithPillow() {
   const candidates = [
     process.env.PYTHON_WITH_PIL,
     process.env.PYTHON,
+    path.join(os.homedir(), '.local', 'share', 'codex-usage-tools', 'runtime', 'python', 'bin', 'python3'),
     '/Library/Frameworks/Python.framework/Versions/3.12/bin/python3',
     '/opt/homebrew/bin/python3',
     '/usr/local/bin/python3',
@@ -666,8 +687,8 @@ function resolveCcusageCommand() {
   }
 
   const cachedCliCandidates = [
-    '/Users/ganeshtalluri/.npm/_npx/b8bc0fb451ae8722/node_modules/ccusage/src/cli.js',
-    '/Users/ganeshtalluri/.npm/_npx/b8bc0fb451ae8722/node_modules/ccusage/dist/cli.js'
+    path.join(os.homedir(), '.local', 'share', 'codex-usage-tools', 'node_modules', 'ccusage', 'src', 'cli.js'),
+    path.join(os.homedir(), '.local', 'share', 'codex-usage-tools', 'node_modules', 'ccusage', 'dist', 'cli.js')
   ];
   const cachedCli = cachedCliCandidates.find((candidate) => existsSync(candidate));
   if (cachedCli) {

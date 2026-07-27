@@ -38,6 +38,12 @@ for (const requiredLauncherBehavior of [
 assert(plist.includes('<key>RunAtLoad</key>\n  <true/>'));
 assert(plist.includes('<key>StartInterval</key>\n  <integer>3600</integer>'));
 assert(plist.includes('/scripts/update-codex-token-counter.sh'));
+assert(plist.includes('/Users/ganstlr/.local/share/codex-usage-tools/runtime/node/bin/node'));
+assert(plist.includes('/Users/ganstlr/.local/share/codex-usage-tools/runtime/bin/fallback/git'));
+assert(plist.includes('/Users/ganstlr/.local/share/codex-usage-tools/runtime/python/bin/python3'));
+assert(plist.includes('<key>CODEX_USAGE_MACHINE_ID</key>\n    <string>ganstlr-macbook-2026</string>'));
+assert(!plist.includes('/Users/ganeshtalluri/'));
+assert(launcher.includes('TOOL_ROOT="${CODEX_USAGE_TOOL_ROOT:-$HOME/.local/share/codex-usage-tools}"'));
 
 console.log(`Verified once-daily scheduling and README usage through ${data.range.endDate}: ${data.totals.totalTokens.toLocaleString('en-US')} tokens.`);
 

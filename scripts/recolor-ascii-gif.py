@@ -47,8 +47,13 @@ def main() -> int:
 
 def recolor_frame(frame: Image.Image, accent: tuple[int, int, int], highlight: tuple[int, int, int], shadow: tuple[int, int, int]) -> Image.Image:
     pixels = []
+    source_pixels = (
+        frame.get_flattened_data()
+        if hasattr(frame, "get_flattened_data")
+        else frame.getdata()
+    )
 
-    for red, green, blue, alpha in frame.getdata():
+    for red, green, blue, alpha in source_pixels:
         if alpha == 0 or max(red, green, blue) <= 16:
             pixels.append(BACKGROUND)
             continue

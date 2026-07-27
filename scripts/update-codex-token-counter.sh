@@ -4,8 +4,9 @@ set -euo pipefail
 SCRIPT_PATH="${0:A}"
 SCRIPT_DIR="${SCRIPT_PATH:h}"
 REPO="${SCRIPT_DIR:h}"
-NODE="${NODE:-/usr/local/bin/node}"
-GIT="${GIT:-/usr/bin/git}"
+TOOL_ROOT="${CODEX_USAGE_TOOL_ROOT:-$HOME/.local/share/codex-usage-tools}"
+NODE="${NODE:-$TOOL_ROOT/runtime/node/bin/node}"
+GIT="${GIT:-$TOOL_ROOT/runtime/bin/fallback/git}"
 LOG_DIR="${GITHUB_PROFILE_TOKEN_COUNTER_LOG_DIR:-$HOME/.local/state/github-profile-token-counter}"
 STATE_DIR="${TOKEN_COUNTER_STATE_DIR:-$LOG_DIR}"
 SUCCESS_FILE="$STATE_DIR/last-success-date"
@@ -17,7 +18,7 @@ if [[ "${1:-}" == "--force" ]]; then
   FORCE_RUN=1
 fi
 
-export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="${GIT:h}:${NODE:h}:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export TZ="${TZ:-America/Phoenix}"
 export TOKEN_COUNTER_START_DATE="${TOKEN_COUNTER_START_DATE:-2026-01-01}"
 export CODEX_USAGE_SPEED="${CODEX_USAGE_SPEED:-fast}"

@@ -8,16 +8,24 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/zsh</string>
-    <string>/Users/ganeshtalluri/.local/share/github-profile-token-counter/g4nesh/scripts/update-codex-token-counter.sh</string>
+    <string>/Users/ganstlr/.local/share/github-profile-token-counter/g4nesh/scripts/update-codex-token-counter.sh</string>
   </array>
 
   <key>WorkingDirectory</key>
-  <string>/Users/ganeshtalluri/.local/share/github-profile-token-counter/g4nesh</string>
+  <string>/Users/ganstlr/.local/share/github-profile-token-counter/g4nesh</string>
 
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key>
-    <string>/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <string>/Users/ganstlr/.local/share/codex-usage-tools/runtime/bin/fallback:/Users/ganstlr/.local/share/codex-usage-tools/runtime/node/bin:/Users/ganstlr/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>NODE</key>
+    <string>/Users/ganstlr/.local/share/codex-usage-tools/runtime/node/bin/node</string>
+    <key>GIT</key>
+    <string>/Users/ganstlr/.local/share/codex-usage-tools/runtime/bin/fallback/git</string>
+    <key>PYTHON_WITH_PIL</key>
+    <string>/Users/ganstlr/.local/share/codex-usage-tools/runtime/python/bin/python3</string>
+    <key>CCUSAGE_COMMAND</key>
+    <string>/Users/ganstlr/.local/share/codex-usage-tools/runtime/node/bin/node /Users/ganstlr/.local/share/codex-usage-tools/node_modules/ccusage/src/cli.js</string>
     <key>TZ</key>
     <string>America/Phoenix</string>
     <key>TOKEN_COUNTER_START_DATE</key>
@@ -26,6 +34,8 @@
     <string>fast</string>
     <key>CCUSAGE_VERSION</key>
     <string>20.0.14</string>
+    <key>CODEX_USAGE_MACHINE_ID</key>
+    <string>ganstlr-macbook-2026</string>
     <key>GIT_TERMINAL_PROMPT</key>
     <string>0</string>
   </dict>
@@ -40,9 +50,9 @@
   <string>Background</string>
 
   <key>StandardOutPath</key>
-  <string>/Users/ganeshtalluri/.local/state/github-profile-token-counter/launchd.out.log</string>
+  <string>/Users/ganstlr/.local/state/github-profile-token-counter/launchd.out.log</string>
 
   <key>StandardErrorPath</key>
-  <string>/Users/ganeshtalluri/.local/state/github-profile-token-counter/launchd.err.log</string>
+  <string>/Users/ganstlr/.local/state/github-profile-token-counter/launchd.err.log</string>
 </dict>
 </plist>
