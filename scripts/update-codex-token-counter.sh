@@ -25,6 +25,8 @@ export CODEX_USAGE_SPEED="${CODEX_USAGE_SPEED:-fast}"
 export CCUSAGE_VERSION="${CCUSAGE_VERSION:-20.0.14}"
 export GIT_TERMINAL_PROMPT=0
 
+source "$SCRIPT_DIR/token-counter-git-sync.zsh"
+
 mkdir -p "$LOG_DIR" "$STATE_DIR"
 
 if [[ "${TOKEN_COUNTER_FOREGROUND:-0}" != "1" ]]; then
@@ -52,21 +54,6 @@ cleanup() {
 }
 trap cleanup EXIT
 
-push_main() {
-  if "$GIT" push origin main; then
-    return 0
-  fi
-
-  echo "Initial push failed; fetching and rebasing once before retrying."
-  "$GIT" fetch origin main
-  if ! "$GIT" rebase origin/main; then
-    "$GIT" rebase --abort || true
-    echo "Unable to rebase token counter commit onto origin/main."
-    return 1
-  fi
-  "$GIT" push origin main
-}
-
 pending_commit_is_today_token_update() {
   local subject commit_date
   subject="$("$GIT" log -1 --format=%s)"
@@ -75,12 +62,6 @@ pending_commit_is_today_token_update() {
 }
 
 today="$(date '+%Y-%m-%d')"
-if [[ "$FORCE_RUN" != "1" && -f "$SUCCESS_FILE" ]] && grep -qx "$today" "$SUCCESS_FILE"; then
-  echo "Profile token counter already completed for $today; skipping."
-  echo "==== $(date -u '+%Y-%m-%dT%H:%M:%SZ') profile token counter complete ===="
-  exit 0
-fi
-
 cd "$REPO"
 
 "$GIT" config user.name "${TOKEN_COUNTER_GIT_NAME:-MacBook token updater}"
@@ -92,14 +73,7 @@ if [[ -n "$("$GIT" status --porcelain --untracked-files=no)" ]]; then
   exit 1
 fi
 
-"$GIT" fetch origin main
-"$GIT" checkout main
-
-behind_count="$("$GIT" rev-list --count HEAD..origin/main 2>/dev/null || echo 0)"
-if [[ "$behind_count" != "0" ]]; then
-  echo "Pulling $behind_count remote commit(s)."
-  "$GIT" pull --ff-only origin main
-fi
+sync_main
 
 ahead_count="$("$GIT" rev-list --count origin/main..HEAD 2>/dev/null || echo 0)"
 if [[ "$ahead_count" != "0" ]]; then
@@ -112,6 +86,12 @@ if [[ "$ahead_count" != "0" ]]; then
     echo "==== $(date -u '+%Y-%m-%dT%H:%M:%SZ') profile token counter complete ===="
     exit 0
   fi
+fi
+
+if [[ "$FORCE_RUN" != "1" && -f "$SUCCESS_FILE" ]] && grep -qx "$today" "$SUCCESS_FILE"; then
+  echo "Profile token counter already completed for $today; repository sync complete."
+  echo "==== $(date -u '+%Y-%m-%dT%H:%M:%SZ') profile token counter complete ===="
+  exit 0
 fi
 
 "$NODE" scripts/update-codex-token-counter.mjs --no-push

@@ -5,10 +5,11 @@ import { readFile } from 'node:fs/promises';
 const root = new URL('../', import.meta.url);
 const read = (path) => readFile(new URL(path, root), 'utf8');
 
-const [readme, dataText, launcher, plist] = await Promise.all([
+const [readme, dataText, launcher, syncLibrary, plist] = await Promise.all([
   read('README.md'),
   read('data/codex-token-usage.json'),
   read('scripts/update-codex-token-counter.sh'),
+  read('scripts/token-counter-git-sync.zsh'),
   read('launchd/com.ganeshtalluri.github-profile-token-counter.plist')
 ]);
 const data = JSON.parse(dataText);
@@ -28,11 +29,26 @@ assert(data.totals.totalCost > 0);
 
 for (const requiredLauncherBehavior of [
   'last-success-date',
-  'already completed for $today; skipping',
+  'already completed for $today; repository sync complete',
   'Recovered today\'s pending token counter commit',
-  'printf \'%s\\n\' "$today" > "$SUCCESS_FILE"'
+  'printf \'%s\\n\' "$today" > "$SUCCESS_FILE"',
+  'source "$SCRIPT_DIR/token-counter-git-sync.zsh"'
 ]) {
   assert(launcher.includes(requiredLauncherBehavior), `Missing launcher behavior: ${requiredLauncherBehavior}`);
+}
+
+assert(
+  launcher.indexOf('sync_main') <
+    launcher.indexOf('already completed for $today; repository sync complete'),
+  'Repository synchronization must happen before the daily-success skip.'
+);
+for (const requiredSyncBehavior of [
+  '"$GIT" fetch origin main',
+  '"$GIT" merge --ff-only origin/main',
+  'rebase_main_onto_origin',
+  'Initial push failed; fetching and rebasing once before retrying.'
+]) {
+  assert(syncLibrary.includes(requiredSyncBehavior), `Missing Git sync behavior: ${requiredSyncBehavior}`);
 }
 
 assert(plist.includes('<key>RunAtLoad</key>\n  <true/>'));

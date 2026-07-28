@@ -50,5 +50,5 @@ for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
   </tbody>
 </table>
 
-<sub>auto-refreshes once daily when this Mac is available via ccusage; graph and banner colors randomize daily</sub>
+<sub>auto-refreshes once daily when this Mac is available via ccusage; the hourly check syncs new upstream commits before updating or skipping; graph and banner colors randomize daily</sub>
 <!-- codex-token-counter:end -->
