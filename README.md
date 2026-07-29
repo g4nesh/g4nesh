@@ -20,20 +20,20 @@ for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
   <tbody>
     <tr>
       <td width="18%">tokens</td>
-      <td width="36%">9,360,355,032 (9.36B)</td>
+      <td width="36%">9,374,408,047 (9.37B)</td>
       <td rowspan="7" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>
     </tr>
     <tr>
       <td>cost</td>
-      <td>$12,868.77</td>
+      <td>$12,897.56</td>
     </tr>
     <tr>
       <td>active days</td>
-      <td>122</td>
+      <td>123</td>
     </tr>
     <tr>
       <td>sessions</td>
-      <td>950</td>
+      <td>957</td>
     </tr>
     <tr>
       <td>top model</td>
@@ -41,11 +41,11 @@ for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
     </tr>
     <tr>
       <td>range</td>
-      <td>Jan 1, 2026 -&gt; Jul 28, 2026</td>
+      <td>Jan 1, 2026 -&gt; Jul 29, 2026</td>
     </tr>
     <tr>
       <td>updated</td>
-      <td>Jul 28, 2026, 12:25 AM MST</td>
+      <td>Jul 29, 2026, 12:26 AM MST</td>
     </tr>
   </tbody>
 </table>
