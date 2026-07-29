@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mergeCumulativeUsage } from './merge-cumulative-usage.mjs';
+import { verifyProfileTokenVisuals } from './token-visual-contract.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, '..');
@@ -37,13 +38,30 @@ const payload = mergeCumulativeUsage(previousPayload, localPayload, machineId);
 
 mkdirSync(path.dirname(dataPath), { recursive: true });
 mkdirSync(path.dirname(svgPath), { recursive: true });
-writeFileSync(dataPath, `${JSON.stringify(payload, null, 2)}\n`);
-writeFileSync(svgPath, `${renderSvg(payload, payload.theme)}\n`);
-writeFileSync(trendSvgPath, `${renderTrendSvg(payload, payload.theme)}\n`);
+const generated = {
+  data: `${JSON.stringify(payload, null, 2)}\n`,
+  counterSvg: `${renderSvg(payload, payload.theme)}\n`,
+  trendSvg: `${renderTrendSvg(payload, payload.theme)}\n`,
+  readme: updateReadme(readFileSync(readmePath, 'utf8'), payload)
+};
+const visualContract = verifyProfileTokenVisuals({
+  payload,
+  readme: generated.readme,
+  counterSvg: generated.counterSvg,
+  trendSvg: generated.trendSvg
+});
+
 recolorAsciiGif(payload.theme);
-writeFileSync(readmePath, updateReadme(readFileSync(readmePath, 'utf8'), payload));
+writeFileSync(dataPath, generated.data);
+writeFileSync(svgPath, generated.counterSvg);
+writeFileSync(trendSvgPath, generated.trendSvg);
+writeFileSync(readmePath, generated.readme);
 
 console.log(`Generated README counter, ${path.relative(repoRoot, dataPath)}, ${path.relative(repoRoot, svgPath)}, ${path.relative(repoRoot, trendSvgPath)}, and ${path.relative(repoRoot, asciiGifPath)}`);
+console.log(
+  `Verified README token graph through ${visualContract.lastDailyDate} ` +
+  `(${visualContract.days} days).`
+);
 console.log(`Cumulative machine: ${machineId}`);
 console.log(`Range: ${payload.range.startDate} to ${payload.range.endDate}`);
 console.log(`Total tokens: ${payload.totals.totalTokens.toLocaleString('en-US')}`);

@@ -1,18 +1,22 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { verifyProfileTokenVisuals } from './token-visual-contract.mjs';
 
 const root = new URL('../', import.meta.url);
 const read = (path) => readFile(new URL(path, root), 'utf8');
 
-const [readme, dataText, launcher, syncLibrary, plist] = await Promise.all([
+const [readme, dataText, counterSvg, trendSvg, launcher, syncLibrary, plist] = await Promise.all([
   read('README.md'),
   read('data/codex-token-usage.json'),
+  read('assets/codex-token-counter.svg'),
+  read('assets/codex-token-trend.svg'),
   read('scripts/update-codex-token-counter.sh'),
   read('scripts/token-counter-git-sync.zsh'),
   read('launchd/com.ganeshtalluri.github-profile-token-counter.plist')
 ]);
 const data = JSON.parse(dataText);
+const visualContract = verifyProfileTokenVisuals({ payload: data, readme, counterSvg, trendSvg });
 
 assert(readme.includes('<!-- codex-token-counter:start -->'));
 assert(readme.includes('<!-- codex-token-counter:end -->'));
@@ -23,7 +27,7 @@ assert(readme.includes(data.totals.favoriteModel?.name || 'unknown'));
 assert(readme.includes('auto-refreshes once daily when this Mac is available'));
 
 assert.equal(data.range.endDate, phoenixDate(new Date(data.generatedAt)));
-assert(data.daily.some((day) => day.date === data.range.endDate));
+assert(visualContract.lastDailyDate <= data.range.endDate);
 assert(data.totals.totalTokens > 0);
 assert(data.totals.totalCost > 0);
 
@@ -61,7 +65,7 @@ assert(plist.includes('<key>CODEX_USAGE_MACHINE_ID</key>\n    <string>ganstlr-ma
 assert(!plist.includes('/Users/ganeshtalluri/'));
 assert(launcher.includes('TOOL_ROOT="${CODEX_USAGE_TOOL_ROOT:-$HOME/.local/share/codex-usage-tools}"'));
 
-console.log(`Verified once-daily scheduling and README usage through ${data.range.endDate}: ${data.totals.totalTokens.toLocaleString('en-US')} tokens.`);
+console.log(`Verified once-daily scheduling and synchronized README graph through ${visualContract.lastDailyDate}: ${data.totals.totalTokens.toLocaleString('en-US')} tokens.`);
 
 function phoenixDate(date) {
   const parts = new Intl.DateTimeFormat('en-US', {
