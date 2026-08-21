@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T07:25:06.636Z",
+  "generatedAt": "2026-08-21T16:26:27.805Z",
   "source": "ccusage codex daily/session --json --speed fast; cumulative machine snapshots",
   "pricing": {
     "codexSpeed": "fast",
@@ -8,51 +8,51 @@
   "scope": "cumulative-multi-machine",
   "range": {
     "startDate": "2026-01-01",
-    "endDate": "2026-08-20",
+    "endDate": "2026-08-21",
     "firstTrackedDay": "2026-01-06",
-    "lastTrackedDay": "2026-08-20"
+    "lastTrackedDay": "2026-08-21"
   },
   "totals": {
-    "totalTokens": 14271597460,
-    "totalCost": 19876.971795299996,
-    "inputTokens": 548755139,
-    "outputTokens": 53415763,
-    "cacheReadTokens": 13669426558,
+    "totalTokens": 16249944557,
+    "totalCost": 22528.055085799995,
+    "inputTokens": 592981680,
+    "outputTokens": 58064703,
+    "cacheReadTokens": 15598898174,
     "cacheCreationTokens": 0,
-    "reasoningOutputTokens": 23175898,
-    "sessions": 1223,
-    "activeDays": 146,
+    "reasoningOutputTokens": 24976820,
+    "sessions": 1323,
+    "activeDays": 147,
     "favoriteModel": {
       "name": "gpt-5.6-sol",
-      "totalTokens": 8858150012,
+      "totalTokens": 10797840165,
       "totalCost": 14.267839000000002,
-      "inputTokens": 249458152,
-      "outputTokens": 27542678,
-      "cacheReadTokens": 8581149182,
+      "inputTokens": 287954362,
+      "outputTokens": 32125165,
+      "cacheReadTokens": 10477760638,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 10934197
+      "reasoningOutputTokens": 12709250
     }
   },
   "models": [
     {
       "name": "gpt-5.6-sol",
-      "totalTokens": 8858150012,
+      "totalTokens": 10797840165,
       "totalCost": 14.267839000000002,
-      "inputTokens": 249458152,
-      "outputTokens": 27542678,
-      "cacheReadTokens": 8581149182,
+      "inputTokens": 287954362,
+      "outputTokens": 32125165,
+      "cacheReadTokens": 10477760638,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 10934197
+      "reasoningOutputTokens": 12709250
     },
     {
       "name": "gpt-5.5",
-      "totalTokens": 2039840277,
+      "totalTokens": 2060235291,
       "totalCost": 3780.9825700000006,
-      "inputTokens": 135773650,
-      "outputTokens": 6837699,
-      "cacheReadTokens": 1897228928,
+      "inputTokens": 141182749,
+      "outputTokens": 6867582,
+      "cacheReadTokens": 1912184960,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 2396051
+      "reasoningOutputTokens": 2407229
     },
     {
       "name": "gpt-5.4",
@@ -66,13 +66,13 @@
     },
     {
       "name": "gpt-5",
-      "totalTokens": 752147524,
+      "totalTokens": 770409454,
       "totalCost": 0,
-      "inputTokens": 14883508,
-      "outputTokens": 2153616,
-      "cacheReadTokens": 735110400,
+      "inputTokens": 15204740,
+      "outputTokens": 2190186,
+      "cacheReadTokens": 753014528,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 847001
+      "reasoningOutputTokens": 861692
     },
     {
       "name": "gpt-5.3-codex-spark",
@@ -4570,38 +4570,86 @@
       "date": "2026-08-20",
       "modelsUsed": [
         "gpt-5.5",
+        "gpt-5.6-sol",
+        "gpt-5"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "modelBreakdowns": [
+        {
+          "modelName": "gpt-5.6-sol",
+          "totalTokens": 1577655480,
+          "totalCost": 0,
+          "inputTokens": 31731868,
+          "outputTokens": 3900060,
+          "cacheReadTokens": 1542023552,
+          "cacheCreationTokens": 0,
+          "reasoningOutputTokens": 1498665
+        },
+        {
+          "modelName": "gpt-5.5",
+          "totalTokens": 20266108,
+          "totalCost": 0,
+          "inputTokens": 5279214,
+          "outputTokens": 29838,
+          "cacheReadTokens": 14957056,
+          "cacheCreationTokens": 0,
+          "reasoningOutputTokens": 11140
+        },
+        {
+          "modelName": "gpt-5",
+          "totalTokens": 18261930,
+          "totalCost": 0,
+          "inputTokens": 321232,
+          "outputTokens": 36570,
+          "cacheReadTokens": 17904128,
+          "cacheCreationTokens": 0,
+          "reasoningOutputTokens": 14691
+        }
+      ],
+      "totalTokens": 1616183518,
+      "totalCost": 2186.280689,
+      "inputTokens": 37332314,
+      "outputTokens": 3966468,
+      "cacheReadTokens": 1574884736,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1524496
+    },
+    {
+      "date": "2026-08-21",
+      "modelsUsed": [
+        "gpt-5.5",
         "gpt-5.6-sol"
       ],
       "topModel": "gpt-5.6-sol",
       "modelBreakdowns": [
         {
           "modelName": "gpt-5.6-sol",
-          "totalTokens": 2038676,
+          "totalTokens": 364073349,
           "totalCost": 0,
-          "inputTokens": 11232,
-          "outputTokens": 3508,
-          "cacheReadTokens": 2023936,
+          "inputTokens": 6775574,
+          "outputTokens": 685935,
+          "cacheReadTokens": 356611840,
           "cacheCreationTokens": 0,
-          "reasoningOutputTokens": 1954
+          "reasoningOutputTokens": 278342
         },
         {
           "modelName": "gpt-5.5",
-          "totalTokens": 268386,
+          "totalTokens": 397292,
           "totalCost": 0,
-          "inputTokens": 6893,
-          "outputTokens": 373,
-          "cacheReadTokens": 261120,
+          "inputTokens": 136778,
+          "outputTokens": 418,
+          "cacheReadTokens": 260096,
           "cacheCreationTokens": 0,
-          "reasoningOutputTokens": 141
+          "reasoningOutputTokens": 179
         }
       ],
-      "totalTokens": 2307062,
-      "totalCost": 2.7872735,
-      "inputTokens": 18125,
-      "outputTokens": 3881,
-      "cacheReadTokens": 2285056,
+      "totalTokens": 364470641,
+      "totalCost": 467.58987499999995,
+      "inputTokens": 6912352,
+      "outputTokens": 686353,
+      "cacheReadTokens": 356871936,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 2095
+      "reasoningOutputTokens": 278521
     }
   ],
   "sessions": [
@@ -25495,25 +25543,6 @@
     },
     {
       "index": 1197,
-      "sessionId": "2026/07/27/rollout-2026-07-27T23-10-27-019fa758-90e2-7183-96b8-1cada515ce96",
-      "date": "2026-08-19",
-      "lastActivity": "2026-08-19T15:03:43.470Z",
-      "totalTokens": 28093360,
-      "totalCost": 64.44907900000001,
-      "inputTokens": 3617458,
-      "outputTokens": 64383,
-      "cacheReadTokens": 24411519,
-      "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 30350,
-      "modelsUsed": [
-        "gpt-5.6-sol"
-      ],
-      "topModel": "gpt-5.6-sol",
-      "agent": "codex",
-      "sourceMachine": "ganstlr-macbook-2026"
-    },
-    {
-      "index": 1198,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-36-31-01a01ae1-a7d3-7572-b754-a4ae259f5318",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T16:40:36.488Z",
@@ -25532,7 +25561,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1199,
+      "index": 1198,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-36-35-01a01ae1-b8bc-70a3-a317-e50634cb0fdc",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T16:43:46.330Z",
@@ -25551,7 +25580,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1200,
+      "index": 1199,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-36-41-01a01ae1-ceab-7ce0-800e-ff3e18c60cbd",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T16:43:53.860Z",
@@ -25570,7 +25599,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1201,
+      "index": 1200,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-48-28-01a01aec-99e1-7821-957e-b77f71e801da",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T16:50:24.335Z",
@@ -25589,7 +25618,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1202,
+      "index": 1201,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-48-33-01a01aec-ab8c-7301-941c-ada9f7d17b27",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T16:50:44.078Z",
@@ -25608,7 +25637,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1203,
+      "index": 1202,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-48-30-01a01aec-a1dc-7330-9172-e80d5b4f15d9",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T16:53:38.273Z",
@@ -25627,7 +25656,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1204,
+      "index": 1203,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-48-08-01a01aec-4a36-7351-b8e8-bf12ae5894fa",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T16:54:58.130Z",
@@ -25646,7 +25675,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1205,
+      "index": 1204,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-53-32-01a01af1-3dbc-7a92-ae99-8d6752c698fb",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:04:55.579Z",
@@ -25665,7 +25694,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1206,
+      "index": 1205,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-53-20-01a01af1-0c62-7141-b68e-80a2eebc1aa6",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:10:17.986Z",
@@ -25684,7 +25713,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1207,
+      "index": 1206,
       "sessionId": "2026/08/19/rollout-2026-08-19T10-14-56-01a01b04-d469-7f02-90b6-8887c14fff06",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:19:38.262Z",
@@ -25703,7 +25732,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1208,
+      "index": 1207,
       "sessionId": "2026/08/19/rollout-2026-08-19T10-05-09-01a01afb-e070-74b3-93cd-008c2007b0dd",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:23:25.232Z",
@@ -25722,7 +25751,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1209,
+      "index": 1208,
       "sessionId": "2026/08/19/rollout-2026-08-19T10-21-30-01a01b0a-d7a6-7d83-adcf-7bcc5a4e9880",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:25:13.228Z",
@@ -25741,7 +25770,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1210,
+      "index": 1209,
       "sessionId": "2026/08/19/rollout-2026-08-19T10-21-33-01a01b0a-e513-7892-94f8-1125883c8dd6",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:25:34.469Z",
@@ -25760,7 +25789,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1211,
+      "index": 1210,
       "sessionId": "2026/08/19/rollout-2026-08-19T10-21-30-01a01b0a-d711-7e90-a077-fd767fe580b5",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:28:22.344Z",
@@ -25779,7 +25808,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1212,
+      "index": 1211,
       "sessionId": "2026/08/19/rollout-2026-08-19T10-25-39-01a01b0e-a405-7393-9a5c-1bc2038ab242",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:32:49.719Z",
@@ -25798,7 +25827,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1213,
+      "index": 1212,
       "sessionId": "2026/08/19/rollout-2026-08-19T10-33-53-01a01b16-2da0-7893-b450-66aadc6f884a",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:34:17.193Z",
@@ -25817,7 +25846,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1214,
+      "index": 1213,
       "sessionId": "2026/08/18/rollout-2026-08-18T23-52-02-01a018ca-8bf4-7432-9674-2e3bd11b56bf",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T17:45:13.519Z",
@@ -25836,7 +25865,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1215,
+      "index": 1214,
       "sessionId": "2026/08/18/rollout-2026-08-18T11-35-11-01a01627-f2cc-7de0-82c4-bbb89a03b5ed",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T18:14:06.030Z",
@@ -25855,7 +25884,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1216,
+      "index": 1215,
       "sessionId": "2026/08/19/rollout-2026-08-19T10-33-48-01a01b16-1a34-72a1-9ce7-fd6c08678f3d",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T18:14:06.383Z",
@@ -25874,7 +25903,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1217,
+      "index": 1216,
       "sessionId": "2026/08/19/rollout-2026-08-19T10-34-00-01a01b16-477f-7b22-9e51-1d8a0c97d4df",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T18:14:06.607Z",
@@ -25893,7 +25922,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1218,
+      "index": 1217,
       "sessionId": "2026/08/19/rollout-2026-08-19T09-53-03-01a01af0-cc78-7bf3-ac9a-0acba1aaf63d",
       "date": "2026-08-19",
       "lastActivity": "2026-08-19T18:14:06.616Z",
@@ -25912,7 +25941,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1219,
+      "index": 1218,
       "sessionId": "2026/08/19/rollout-2026-08-19T16-59-53-01a01c77-916d-70b2-8db3-5dc95fc50ee3",
       "date": "2026-08-20",
       "lastActivity": "2026-08-20T00:11:37.586Z",
@@ -25931,7 +25960,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1220,
+      "index": 1219,
       "sessionId": "2026/08/19/rollout-2026-08-19T17-39-04-01a01c9b-727a-7153-b083-1157a8e645b2",
       "date": "2026-08-20",
       "lastActivity": "2026-08-20T00:41:42.134Z",
@@ -25950,26 +25979,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1221,
-      "sessionId": "2026/08/19/rollout-2026-08-19T23-36-20-01a01de2-86d8-7333-bd67-532f5f3b3451",
-      "date": "2026-08-20",
-      "lastActivity": "2026-08-20T06:36:47.740Z",
-      "totalTokens": 107749,
-      "totalCost": 0.633184,
-      "inputTokens": 51990,
-      "outputTokens": 975,
-      "cacheReadTokens": 54784,
-      "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 380,
-      "modelsUsed": [
-        "gpt-5.6-sol"
-      ],
-      "topModel": "gpt-5.6-sol",
-      "agent": "codex",
-      "sourceMachine": "ganstlr-macbook-2026"
-    },
-    {
-      "index": 1222,
+      "index": 1220,
       "sessionId": "2026/08/19/rollout-2026-08-19T23-37-02-01a01de3-2aab-7b22-954f-94eef3eb237c",
       "date": "2026-08-20",
       "lastActivity": "2026-08-20T07:01:08.193Z",
@@ -25988,7 +25998,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1223,
+      "index": 1221,
       "sessionId": "2026/08/19/rollout-2026-08-19T23-37-01-01a01de3-2a43-7a93-a242-66488666ef81",
       "date": "2026-08-20",
       "lastActivity": "2026-08-20T07:01:38.039Z",
@@ -26005,17 +26015,1956 @@
       "topModel": "gpt-5.6-sol",
       "agent": "codex",
       "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1222,
+      "sessionId": "2026/08/20/rollout-2026-08-20T06-40-07-01a01f66-845a-73f3-8e5b-940aa64c727e",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T14:05:53.301Z",
+      "totalTokens": 794998,
+      "totalCost": 2.3265849999999997,
+      "inputTokens": 107802,
+      "outputTokens": 1628,
+      "cacheReadTokens": 685568,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 663,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1223,
+      "sessionId": "2026/08/19/rollout-2026-08-19T23-36-20-01a01de2-86d8-7333-bd67-532f5f3b3451",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T14:07:31.931Z",
+      "totalTokens": 23886137,
+      "totalCost": 31.051002,
+      "inputTokens": 378009,
+      "outputTokens": 63776,
+      "cacheReadTokens": 23444352,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 25479,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1224,
+      "sessionId": "2026/08/20/rollout-2026-08-20T08-19-44-01a01fc1-b835-7362-a252-0076fda172d4",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T15:25:34.541Z",
+      "totalTokens": 153514,
+      "totalCost": 0.7610075000000001,
+      "inputTokens": 44865,
+      "outputTokens": 873,
+      "cacheReadTokens": 107776,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 432,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1225,
+      "sessionId": "2026/08/20/rollout-2026-08-20T08-37-54-01a01fd2-5b4d-7af3-941b-94d3c5170edc",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T15:42:29.807Z",
+      "totalTokens": 738131,
+      "totalCost": 2.1116319999999997,
+      "inputTokens": 71106,
+      "outputTokens": 12433,
+      "cacheReadTokens": 654592,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 6856,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1226,
+      "sessionId": "2026/08/20/rollout-2026-08-20T08-38-00-01a01fd2-7078-75d3-af7a-6c1ed8ba9fe9",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T15:46:00.195Z",
+      "totalTokens": 3343821,
+      "totalCost": 5.690308,
+      "inputTokens": 137732,
+      "outputTokens": 18761,
+      "cacheReadTokens": 3187328,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 10292,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1227,
+      "sessionId": "2026/08/20/rollout-2026-08-20T08-38-09-01a01fd2-96a1-7e00-9547-612998a9ca57",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T15:47:04.811Z",
+      "totalTokens": 5644220,
+      "totalCost": 8.599442,
+      "inputTokens": 181271,
+      "outputTokens": 22437,
+      "cacheReadTokens": 5440512,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 11427,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1228,
+      "sessionId": "2026/08/20/rollout-2026-08-20T08-38-18-01a01fd2-b970-7930-8d2e-428af864e76b",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T16:16:37.027Z",
+      "totalTokens": 146420,
+      "totalCost": 0.7503150000000002,
+      "inputTokens": 46794,
+      "outputTokens": 554,
+      "cacheReadTokens": 99072,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 265,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1229,
+      "sessionId": "2026/08/20/rollout-2026-08-20T09-18-54-01a01ff7-e4c2-7550-9648-a3fc88a6c869",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T16:21:30.587Z",
+      "totalTokens": 20630,
+      "totalCost": 0.21640500000000004,
+      "inputTokens": 15554,
+      "outputTokens": 212,
+      "cacheReadTokens": 4864,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 154,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1230,
+      "sessionId": "2026/08/20/rollout-2026-08-20T09-18-46-01a01ff7-c5d5-7ec2-a533-13629c446466",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T16:22:23.051Z",
+      "totalTokens": 1514066,
+      "totalCost": 3.1502820000000002,
+      "inputTokens": 120527,
+      "outputTokens": 9347,
+      "cacheReadTokens": 1384192,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 4238,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1231,
+      "sessionId": "2026/08/20/rollout-2026-08-20T09-18-54-01a01ff7-e438-7cf2-b3a7-11554c1314d5",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T16:24:35.855Z",
+      "totalTokens": 3059610,
+      "totalCost": 5.151072,
+      "inputTokens": 145340,
+      "outputTokens": 13278,
+      "cacheReadTokens": 2900992,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 7039,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1232,
+      "sessionId": "2026/08/20/rollout-2026-08-20T09-18-50-01a01ff7-d44f-7612-a2a8-e8011766cb1c",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T16:28:09.907Z",
+      "totalTokens": 6989784,
+      "totalCost": 10.088244000000001,
+      "inputTokens": 211366,
+      "outputTokens": 20274,
+      "cacheReadTokens": 6758144,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 9031,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1233,
+      "sessionId": "2026/08/20/rollout-2026-08-20T09-23-29-01a01ffc-16af-7a60-ab56-0857581b807f",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T17:00:11.868Z",
+      "totalTokens": 135618,
+      "totalCost": 1.190055,
+      "inputTokens": 88118,
+      "outputTokens": 396,
+      "cacheReadTokens": 47104,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 166,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1234,
+      "sessionId": "2026/08/20/rollout-2026-08-20T10-56-09-01a02050-edc7-7c61-bfff-2e9b258541f6",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T18:13:14.744Z",
+      "totalTokens": 7031127,
+      "totalCost": 10.975116,
+      "inputTokens": 174668,
+      "outputTokens": 40203,
+      "cacheReadTokens": 6816256,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 15375,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1235,
+      "sessionId": "2026/08/20/rollout-2026-08-20T10-56-05-01a02050-dc47-7851-a231-f7b6c1c85038",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T18:34:24.473Z",
+      "totalTokens": 25072084,
+      "totalCost": 34.838096,
+      "inputTokens": 545328,
+      "outputTokens": 82340,
+      "cacheReadTokens": 24444416,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 30206,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1236,
+      "sessionId": "2026/08/20/rollout-2026-08-20T10-56-14-01a02050-fe83-75a3-994f-d4e15ca2dabf",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T18:35:41.186Z",
+      "totalTokens": 832894,
+      "totalCost": 4.660265,
+      "inputTokens": 311082,
+      "outputTokens": 1620,
+      "cacheReadTokens": 520192,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 639,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1237,
+      "sessionId": "2026/08/20/rollout-2026-08-20T10-56-13-01a02050-fe01-77e3-92cd-067421513aed",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T18:35:52.444Z",
+      "totalTokens": 16437313,
+      "totalCost": 22.485692,
+      "inputTokens": 328000,
+      "outputTokens": 52481,
+      "cacheReadTokens": 16056832,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 19498,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1238,
+      "sessionId": "2026/08/20/rollout-2026-08-20T11-42-53-01a0207b-b53b-7ff1-a2ba-1b2265b121ba",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T18:48:44.930Z",
+      "totalTokens": 2943941,
+      "totalCost": 4.7304,
+      "inputTokens": 103158,
+      "outputTokens": 14543,
+      "cacheReadTokens": 2826240,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 7380,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1239,
+      "sessionId": "2026/08/20/rollout-2026-08-20T11-42-42-01a0207b-8c2d-7062-a154-b6feaae73e32",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T18:49:17.402Z",
+      "totalTokens": 4422085,
+      "totalCost": 6.99981,
+      "inputTokens": 179165,
+      "outputTokens": 16360,
+      "cacheReadTokens": 4226560,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 8041,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1240,
+      "sessionId": "2026/08/20/rollout-2026-08-20T11-42-47-01a0207b-9d0a-7760-bd68-082f80c9c43d",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T18:55:41.671Z",
+      "totalTokens": 687956,
+      "totalCost": 1.7878025,
+      "inputTokens": 74367,
+      "outputTokens": 1237,
+      "cacheReadTokens": 612352,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 351,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1241,
+      "sessionId": "2026/08/20/rollout-2026-08-20T11-42-47-01a0207b-9c8a-7dc0-a308-559747bfa240",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T18:59:21.748Z",
+      "totalTokens": 9041170,
+      "totalCost": 12.551058,
+      "inputTokens": 173451,
+      "outputTokens": 33031,
+      "cacheReadTokens": 8834688,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 11799,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1242,
+      "sessionId": "2026/08/20/rollout-2026-08-20T11-49-44-01a02081-fa0c-7ca2-aa8c-3c4577d3abe9",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:00:11.144Z",
+      "totalTokens": 19907,
+      "totalCost": 0.20811750000000004,
+      "inputTokens": 14819,
+      "outputTokens": 224,
+      "cacheReadTokens": 4864,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 157,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1243,
+      "sessionId": "2026/08/20/rollout-2026-08-20T11-49-44-01a02081-f96d-7560-a831-9d88ae93e629",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:06:10.133Z",
+      "totalTokens": 10331473,
+      "totalCost": 14.54217,
+      "inputTokens": 192889,
+      "outputTokens": 41944,
+      "cacheReadTokens": 10096640,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 14753,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1244,
+      "sessionId": "2026/08/20/rollout-2026-08-20T11-59-44-01a0208b-2490-7902-8545-60c77e22c495",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:11:32.095Z",
+      "totalTokens": 3090833,
+      "totalCost": 5.198176,
+      "inputTokens": 100606,
+      "outputTokens": 20371,
+      "cacheReadTokens": 2969856,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 6980,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1245,
+      "sessionId": "2026/08/20/rollout-2026-08-20T12-19-06-01a0209c-deaa-7530-9816-f2484761535c",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:25:47.871Z",
+      "totalTokens": 3493848,
+      "totalCost": 6.072882,
+      "inputTokens": 193359,
+      "outputTokens": 14217,
+      "cacheReadTokens": 3286272,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 7608,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1246,
+      "sessionId": "2026/08/20/rollout-2026-08-20T12-17-45-01a0209b-a20a-78b1-ba18-939f520ed20b",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:26:13.731Z",
+      "totalTokens": 4478535,
+      "totalCost": 6.776746,
+      "inputTokens": 140805,
+      "outputTokens": 17474,
+      "cacheReadTokens": 4320256,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 6646,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1247,
+      "sessionId": "2026/08/20/rollout-2026-08-20T12-26-12-01a020a3-5c67-7fc1-baa4-bd05a005cd22",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:28:32.668Z",
+      "totalTokens": 75114,
+      "totalCost": 0.3430125,
+      "inputTokens": 18191,
+      "outputTokens": 603,
+      "cacheReadTokens": 56320,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 318,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1248,
+      "sessionId": "2026/08/20/rollout-2026-08-20T12-26-11-01a020a3-5bc5-7851-8df9-aecabc9fd4cd",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:31:20.541Z",
+      "totalTokens": 1293259,
+      "totalCost": 2.711166,
+      "inputTokens": 76099,
+      "outputTokens": 12424,
+      "cacheReadTokens": 1204736,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 7748,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1249,
+      "sessionId": "2026/08/20/rollout-2026-08-20T12-42-35-01a020b2-5d6b-7c91-89c9-e4258b0555e5",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:48:39.768Z",
+      "totalTokens": 2885795,
+      "totalCost": 5.167836,
+      "inputTokens": 167820,
+      "outputTokens": 13079,
+      "cacheReadTokens": 2704896,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 8036,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1250,
+      "sessionId": "2026/08/20/rollout-2026-08-20T12-42-18-01a020b2-1ceb-7e40-b7c8-90a60fd2d2ae",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:55:11.285Z",
+      "totalTokens": 72132761,
+      "totalCost": 93.348024,
+      "inputTokens": 1353314,
+      "outputTokens": 153143,
+      "cacheReadTokens": 70626304,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 57651,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1251,
+      "sessionId": "2026/08/20/rollout-2026-08-20T11-04-57-01a02058-fcd2-7cb1-9a16-b9ed67b00433",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T19:58:28.458Z",
+      "totalTokens": 4372341,
+      "totalCost": 20.707780000000003,
+      "inputTokens": 1333118,
+      "outputTokens": 3319,
+      "cacheReadTokens": 3035904,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1006,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1252,
+      "sessionId": "2026/08/20/rollout-2026-08-20T11-58-24-01a02089-e8ac-7891-a607-86663f7cffab",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T20:06:08.648Z",
+      "totalTokens": 5157779,
+      "totalCost": 8.782876,
+      "inputTokens": 216460,
+      "outputTokens": 28423,
+      "cacheReadTokens": 4912896,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 15684,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1253,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-00-51-01a020c3-1735-7f70-af5b-23622df1d420",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T20:10:26.381Z",
+      "totalTokens": 22168,
+      "totalCost": 0.23213000000000006,
+      "inputTokens": 17148,
+      "outputTokens": 156,
+      "cacheReadTokens": 4864,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 82,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1254,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-07-37-01a020c9-4a0c-7163-9acf-b3b3cf3cb45c",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T20:14:53.228Z",
+      "totalTokens": 1348309,
+      "totalCost": 3.4674179999999994,
+      "inputTokens": 100753,
+      "outputTokens": 20548,
+      "cacheReadTokens": 1227008,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 8456,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1255,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-00-51-01a020c3-16c6-7ff2-ab45-17b4c543512d",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T20:15:09.864Z",
+      "totalTokens": 3437985,
+      "totalCost": 6.5559,
+      "inputTokens": 120288,
+      "outputTokens": 34497,
+      "cacheReadTokens": 3283200,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 15298,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1256,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-24-32-01a020d8-c4ed-7353-80a0-d5c16bfe086d",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T20:26:37.057Z",
+      "totalTokens": 42360,
+      "totalCost": 0.26207250000000004,
+      "inputTokens": 17035,
+      "outputTokens": 237,
+      "cacheReadTokens": 25088,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 113,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1257,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-24-32-01a020d8-c462-73e1-ba9a-888c0310d43c",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T20:27:03.657Z",
+      "totalTokens": 1163608,
+      "totalCost": 1.953676,
+      "inputTokens": 50458,
+      "outputTokens": 5694,
+      "cacheReadTokens": 1107456,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1604,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1258,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-24-36-01a020d8-d392-77a1-89cf-d5e4302a63ce",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T20:35:37.656Z",
+      "totalTokens": 5355303,
+      "totalCost": 7.538778,
+      "inputTokens": 131885,
+      "outputTokens": 16890,
+      "cacheReadTokens": 5206528,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 8642,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1259,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-00-59-01a020c3-34f6-7d33-8388-31536a5ef4f8",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T20:50:33.203Z",
+      "totalTokens": 10899969,
+      "totalCost": 18.037426,
+      "inputTokens": 344205,
+      "outputTokens": 68468,
+      "cacheReadTokens": 10487296,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 28644,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1260,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-35-42-01a020e2-fd16-74d2-9267-b4ca8a69408d",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T20:55:27.667Z",
+      "totalTokens": 21589,
+      "totalCost": 0.222455,
+      "inputTokens": 16608,
+      "outputTokens": 117,
+      "cacheReadTokens": 4864,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 56,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1261,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-35-41-01a020e2-fc85-77a0-bdfc-d1ab78c1804e",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T21:01:22.198Z",
+      "totalTokens": 4897093,
+      "totalCost": 7.650462,
+      "inputTokens": 144991,
+      "outputTokens": 24550,
+      "cacheReadTokens": 4727552,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 8710,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1262,
+      "sessionId": "2026/08/20/rollout-2026-08-20T14-05-07-01a020fd-ee1a-71b3-b3ae-bfd0696bb052",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T21:09:16.803Z",
+      "totalTokens": 3413712,
+      "totalCost": 5.399448,
+      "inputTokens": 154164,
+      "outputTokens": 10140,
+      "cacheReadTokens": 3249408,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 5372,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1263,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-24-28-01a020d8-b4b4-7823-8ee6-53ce494f9c0c",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T21:17:14.686Z",
+      "totalTokens": 26650283,
+      "totalCost": 36.823139999999995,
+      "inputTokens": 708120,
+      "outputTokens": 64403,
+      "cacheReadTokens": 25877760,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 28707,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1264,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-54-49-01a020f4-7e2b-7591-903c-c39c2d0e1c31",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T21:20:19.542Z",
+      "totalTokens": 19009891,
+      "totalCost": 27.182816000000003,
+      "inputTokens": 583098,
+      "outputTokens": 49577,
+      "cacheReadTokens": 18377216,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 26569,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1265,
+      "sessionId": "2026/08/20/rollout-2026-08-20T14-32-30-01a02116-fda6-7440-b5e5-c0cc2bbc6540",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T21:37:29.064Z",
+      "totalTokens": 20829,
+      "totalCost": 0.21464250000000004,
+      "inputTokens": 15821,
+      "outputTokens": 144,
+      "cacheReadTokens": 4864,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 86,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1266,
+      "sessionId": "2026/08/20/rollout-2026-08-20T14-32-29-01a02116-fd11-79c0-b822-5a3ace667f25",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T21:38:59.950Z",
+      "totalTokens": 22100372,
+      "totalCost": 11.986107999999998,
+      "inputTokens": 448534,
+      "outputTokens": 53374,
+      "cacheReadTokens": 21598464,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 19999,
+      "modelsUsed": [
+        "gpt-5",
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1267,
+      "sessionId": "2026/08/20/rollout-2026-08-20T14-39-10-01a0211d-198b-7970-8cd9-3b006fad59f6",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T21:55:02.760Z",
+      "totalTokens": 10488727,
+      "totalCost": 14.493625999999999,
+      "inputTokens": 202525,
+      "outputTokens": 36986,
+      "cacheReadTokens": 10249216,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 15900,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1268,
+      "sessionId": "2026/08/20/rollout-2026-08-20T14-29-38-01a02114-5e1e-7d82-b854-53341c61e4f6",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T22:17:22.930Z",
+      "totalTokens": 37765538,
+      "totalCost": 50.831469999999996,
+      "inputTokens": 820621,
+      "outputTokens": 96277,
+      "cacheReadTokens": 36848640,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 41204,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1269,
+      "sessionId": "2026/08/20/rollout-2026-08-20T13-26-55-01a020da-f3bc-7e81-bd46-75b7a0e249f2",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T22:17:28.904Z",
+      "totalTokens": 972125,
+      "totalCost": 4.4436325,
+      "inputTokens": 276513,
+      "outputTokens": 1596,
+      "cacheReadTokens": 694016,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 582,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1270,
+      "sessionId": "2026/08/20/rollout-2026-08-20T14-12-05-01a02104-4fe0-7512-ab7f-691e0f4fad18",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T22:41:52.277Z",
+      "totalTokens": 248723,
+      "totalCost": 1.0158325000000001,
+      "inputTokens": 58373,
+      "outputTokens": 654,
+      "cacheReadTokens": 189696,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 260,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1271,
+      "sessionId": "2026/08/20/rollout-2026-08-20T14-12-05-01a02104-4f4b-7d13-bc96-8b238abae64d",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T22:43:14.826Z",
+      "totalTokens": 52471609,
+      "totalCost": 70.442768,
+      "inputTokens": 1188502,
+      "outputTokens": 123299,
+      "cacheReadTokens": 51159808,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 55897,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1272,
+      "sessionId": "2026/08/20/rollout-2026-08-20T15-37-49-01a02152-cc06-72f1-a73a-a0f2cec0b8f6",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T22:43:19.811Z",
+      "totalTokens": 3937670,
+      "totalCost": 6.178675999999999,
+      "inputTokens": 166794,
+      "outputTokens": 12540,
+      "cacheReadTokens": 3758336,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 5414,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1273,
+      "sessionId": "2026/08/20/rollout-2026-08-20T15-52-33-01a02160-4af4-7aa3-8ff2-2c2a276d9fb4",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T22:53:51.878Z",
+      "totalTokens": 31665,
+      "totalCost": 0.22366999999999998,
+      "inputTokens": 14482,
+      "outputTokens": 287,
+      "cacheReadTokens": 16896,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 159,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1274,
+      "sessionId": "2026/08/20/rollout-2026-08-20T15-52-33-01a02160-4a3f-73b0-b9f9-3c7a2f82f59b",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T22:54:21.466Z",
+      "totalTokens": 711635,
+      "totalCost": 1.471276,
+      "inputTokens": 59972,
+      "outputTokens": 3727,
+      "cacheReadTokens": 647936,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1456,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1275,
+      "sessionId": "2026/08/20/rollout-2026-08-20T15-54-18-01a02161-e4ed-7a53-ae1e-10dffa79d34f",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T22:56:44.067Z",
+      "totalTokens": 22781,
+      "totalCost": 0.23966750000000003,
+      "inputTokens": 17763,
+      "outputTokens": 154,
+      "cacheReadTokens": 4864,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 87,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1276,
+      "sessionId": "2026/08/20/rollout-2026-08-20T15-54-18-01a02161-e463-71a0-87e3-70f709d886a5",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T22:58:00.123Z",
+      "totalTokens": 1856077,
+      "totalCost": 3.4010920000000002,
+      "inputTokens": 110564,
+      "outputTokens": 9321,
+      "cacheReadTokens": 1736192,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 3647,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1277,
+      "sessionId": "2026/08/20/rollout-2026-08-20T15-38-24-01a02153-5619-7d91-9b72-06d60d7e6be6",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T23:04:22.304Z",
+      "totalTokens": 2942603,
+      "totalCost": 5.414422500000001,
+      "inputTokens": 129769,
+      "outputTokens": 3746,
+      "cacheReadTokens": 2809088,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1228,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1278,
+      "sessionId": "2026/08/20/rollout-2026-08-20T14-55-14-01a0212b-ce40-7122-a502-01fc8a75dabf",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T23:28:40.224Z",
+      "totalTokens": 17525021,
+      "totalCost": 25.252586,
+      "inputTokens": 404633,
+      "outputTokens": 69252,
+      "cacheReadTokens": 17051136,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 25827,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1279,
+      "sessionId": "2026/08/20/rollout-2026-08-20T16-28-49-01a02181-7efe-7980-9c51-baaf4576d677",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T23:33:26.605Z",
+      "totalTokens": 1680053,
+      "totalCost": 3.146618,
+      "inputTokens": 109537,
+      "outputTokens": 8148,
+      "cacheReadTokens": 1562368,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1108,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1280,
+      "sessionId": "2026/08/20/rollout-2026-08-20T16-06-51-01a0216d-61ac-7b71-95db-476309cba888",
+      "date": "2026-08-20",
+      "lastActivity": "2026-08-20T23:41:43.831Z",
+      "totalTokens": 22585273,
+      "totalCost": 32.228262,
+      "inputTokens": 647443,
+      "outputTokens": 64678,
+      "cacheReadTokens": 21873152,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 25838,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1281,
+      "sessionId": "2026/08/20/rollout-2026-08-20T16-06-59-01a0216d-81b5-7450-80bf-2109a974b402",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T00:04:45.852Z",
+      "totalTokens": 1551406,
+      "totalCost": 4.9965275,
+      "inputTokens": 257145,
+      "outputTokens": 2229,
+      "cacheReadTokens": 1292032,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 564,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1282,
+      "sessionId": "2026/08/20/rollout-2026-08-20T16-06-59-01a0216d-812d-7283-911b-0bbc2e6aae37",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T00:05:39.392Z",
+      "totalTokens": 35086862,
+      "totalCost": 43.352266,
+      "inputTokens": 505175,
+      "outputTokens": 63031,
+      "cacheReadTokens": 34518656,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 26485,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1283,
+      "sessionId": "2026/08/20/rollout-2026-08-20T17-20-04-01a021b0-6981-7b90-b6b4-58ff59b9f5de",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T01:16:09.728Z",
+      "totalTokens": 1351819,
+      "totalCost": 7.186590000000001,
+      "inputTokens": 474990,
+      "outputTokens": 2077,
+      "cacheReadTokens": 874752,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 715,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1284,
+      "sessionId": "2026/08/20/rollout-2026-08-20T17-15-42-01a021ac-6a21-7d80-a049-b1f5ccf25210",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T01:17:20.765Z",
+      "totalTokens": 21243083,
+      "totalCost": 30.533898,
+      "inputTokens": 462989,
+      "outputTokens": 86846,
+      "cacheReadTokens": 20693248,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 27595,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1285,
+      "sessionId": "2026/08/20/rollout-2026-08-20T18-12-49-01a021e0-b3c9-7fc1-94f1-2c41a91ebe11",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T01:20:21.555Z",
+      "totalTokens": 2722355,
+      "totalCost": 4.495877999999999,
+      "inputTokens": 105359,
+      "outputTokens": 13988,
+      "cacheReadTokens": 2603008,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 4575,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1286,
+      "sessionId": "2026/08/20/rollout-2026-08-20T18-12-59-01a021e0-dba0-7a42-a33e-3b4093dbeb3c",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T01:25:00.989Z",
+      "totalTokens": 8557218,
+      "totalCost": 12.043024,
+      "inputTokens": 221076,
+      "outputTokens": 25358,
+      "cacheReadTokens": 8310784,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 10852,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1287,
+      "sessionId": "2026/08/20/rollout-2026-08-20T18-12-54-01a021e0-c776-7d71-8562-d052534d9898",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T01:25:25.395Z",
+      "totalTokens": 52519,
+      "totalCost": 0.45476999999999995,
+      "inputTokens": 31278,
+      "outputTokens": 505,
+      "cacheReadTokens": 20736,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 304,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1288,
+      "sessionId": "2026/08/20/rollout-2026-08-20T18-24-19-01a021eb-3b0b-7b53-9d9c-86ce62f042c2",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T01:32:19.987Z",
+      "totalTokens": 3793160,
+      "totalCost": 5.746066,
+      "inputTokens": 110783,
+      "outputTokens": 16201,
+      "cacheReadTokens": 3666176,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 5332,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1289,
+      "sessionId": "2026/08/20/rollout-2026-08-20T18-26-39-01a021ed-5e3b-7951-9dc0-1a67f27f6119",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T01:49:09.160Z",
+      "totalTokens": 16301559,
+      "totalCost": 20.782365999999996,
+      "inputTokens": 241755,
+      "outputTokens": 39068,
+      "cacheReadTokens": 16020736,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 13575,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1290,
+      "sessionId": "2026/08/20/rollout-2026-08-20T18-33-40-01a021f3-cce0-7cf2-80fa-aa7c0a0ffd0e",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T02:18:23.774Z",
+      "totalTokens": 17391142,
+      "totalCost": 23.295416000000003,
+      "inputTokens": 420568,
+      "outputTokens": 35918,
+      "cacheReadTokens": 16934656,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 18559,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1291,
+      "sessionId": "2026/08/20/rollout-2026-08-20T18-12-54-01a021e0-c6ee-75a0-b3c1-b26a2ed498fb",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T02:22:49.429Z",
+      "totalTokens": 16154911,
+      "totalCost": 23.274248,
+      "inputTokens": 371790,
+      "outputTokens": 63953,
+      "cacheReadTokens": 15719168,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 23906,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1292,
+      "sessionId": "2026/08/20/rollout-2026-08-20T19-29-29-01a02226-e6e9-72f2-9a25-79bc27b30dd1",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T02:30:34.095Z",
+      "totalTokens": 15817,
+      "totalCost": 0.15349250000000003,
+      "inputTokens": 10785,
+      "outputTokens": 168,
+      "cacheReadTokens": 4864,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 112,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1293,
+      "sessionId": "2026/08/20/rollout-2026-08-20T16-42-48-01a0218e-4b31-7a63-87df-28d631e024bc",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T02:34:48.902Z",
+      "totalTokens": 3293677,
+      "totalCost": 16.945660000000004,
+      "inputTokens": 1121758,
+      "outputTokens": 2831,
+      "cacheReadTokens": 2169088,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 730,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1294,
+      "sessionId": "2026/08/20/rollout-2026-08-20T19-29-29-01a02226-e644-7062-9faa-bcfb7973f901",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T02:35:29.924Z",
+      "totalTokens": 124766551,
+      "totalCost": 155.521712,
+      "inputTokens": 2018986,
+      "outputTokens": 213293,
+      "cacheReadTokens": 122534272,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 77214,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1295,
+      "sessionId": "2026/08/20/rollout-2026-08-20T19-37-44-01a0222e-73cf-72f3-9c88-33766b9e3a86",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T03:10:21.037Z",
+      "totalTokens": 19766634,
+      "totalCost": 25.54314,
+      "inputTokens": 334090,
+      "outputTokens": 46944,
+      "cacheReadTokens": 19385600,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 15835,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1296,
+      "sessionId": "2026/08/20/rollout-2026-08-20T19-37-51-01a0222e-8c2f-7be3-ad8c-e96b671dc6ff",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T03:13:09.732Z",
+      "totalTokens": 126537,
+      "totalCost": 1.2056375,
+      "inputTokens": 90263,
+      "outputTokens": 434,
+      "cacheReadTokens": 35840,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 193,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1297,
+      "sessionId": "2026/08/20/rollout-2026-08-20T19-37-50-01a0222e-8ba4-7643-b371-cc52bf2e18c1",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T03:14:39.209Z",
+      "totalTokens": 22227632,
+      "totalCost": 29.836546000000002,
+      "inputTokens": 405367,
+      "outputTokens": 67129,
+      "cacheReadTokens": 21755136,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 21653,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1298,
+      "sessionId": "2026/08/20/rollout-2026-08-20T20-11-58-01a0224d-cbb1-7911-bf3f-d37464a757d7",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T03:23:20.821Z",
+      "totalTokens": 9302405,
+      "totalCost": 12.888298,
+      "inputTokens": 230217,
+      "outputTokens": 25660,
+      "cacheReadTokens": 9046528,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 6478,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1299,
+      "sessionId": "2026/08/20/rollout-2026-08-20T19-37-39-01a0222e-5f16-77d3-b49d-88854d7f2330",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T03:23:59.373Z",
+      "totalTokens": 23950632,
+      "totalCost": 34.95346,
+      "inputTokens": 585638,
+      "outputTokens": 97154,
+      "cacheReadTokens": 23267840,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 26966,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1300,
+      "sessionId": "2026/08/20/rollout-2026-08-20T20-25-58-01a0225a-9abb-7e80-98fe-f9720fee4e09",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T03:27:12.030Z",
+      "totalTokens": 702220,
+      "totalCost": 1.4145820000000002,
+      "inputTokens": 61589,
+      "outputTokens": 2679,
+      "cacheReadTokens": 637952,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1005,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1301,
+      "sessionId": "2026/08/20/rollout-2026-08-20T20-30-54-01a0225f-1e77-7a92-b311-ec91dd111982",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T03:40:43.144Z",
+      "totalTokens": 8401514,
+      "totalCost": 11.698339999999998,
+      "inputTokens": 211498,
+      "outputTokens": 23616,
+      "cacheReadTokens": 8166400,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 12375,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1302,
+      "sessionId": "2026/08/20/rollout-2026-08-20T20-30-49-01a0225f-0bc3-7330-8773-bebb591b5d1d",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T03:44:12.735Z",
+      "totalTokens": 9931960,
+      "totalCost": 13.52609,
+      "inputTokens": 209571,
+      "outputTokens": 28949,
+      "cacheReadTokens": 9693440,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 12291,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1303,
+      "sessionId": "2026/08/20/rollout-2026-08-20T21-21-39-01a0228d-97d6-71c0-a647-5a2c5126816a",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T04:21:57.342Z",
+      "totalTokens": 22681,
+      "totalCost": 0.13972250000000003,
+      "inputTokens": 7461,
+      "outputTokens": 372,
+      "cacheReadTokens": 14848,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 241,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1304,
+      "sessionId": "2026/08/20/rollout-2026-08-20T21-21-09-01a0228d-20c9-7dd1-b366-395bb4b51103",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T04:23:00.364Z",
+      "totalTokens": 495601,
+      "totalCost": 1.1439180000000002,
+      "inputTokens": 43807,
+      "outputTokens": 4306,
+      "cacheReadTokens": 447488,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1339,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1305,
+      "sessionId": "2026/08/20/rollout-2026-08-20T20-41-01-01a02268-6220-7701-b26f-19211f8bd88a",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T04:49:35.580Z",
+      "totalTokens": 7857933,
+      "totalCost": 11.605452000000001,
+      "inputTokens": 268832,
+      "outputTokens": 22509,
+      "cacheReadTokens": 7566592,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 9539,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1306,
+      "sessionId": "2026/08/20/rollout-2026-08-20T20-44-36-01a0226b-aad7-7620-abda-0496a97f51e8",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T04:49:51.081Z",
+      "totalTokens": 4470476,
+      "totalCost": 6.376628000000001,
+      "inputTokens": 114366,
+      "outputTokens": 14862,
+      "cacheReadTokens": 4341248,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 6156,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1307,
+      "sessionId": "2026/08/20/rollout-2026-08-20T21-50-12-01a022a7-b967-79c2-b891-403de4cf986c",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T05:01:28.603Z",
+      "totalTokens": 8087136,
+      "totalCost": 11.533338,
+      "inputTokens": 217259,
+      "outputTokens": 25269,
+      "cacheReadTokens": 7844608,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 9495,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1308,
+      "sessionId": "2026/08/20/rollout-2026-08-20T22-05-55-01a022b6-1bf4-7e11-9d94-e9f3f3c85bec",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T05:10:23.028Z",
+      "totalTokens": 2133705,
+      "totalCost": 3.57394,
+      "inputTokens": 90452,
+      "outputTokens": 10613,
+      "cacheReadTokens": 2032640,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 6518,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1309,
+      "sessionId": "2026/08/20/rollout-2026-08-20T22-23-46-01a022c6-73fe-77a1-8cbe-2c79ef436b62",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T05:25:35.756Z",
+      "totalTokens": 39299,
+      "totalCost": 0.25949500000000003,
+      "inputTokens": 17028,
+      "outputTokens": 255,
+      "cacheReadTokens": 22016,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 143,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1310,
+      "sessionId": "2026/08/20/rollout-2026-08-20T22-23-46-01a022c6-7379-72f0-b179-1a9489222fa8",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T05:26:02.148Z",
+      "totalTokens": 1082001,
+      "totalCost": 1.6992079999999998,
+      "inputTokens": 40842,
+      "outputTokens": 4231,
+      "cacheReadTokens": 1036928,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 2158,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1311,
+      "sessionId": "2026/08/20/rollout-2026-08-20T22-23-32-01a022c6-3c09-77f1-ad71-cfb72d96ddb3",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T05:29:11.743Z",
+      "totalTokens": 3586325,
+      "totalCost": 5.768294,
+      "inputTokens": 151227,
+      "outputTokens": 13914,
+      "cacheReadTokens": 3421184,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 5907,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1312,
+      "sessionId": "2026/08/20/rollout-2026-08-20T22-26-52-01a022c9-4c41-7893-8e6a-40e62fc9e70d",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T05:29:52.051Z",
+      "totalTokens": 44751,
+      "totalCost": 0.2832525,
+      "inputTokens": 18357,
+      "outputTokens": 282,
+      "cacheReadTokens": 26112,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 153,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1313,
+      "sessionId": "2026/08/20/rollout-2026-08-20T22-26-52-01a022c9-4bb3-75e2-be4d-522d3b10c694",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T05:31:37.461Z",
+      "totalTokens": 2707651,
+      "totalCost": 4.186783999999999,
+      "inputTokens": 116250,
+      "outputTokens": 7337,
+      "cacheReadTokens": 2584064,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 2572,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1314,
+      "sessionId": "2026/08/20/rollout-2026-08-20T22-05-51-01a022b6-0ee3-70b0-bd0c-957521682fe3",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T05:36:30.802Z",
+      "totalTokens": 265007135,
+      "totalCost": 332.3794199999999,
+      "inputTokens": 4317044,
+      "outputTokens": 483371,
+      "cacheReadTokens": 260206720,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 179547,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1315,
+      "sessionId": "2026/08/20/rollout-2026-08-20T22-05-48-01a022b6-0087-7922-83ff-8183173da582",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T05:40:57.285Z",
+      "totalTokens": 9580233,
+      "totalCost": 13.264154,
+      "inputTokens": 282409,
+      "outputTokens": 19360,
+      "cacheReadTokens": 9278464,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 9240,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1316,
+      "sessionId": "2026/07/27/rollout-2026-07-27T23-10-27-019fa758-90e2-7183-96b8-1cada515ce96",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T15:47:01.627Z",
+      "totalTokens": 29703018,
+      "totalCost": 69.552003,
+      "inputTokens": 4000328,
+      "outputTokens": 65187,
+      "cacheReadTokens": 25637503,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 30410,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1317,
+      "sessionId": "2026/08/21/rollout-2026-08-21T08-49-31-01a02503-56f6-7a83-ad9d-dbd033d3c713",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T15:50:46.735Z",
+      "totalTokens": 19216,
+      "totalCost": 0.19773000000000002,
+      "inputTokens": 14156,
+      "outputTokens": 196,
+      "cacheReadTokens": 4864,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 138,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1318,
+      "sessionId": "2026/08/21/rollout-2026-08-21T08-49-46-01a02503-92cb-7ca3-b0fa-2dfe531e78c6",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T15:58:44.948Z",
+      "totalTokens": 7228125,
+      "totalCost": 10.848845999999998,
+      "inputTokens": 285207,
+      "outputTokens": 17862,
+      "cacheReadTokens": 6925056,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 6948,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1319,
+      "sessionId": "2026/08/20/rollout-2026-08-20T19-44-27-01a02234-9a2d-7823-af49-d29226c8d94b",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T16:09:04.433Z",
+      "totalTokens": 2313057,
+      "totalCost": 11.507255,
+      "inputTokens": 747656,
+      "outputTokens": 2777,
+      "cacheReadTokens": 1562624,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 1081,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1320,
+      "sessionId": "2026/08/21/rollout-2026-08-21T08-49-30-01a02503-563f-7031-8f0f-0d48e3683375",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T16:24:01.270Z",
+      "totalTokens": 299146782,
+      "totalCost": 375.60504799999995,
+      "inputTokens": 5059688,
+      "outputTokens": 524086,
+      "cacheReadTokens": 293563008,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 196271,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1321,
+      "sessionId": "2026/08/21/rollout-2026-08-21T08-49-38-01a02503-74e4-70e0-a432-73f1c0558a55",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T16:25:49.274Z",
+      "totalTokens": 15527953,
+      "totalCost": 21.596663999999997,
+      "inputTokens": 332370,
+      "outputTokens": 52159,
+      "cacheReadTokens": 15143424,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 24040,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1322,
+      "sessionId": "2026/08/21/rollout-2026-08-21T08-59-04-01a0250c-179c-7de3-92ec-97e55a9b8a6c",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T16:26:20.537Z",
+      "totalTokens": 5652698,
+      "totalCost": 9.514634000000001,
+      "inputTokens": 174047,
+      "outputTokens": 38907,
+      "cacheReadTokens": 5439744,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 27118,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1323,
+      "sessionId": "2026/08/20/rollout-2026-08-20T08-16-23-01a01fbe-a55c-73a1-9603-4a5554699555",
+      "date": "2026-08-21",
+      "lastActivity": "2026-08-21T16:26:22.921Z",
+      "totalTokens": 523300682,
+      "totalCost": 664.998314,
+      "inputTokens": 8808751,
+      "outputTokens": 1057947,
+      "cacheReadTokens": 513433984,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 378461,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
     }
   ],
   "theme": {
-    "date": "2026-08-20",
-    "name": "green 161",
-    "hue": 161,
-    "saturation": 88,
-    "lightness": 57,
-    "hex": "#31f2b5",
-    "light": "#8bf4d2",
-    "dark": "#08bf85"
+    "date": "2026-08-21",
+    "name": "blue 223",
+    "hue": 223,
+    "saturation": 84,
+    "lightness": 53,
+    "hex": "#225cec",
+    "light": "#7b9cef",
+    "dark": "#0736ab"
   },
   "collection": {
     "mode": "cumulative-machine-snapshots-v1",
@@ -26023,46 +27972,46 @@
     "legacyBaselineGeneratedAt": "2026-07-27T07:31:25.480Z",
     "machines": {
       "ganstlr-macbook-2026": {
-        "generatedAt": "2026-08-20T07:25:06.636Z",
+        "generatedAt": "2026-08-21T16:26:27.805Z",
         "totals": {
-          "totalTokens": 4967290819,
-          "totalCost": 7102.310804399999,
-          "inputTokens": 141580285,
-          "outputTokens": 14286355,
-          "cacheReadTokens": 4811424179,
+          "totalTokens": 6945637916,
+          "totalCost": 9753.394094899999,
+          "inputTokens": 185806826,
+          "outputTokens": 18935295,
+          "cacheReadTokens": 6740895795,
           "cacheCreationTokens": 0,
-          "reasoningOutputTokens": 5301164
+          "reasoningOutputTokens": 7102086
         },
         "models": [
           {
             "name": "gpt-5.6-sol",
-            "totalTokens": 4828760526,
+            "totalTokens": 6768450679,
             "totalCost": 13.042684000000001,
-            "inputTokens": 126601896,
-            "outputTokens": 13989235,
-            "cacheReadTokens": 4688169395,
+            "inputTokens": 165098106,
+            "outputTokens": 18571722,
+            "cacheReadTokens": 6584780851,
             "cacheCreationTokens": 0,
-            "reasoningOutputTokens": 5173717
+            "reasoningOutputTokens": 6948770
           },
           {
             "name": "gpt-5.5",
-            "totalTokens": 102481406,
+            "totalTokens": 122876420,
             "totalCost": 0,
-            "inputTokens": 13760306,
-            "outputTokens": 137932,
-            "cacheReadTokens": 88583168,
+            "inputTokens": 19169405,
+            "outputTokens": 167815,
+            "cacheReadTokens": 103539200,
             "cacheCreationTokens": 0,
-            "reasoningOutputTokens": 56451
+            "reasoningOutputTokens": 67629
           },
           {
             "name": "gpt-5",
-            "totalTokens": 33777353,
+            "totalTokens": 52039283,
             "totalCost": 0,
-            "inputTokens": 1011792,
-            "outputTokens": 115577,
-            "cacheReadTokens": 32649984,
+            "inputTokens": 1333024,
+            "outputTokens": 152147,
+            "cacheReadTokens": 50554112,
             "cacheCreationTokens": 0,
-            "reasoningOutputTokens": 37207
+            "reasoningOutputTokens": 51898
           },
           {
             "name": "gpt-5.3-codex-spark",
@@ -26987,13 +28936,61 @@
           },
           {
             "date": "2026-08-20",
-            "totalTokens": 2307062,
-            "totalCost": 2.7872735,
-            "inputTokens": 18125,
-            "outputTokens": 3881,
-            "cacheReadTokens": 2285056,
+            "totalTokens": 1616183518,
+            "totalCost": 2186.280689,
+            "inputTokens": 37332314,
+            "outputTokens": 3966468,
+            "cacheReadTokens": 1574884736,
             "cacheCreationTokens": 0,
-            "reasoningOutputTokens": 2095,
+            "reasoningOutputTokens": 1524496,
+            "modelsUsed": [
+              "gpt-5",
+              "gpt-5.5",
+              "gpt-5.6-sol"
+            ],
+            "topModel": "gpt-5.6-sol",
+            "modelBreakdowns": [
+              {
+                "modelName": "gpt-5",
+                "cost": 0,
+                "inputTokens": 321232,
+                "outputTokens": 36570,
+                "cacheReadTokens": 17904128,
+                "cacheCreationTokens": 0,
+                "reasoningOutputTokens": 14691,
+                "totalTokens": 18261930
+              },
+              {
+                "modelName": "gpt-5.5",
+                "cost": 0,
+                "inputTokens": 5279214,
+                "outputTokens": 29838,
+                "cacheReadTokens": 14957056,
+                "cacheCreationTokens": 0,
+                "reasoningOutputTokens": 11140,
+                "totalTokens": 20266108
+              },
+              {
+                "modelName": "gpt-5.6-sol",
+                "cost": 0,
+                "inputTokens": 31731868,
+                "outputTokens": 3900060,
+                "cacheReadTokens": 1542023552,
+                "cacheCreationTokens": 0,
+                "reasoningOutputTokens": 1498665,
+                "totalTokens": 1577655480
+              }
+            ]
+          },
+          {
+            "date": "2026-08-21",
+            "totalTokens": 364470641,
+            "totalCost": 467.58987499999995,
+            "inputTokens": 6912352,
+            "outputTokens": 686353,
+            "cacheReadTokens": 356871936,
+            "cacheCreationTokens": 0,
+            "reasoningOutputTokens": 278521,
             "modelsUsed": [
               "gpt-5.5",
               "gpt-5.6-sol"
@@ -27003,27 +29000,27 @@
               {
                 "modelName": "gpt-5.5",
                 "cost": 0,
-                "inputTokens": 6893,
-                "outputTokens": 373,
-                "cacheReadTokens": 261120,
+                "inputTokens": 136778,
+                "outputTokens": 418,
+                "cacheReadTokens": 260096,
                 "cacheCreationTokens": 0,
-                "reasoningOutputTokens": 141,
-                "totalTokens": 268386
+                "reasoningOutputTokens": 179,
+                "totalTokens": 397292
               },
               {
                 "modelName": "gpt-5.6-sol",
                 "cost": 0,
-                "inputTokens": 11232,
-                "outputTokens": 3508,
-                "cacheReadTokens": 2023936,
+                "inputTokens": 6775574,
+                "outputTokens": 685935,
+                "cacheReadTokens": 356611840,
                 "cacheCreationTokens": 0,
-                "reasoningOutputTokens": 1954,
-                "totalTokens": 2038676
+                "reasoningOutputTokens": 278342,
+                "totalTokens": 364073349
               }
             ]
           }
         ],
-        "sessionCount": 291
+        "sessionCount": 391
       }
     }
   }
