@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T07:00:31.994Z",
+  "generatedAt": "2026-09-03T07:01:47.611Z",
   "source": "ccusage codex daily/session --json --speed fast; cumulative machine snapshots",
   "pricing": {
     "codexSpeed": "fast",
@@ -8,49 +8,49 @@
   "scope": "cumulative-multi-machine",
   "range": {
     "startDate": "2026-01-01",
-    "endDate": "2026-09-02",
+    "endDate": "2026-09-03",
     "firstTrackedDay": "2026-01-06",
-    "lastTrackedDay": "2026-09-01"
+    "lastTrackedDay": "2026-09-02"
   },
   "totals": {
-    "totalTokens": 17652213021,
-    "totalCost": 22148.7277035,
-    "inputTokens": 643302172,
-    "outputTokens": 61737347,
-    "cacheReadTokens": 16947173502,
+    "totalTokens": 17654036168,
+    "totalCost": 22152.2549192,
+    "inputTokens": 643555627,
+    "outputTokens": 61739679,
+    "cacheReadTokens": 16948740862,
     "cacheCreationTokens": 0,
-    "reasoningOutputTokens": 26495921,
+    "reasoningOutputTokens": 26496299,
     "sessions": 1433,
-    "activeDays": 156,
+    "activeDays": 157,
     "favoriteModel": {
       "name": "gpt-5.6-sol",
-      "totalTokens": 11966862888,
+      "totalTokens": 11968619328,
       "totalCost": 13.735748599999999,
-      "inputTokens": 320766508,
-      "outputTokens": 35416318,
-      "cacheReadTokens": 11610680062,
+      "inputTokens": 320990750,
+      "outputTokens": 35418532,
+      "cacheReadTokens": 11612210046,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 14095859
+      "reasoningOutputTokens": 14096237
     }
   },
   "models": [
     {
       "name": "gpt-5.6-sol",
-      "totalTokens": 11966862888,
+      "totalTokens": 11968619328,
       "totalCost": 13.735748599999999,
-      "inputTokens": 320766508,
-      "outputTokens": 35416318,
-      "cacheReadTokens": 11610680062,
+      "inputTokens": 320990750,
+      "outputTokens": 35418532,
+      "cacheReadTokens": 11612210046,
       "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 14095859
+      "reasoningOutputTokens": 14096237
     },
     {
       "name": "gpt-5.5",
-      "totalTokens": 2150870916,
+      "totalTokens": 2150937623,
       "totalCost": 3780.9825700000006,
-      "inputTokens": 155780532,
-      "outputTokens": 6952016,
-      "cacheReadTokens": 1988138368,
+      "inputTokens": 155809745,
+      "outputTokens": 6952134,
+      "cacheReadTokens": 1988175744,
       "cacheCreationTokens": 0,
       "reasoningOutputTokens": 2437284
     },
@@ -5016,6 +5016,43 @@
       "cacheReadTokens": 88948096,
       "cacheCreationTokens": 0,
       "reasoningOutputTokens": 145908
+    },
+    {
+      "date": "2026-09-02",
+      "modelsUsed": [
+        "gpt-5.5",
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "modelBreakdowns": [
+        {
+          "modelName": "gpt-5.6-sol",
+          "totalTokens": 1756440,
+          "totalCost": 0,
+          "inputTokens": 224242,
+          "outputTokens": 2214,
+          "cacheReadTokens": 1529984,
+          "cacheCreationTokens": 0,
+          "reasoningOutputTokens": 378
+        },
+        {
+          "modelName": "gpt-5.5",
+          "totalTokens": 66707,
+          "totalCost": 0,
+          "inputTokens": 29213,
+          "outputTokens": 118,
+          "cacheReadTokens": 37376,
+          "cacheCreationTokens": 0,
+          "reasoningOutputTokens": 0
+        }
+      ],
+      "totalTokens": 1823147,
+      "totalCost": 3.5272157000000006,
+      "inputTokens": 253455,
+      "outputTokens": 2332,
+      "cacheReadTokens": 1567360,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 378
     }
   ],
   "sessions": [
@@ -30016,25 +30053,6 @@
     },
     {
       "index": 1413,
-      "sessionId": "2026/07/27/rollout-2026-07-27T23-10-27-019fa758-90e2-7183-96b8-1cada515ce96",
-      "date": "2026-09-01",
-      "lastActivity": "2026-09-01T15:03:33.217Z",
-      "totalTokens": 37098340,
-      "totalCost": 73.14549840000001,
-      "inputTokens": 5649491,
-      "outputTokens": 71186,
-      "cacheReadTokens": 31377663,
-      "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 31476,
-      "modelsUsed": [
-        "gpt-5.6-sol"
-      ],
-      "topModel": "gpt-5.6-sol",
-      "agent": "codex",
-      "sourceMachine": "ganstlr-macbook-2026"
-    },
-    {
-      "index": 1414,
       "sessionId": "2026/08/31/rollout-2026-08-31T23-21-11-01a05ba0-fb89-7821-af29-15e73970ffac",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T15:26:09.968Z",
@@ -30053,7 +30071,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1415,
+      "index": 1414,
       "sessionId": "2026/08/31/rollout-2026-08-31T23-21-11-01a05ba0-faf0-7653-ba48-c3660cc2ff91",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T15:27:02.315Z",
@@ -30072,7 +30090,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1416,
+      "index": 1415,
       "sessionId": "2026/08/31/rollout-2026-08-31T23-00-56-01a05b8e-709d-7512-91d9-368edee2bfaf",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T15:34:01.088Z",
@@ -30091,7 +30109,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1417,
+      "index": 1416,
       "sessionId": "2026/08/31/rollout-2026-08-31T23-21-06-01a05ba0-e558-70e0-837b-2b1332d9d087",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T16:00:55.652Z",
@@ -30110,7 +30128,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1418,
+      "index": 1417,
       "sessionId": "2026/08/31/rollout-2026-08-31T23-00-46-01a05b8e-47d8-7ba1-a53c-5129952436ea",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T16:01:00.554Z",
@@ -30129,45 +30147,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1419,
-      "sessionId": "2026/08/31/rollout-2026-08-31T09-17-11-01a0589c-46a2-77d3-8aa0-f0df21086ba6",
-      "date": "2026-09-01",
-      "lastActivity": "2026-09-01T16:16:22.583Z",
-      "totalTokens": 73730,
-      "totalCost": 0.5425025,
-      "inputTokens": 38411,
-      "outputTokens": 247,
-      "cacheReadTokens": 35072,
-      "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 67,
-      "modelsUsed": [
-        "gpt-5.5"
-      ],
-      "topModel": "gpt-5.5",
-      "agent": "codex",
-      "sourceMachine": "ganstlr-macbook-2026"
-    },
-    {
-      "index": 1420,
-      "sessionId": "2026/08/27/rollout-2026-08-27T08-41-25-01a043e2-17aa-71a1-89a6-80144cfab88d",
-      "date": "2026-09-01",
-      "lastActivity": "2026-09-01T16:16:43.561Z",
-      "totalTokens": 30103454,
-      "totalCost": 35.0927008,
-      "inputTokens": 1025781,
-      "outputTokens": 92457,
-      "cacheReadTokens": 28985216,
-      "cacheCreationTokens": 0,
-      "reasoningOutputTokens": 25653,
-      "modelsUsed": [
-        "gpt-5.6-sol"
-      ],
-      "topModel": "gpt-5.6-sol",
-      "agent": "codex",
-      "sourceMachine": "ganstlr-macbook-2026"
-    },
-    {
-      "index": 1421,
+      "index": 1418,
       "sessionId": "2026/09/01/rollout-2026-09-01T10-03-28-01a05ded-00d6-7921-a7d1-0a8502482fae",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T17:05:34.647Z",
@@ -30186,7 +30166,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1422,
+      "index": 1419,
       "sessionId": "2026/09/01/rollout-2026-09-01T10-03-25-01a05dec-f667-7d61-ada7-093dbd31a4ae",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T17:05:57.601Z",
@@ -30205,7 +30185,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1423,
+      "index": 1420,
       "sessionId": "2026/09/01/rollout-2026-09-01T10-03-31-01a05ded-0de1-7c00-9f74-ea0c65ec7d7e",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T17:07:08.170Z",
@@ -30224,7 +30204,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1424,
+      "index": 1421,
       "sessionId": "2026/09/01/rollout-2026-09-01T11-15-54-01a05e2f-51e4-7550-8bd2-4891e39a67a8",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T18:17:42.483Z",
@@ -30243,7 +30223,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1425,
+      "index": 1422,
       "sessionId": "2026/09/01/rollout-2026-09-01T11-15-51-01a05e2f-459d-7c03-948f-72af65bef578",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T18:18:06.267Z",
@@ -30262,7 +30242,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1426,
+      "index": 1423,
       "sessionId": "2026/08/31/rollout-2026-08-31T22-23-40-01a05b6c-511c-7761-b63a-aa2e3ebb39ec",
       "date": "2026-09-01",
       "lastActivity": "2026-09-01T23:12:59.783Z",
@@ -30281,7 +30261,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1427,
+      "index": 1424,
       "sessionId": "2026/09/01/rollout-2026-09-01T20-26-25-01a06027-55cc-72a0-a869-8b4b19419abb",
       "date": "2026-09-02",
       "lastActivity": "2026-09-02T03:29:36.151Z",
@@ -30300,7 +30280,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1428,
+      "index": 1425,
       "sessionId": "2026/09/01/rollout-2026-09-01T21-28-27-01a06060-1e20-7101-9b94-52a6916c9481",
       "date": "2026-09-02",
       "lastActivity": "2026-09-02T04:28:41.170Z",
@@ -30319,7 +30299,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1429,
+      "index": 1426,
       "sessionId": "2026/09/01/rollout-2026-09-01T21-27-46-01a0605f-7e99-7511-b7a2-237882521741",
       "date": "2026-09-02",
       "lastActivity": "2026-09-02T04:29:31.514Z",
@@ -30338,7 +30318,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1430,
+      "index": 1427,
       "sessionId": "2026/09/01/rollout-2026-09-01T20-29-30-01a0602a-284f-79d2-a7ef-5f0d3ea745e6",
       "date": "2026-09-02",
       "lastActivity": "2026-09-02T05:42:48.455Z",
@@ -30357,7 +30337,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1431,
+      "index": 1428,
       "sessionId": "2026/09/01/rollout-2026-09-01T20-26-22-01a06027-4945-7072-917c-f53f704ccaf2",
       "date": "2026-09-02",
       "lastActivity": "2026-09-02T05:43:14.733Z",
@@ -30376,7 +30356,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1432,
+      "index": 1429,
       "sessionId": "2026/09/01/rollout-2026-09-01T23-34-04-01a060d3-2049-7262-90d6-3a5ec3767b15",
       "date": "2026-09-02",
       "lastActivity": "2026-09-02T06:37:51.779Z",
@@ -30395,7 +30375,7 @@
       "sourceMachine": "ganstlr-macbook-2026"
     },
     {
-      "index": 1433,
+      "index": 1430,
       "sessionId": "2026/09/01/rollout-2026-09-01T23-32-41-01a060d1-dbb0-7060-bc51-67c4264ae800",
       "date": "2026-09-02",
       "lastActivity": "2026-09-02T06:38:04.012Z",
@@ -30412,17 +30392,74 @@
       "topModel": "gpt-5.6-sol",
       "agent": "codex",
       "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1431,
+      "sessionId": "2026/07/27/rollout-2026-07-27T23-10-27-019fa758-90e2-7183-96b8-1cada515ce96",
+      "date": "2026-09-02",
+      "lastActivity": "2026-09-02T15:02:44.845Z",
+      "totalTokens": 37379722,
+      "totalCost": 73.8369192,
+      "inputTokens": 5711170,
+      "outputTokens": 71753,
+      "cacheReadTokens": 31596799,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 31552,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1432,
+      "sessionId": "2026/08/31/rollout-2026-08-31T09-17-11-01a0589c-46a2-77d3-8aa0-f0df21086ba6",
+      "date": "2026-09-02",
+      "lastActivity": "2026-09-02T21:42:36.127Z",
+      "totalTokens": 140437,
+      "totalCost": 0.9632350000000001,
+      "inputTokens": 67624,
+      "outputTokens": 365,
+      "cacheReadTokens": 72448,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 67,
+      "modelsUsed": [
+        "gpt-5.5"
+      ],
+      "topModel": "gpt-5.5",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
+    },
+    {
+      "index": 1433,
+      "sessionId": "2026/08/27/rollout-2026-08-27T08-41-25-01a043e2-17aa-71a1-89a6-80144cfab88d",
+      "date": "2026-09-02",
+      "lastActivity": "2026-09-02T21:42:56.317Z",
+      "totalTokens": 31578512,
+      "totalCost": 37.5077632,
+      "inputTokens": 1188344,
+      "outputTokens": 94104,
+      "cacheReadTokens": 30296064,
+      "cacheCreationTokens": 0,
+      "reasoningOutputTokens": 25955,
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "topModel": "gpt-5.6-sol",
+      "agent": "codex",
+      "sourceMachine": "ganstlr-macbook-2026"
     }
   ],
   "theme": {
-    "date": "2026-09-02",
-    "name": "blue 211",
-    "hue": 211,
-    "saturation": 78,
-    "lightness": 55,
-    "hex": "#3389e6",
-    "light": "#89b8ec",
-    "dark": "#0d5caf"
+    "date": "2026-09-03",
+    "name": "green 149",
+    "hue": 149,
+    "saturation": 81,
+    "lightness": 59,
+    "hex": "#42eb94",
+    "light": "#98f0c3",
+    "dark": "#0cc665"
   },
   "collection": {
     "mode": "cumulative-machine-snapshots-v1",
@@ -30430,34 +30467,34 @@
     "legacyBaselineGeneratedAt": "2026-07-27T07:31:25.480Z",
     "machines": {
       "ganstlr-macbook-2026": {
-        "generatedAt": "2026-09-02T07:00:31.994Z",
+        "generatedAt": "2026-09-03T07:01:47.611Z",
         "totals": {
-          "totalTokens": 8347906380,
-          "totalCost": 9374.0667126,
-          "inputTokens": 236127318,
-          "outputTokens": 22607939,
-          "cacheReadTokens": 8089171123,
+          "totalTokens": 8349729527,
+          "totalCost": 9377.5939283,
+          "inputTokens": 236380773,
+          "outputTokens": 22610271,
+          "cacheReadTokens": 8090738483,
           "cacheCreationTokens": 0,
-          "reasoningOutputTokens": 8621187
+          "reasoningOutputTokens": 8621565
         },
         "models": [
           {
             "name": "gpt-5.6-sol",
-            "totalTokens": 7937473402,
+            "totalTokens": 7939229842,
             "totalCost": 12.510593599999998,
-            "inputTokens": 197910252,
-            "outputTokens": 21862875,
-            "cacheReadTokens": 7717700275,
+            "inputTokens": 198134494,
+            "outputTokens": 21865089,
+            "cacheReadTokens": 7719230259,
             "cacheCreationTokens": 0,
-            "reasoningOutputTokens": 8335379
+            "reasoningOutputTokens": 8335757
           },
           {
             "name": "gpt-5.5",
-            "totalTokens": 213512045,
+            "totalTokens": 213578752,
             "totalCost": 0,
-            "inputTokens": 33767188,
-            "outputTokens": 252249,
-            "cacheReadTokens": 179492608,
+            "inputTokens": 33796401,
+            "outputTokens": 252367,
+            "cacheReadTokens": 179529984,
             "cacheCreationTokens": 0,
             "reasoningOutputTokens": 97684
           },
@@ -31850,6 +31887,43 @@
                 "cacheCreationTokens": 0,
                 "reasoningOutputTokens": 144096,
                 "totalTokens": 88924324
+              }
+            ]
+          },
+          {
+            "date": "2026-09-02",
+            "totalTokens": 1823147,
+            "totalCost": 3.5272157000000006,
+            "inputTokens": 253455,
+            "outputTokens": 2332,
+            "cacheReadTokens": 1567360,
+            "cacheCreationTokens": 0,
+            "reasoningOutputTokens": 378,
+            "modelsUsed": [
+              "gpt-5.5",
+              "gpt-5.6-sol"
+            ],
+            "topModel": "gpt-5.6-sol",
+            "modelBreakdowns": [
+              {
+                "modelName": "gpt-5.5",
+                "cost": 0,
+                "inputTokens": 29213,
+                "outputTokens": 118,
+                "cacheReadTokens": 37376,
+                "cacheCreationTokens": 0,
+                "reasoningOutputTokens": 0,
+                "totalTokens": 66707
+              },
+              {
+                "modelName": "gpt-5.6-sol",
+                "cost": 0,
+                "inputTokens": 224242,
+                "outputTokens": 2214,
+                "cacheReadTokens": 1529984,
+                "cacheCreationTokens": 0,
+                "reasoningOutputTokens": 378,
+                "totalTokens": 1756440
               }
             ]
           }
