@@ -24,7 +24,7 @@ assert(readme.includes(data.totals.totalTokens.toLocaleString('en-US')));
 assert(readme.includes(data.totals.activeDays.toLocaleString('en-US')));
 assert(readme.includes(data.totals.sessions.toLocaleString('en-US')));
 assert(readme.includes(data.totals.favoriteModel?.name || 'unknown'));
-assert(readme.includes('auto-refreshes once daily when this Mac is available'));
+assert(readme.includes('updates periodically when this Mac is available'));
 
 assert.equal(data.range.endDate, phoenixDate(new Date(data.generatedAt)));
 assert(visualContract.lastDailyDate <= data.range.endDate);
@@ -33,8 +33,9 @@ assert(data.totals.totalCost > 0);
 
 for (const requiredLauncherBehavior of [
   'last-success-date',
+  'profile-publication-schedule.mjs" --claim',
   'already completed for $today; repository sync complete',
-  'Recovered today\'s pending token counter commit',
+  'Recovered pending commits; deferring fresh generation',
   'printf \'%s\\n\' "$today" > "$SUCCESS_FILE"',
   'source "$SCRIPT_DIR/token-counter-git-sync.zsh"'
 ]) {
@@ -45,6 +46,10 @@ assert(
   launcher.indexOf('sync_main') <
     launcher.indexOf('already completed for $today; repository sync complete'),
   'Repository synchronization must happen before the daily-success skip.'
+);
+assert(
+  launcher.indexOf('profile-publication-schedule.mjs') < launcher.indexOf('"$GIT" config'),
+  'Publication gate must run before any Git operation.'
 );
 for (const requiredSyncBehavior of [
   '"$GIT" fetch origin main',
@@ -65,7 +70,7 @@ assert(plist.includes('<key>CODEX_USAGE_MACHINE_ID</key>\n    <string>ganstlr-ma
 assert(!plist.includes('/Users/ganeshtalluri/'));
 assert(launcher.includes('TOOL_ROOT="${CODEX_USAGE_TOOL_ROOT:-$HOME/.local/share/codex-usage-tools}"'));
 
-console.log(`Verified once-daily scheduling and synchronized README graph through ${visualContract.lastDailyDate}: ${data.totals.totalTokens.toLocaleString('en-US')} tokens.`);
+console.log(`Verified scheduled publication and synchronized README graph through ${visualContract.lastDailyDate}: ${data.totals.totalTokens.toLocaleString('en-US')} tokens.`);
 
 function phoenixDate(date) {
   const parts = new Intl.DateTimeFormat('en-US', {

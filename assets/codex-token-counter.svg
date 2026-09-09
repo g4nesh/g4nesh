@@ -13,7 +13,7 @@
   <rect width="720" height="190" rx="16" fill="#ffffff" filter="url(#shadow)"/>
   <rect x="0" y="0" width="8" height="190" rx="4" fill="url(#accent)"/>
   <text x="32" y="40" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="18" font-weight="700">Tokenmaxxing stats</text>
-  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from Jan 1, 2026 - Sep 9, 2026; refreshed once daily when available.</text>
+  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from Jan 1, 2026 - Sep 9, 2026; refreshed periodically when available.</text>
   <text x="32" y="120" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="44" font-weight="800">17.86B</text>
   <text x="32" y="144" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">17,860,475,944 total tokens</text>
   <g transform="translate(310 96)">

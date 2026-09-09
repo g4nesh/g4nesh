@@ -12,11 +12,6 @@ STATE_DIR="${TOKEN_COUNTER_STATE_DIR:-$LOG_DIR}"
 SUCCESS_FILE="$STATE_DIR/last-success-date"
 LOCK_DIR="$STATE_DIR/token-counter.lock"
 LOCK_STALE_SECONDS="${TOKEN_COUNTER_LOCK_STALE_SECONDS:-1800}"
-FORCE_RUN="${TOKEN_COUNTER_FORCE:-0}"
-
-if [[ "${1:-}" == "--force" ]]; then
-  FORCE_RUN=1
-fi
 
 export PATH="${GIT:h}:${NODE:h}:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export TZ="${TZ:-America/Phoenix}"
@@ -54,14 +49,19 @@ cleanup() {
 }
 trap cleanup EXIT
 
-pending_commit_is_today_token_update() {
-  local subject commit_date
-  subject="$("$GIT" log -1 --format=%s)"
-  commit_date="$("$GIT" log -1 --date=format-local:'%Y-%m-%d' --format=%ad)"
-  [[ "$subject" == "Update Codex token counter" && "$commit_date" == "$today" ]]
-}
-
 today="$(date '+%Y-%m-%d')"
+# This gate also applies to manual wrapper starts and the former --force flag.
+# The existing lock serializes state reservation and the entire publishing run.
+if "$NODE" "$SCRIPT_DIR/profile-publication-schedule.mjs" --claim "$STATE_DIR/publication-schedule.json"; then
+  :
+else
+  schedule_exit=$?
+  if [[ "$schedule_exit" == "3" ]]; then
+    exit 0
+  fi
+  exit "$schedule_exit"
+fi
+
 cd "$REPO"
 
 "$GIT" config user.name "${TOKEN_COUNTER_GIT_NAME:-MacBook token updater}"
@@ -79,16 +79,14 @@ ahead_count="$("$GIT" rev-list --count origin/main..HEAD 2>/dev/null || echo 0)"
 if [[ "$ahead_count" != "0" ]]; then
   echo "Pushing $ahead_count pending local commit(s) before update."
   push_main
-  if pending_commit_is_today_token_update; then
-    printf '%s\n' "$today" > "$SUCCESS_FILE"
-    echo "Recovered today's pending token counter commit; no second daily update is needed."
-    "$GIT" status --short --branch
-    echo "==== $(date -u '+%Y-%m-%dT%H:%M:%SZ') profile token counter complete ===="
-    exit 0
-  fi
+  printf '%s\n' "$today" > "$SUCCESS_FILE"
+  echo "Recovered pending commits; deferring fresh generation to the next eligible date."
+  "$GIT" status --short --branch
+  echo "==== $(date -u '+%Y-%m-%dT%H:%M:%SZ') profile token counter complete ===="
+  exit 0
 fi
 
-if [[ "$FORCE_RUN" != "1" && -f "$SUCCESS_FILE" ]] && grep -qx "$today" "$SUCCESS_FILE"; then
+if [[ -f "$SUCCESS_FILE" ]] && grep -qx "$today" "$SUCCESS_FILE"; then
   echo "Profile token counter already completed for $today; repository sync complete."
   echo "==== $(date -u '+%Y-%m-%dT%H:%M:%SZ') profile token counter complete ===="
   exit 0
