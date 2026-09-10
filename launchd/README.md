@@ -6,18 +6,27 @@ an eligible date, after a varied time between 10:00 and 21:00 America/Phoenix.
 Actual execution is on the next hourly check while the Mac is awake, before
 23:00. Later checks let that date expire.
 
-- Weekdays have one possible update, with roughly 15% left unscheduled.
-- Each weekend selects either Saturday or Sunday, allowing at most one update
-  across the entire weekend. A pause or a missed selected date can yield zero.
-- Short pauses last 4–5 calendar days, separated by 25–50 days.
-- The first 14-day pause starts 120–240 days after initialization. Later long
-  pauses start 180–365 days after the preceding long pause ends.
+- Weekdays have one possible update except during planned pauses.
+- Each weekend has a 15% chance of being active and an 85% chance of staying
+  quiet. An active weekend selects either Saturday or Sunday, allowing at most
+  one update across the entire weekend. Pauses and missed checks can reduce
+  actual publication below 15%; this is a probability, not a fixed quota.
+- Short pauses last 1–2 calendar days, roughly every 4–8 weeks. They start on
+  Tuesday or Wednesday so they do not combine with quiet weekends into longer
+  routine breaks. The separate random weekday-skip rule has been removed.
+- The first 14-day pause starts 180–365 days after initialization. Later long
+  pauses start 365–395 days after the preceding long pause starts, roughly
+  once per year and never twice within a rolling 365-day interval.
 - Long pauses take priority over short pauses and weekend publication.
 
 The random seed and start date live in `publication-schedule.json` under the
 state directory. Restarts and repeated checks preserve the plan. Missed dates
 expire; there is no burst of catch-up commits. The next eligible update still
 collects cumulative usage, including usage accumulated during pauses.
+
+The revised policy reuses the existing seed, start date, and last attempt
+marker. No state reset is needed, and an already reserved date stays reserved.
+Planned future dates change when policy parameters are intentionally updated.
 
 The wrapper acquires its existing lock and reserves an eligible date before
 any Git operation. A failed or interrupted attempt consumes that date. On the
@@ -109,8 +118,9 @@ node scripts/verify-codex-token-counter.mjs
 zsh scripts/verify-token-counter-git-sync.zsh
 ```
 
-The schedule verifier simulates two years for 12 seeds and checks weekend
-limits, both short pause lengths, long pauses, timezone boundaries, durable
+The schedule verifier simulates two years for 12 seeds and checks the weekend
+participation rate and limit, both short pause lengths, annual spacing, no
+routine breaks longer than two days, timezone boundaries, durable
 reservations, migration, preview immutability, and wrapper refusal before Git.
 
 ## Install and inspect

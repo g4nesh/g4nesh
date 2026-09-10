@@ -42,15 +42,19 @@ export function pauses(state, throughDate) {
   const anchor = dayOf(state.startDate);
   const through = dayOf(throughDate) + 20;
   const long = [];
-  let start = anchor + integer(state, 'long:first', 120, 240);
+  let start = anchor + integer(state, 'long:first', 180, 365);
   for (let index = 0; start <= through; index++) {
     long.push({ start, end: start + 14, length: 14 });
-    start += 14 + integer(state, `long:next:${index}`, 180, 365);
+    start += integer(state, `long:next:${index}`, 365, 395);
   }
   const short = [];
   start = anchor + integer(state, 'short:first', 25, 50);
   for (let index = 0; start <= through; index++) {
-    const length = integer(state, `short:length:${index}`, 4, 5);
+    // Keep brief pauses away from weekends so they do not join into 4-5 days.
+    const weekday = new Date(start * dayMs).getUTCDay();
+    const target = integer(state, `short:weekday:${index}`, 2, 3);
+    start += (target - weekday + 7) % 7;
+    const length = integer(state, `short:length:${index}`, 1, 2);
     const pause = { start, end: start + length, length };
     if (!long.some((other) => pause.start <= other.end + 2 && pause.end >= other.start - 2)) {
       short.push(pause);
@@ -73,10 +77,11 @@ export function decision(state, now) {
   const weekday = new Date(`${date}T00:00:00Z`).getUTCDay();
   if (weekday === 0 || weekday === 6) {
     const saturday = dateAt(day - (weekday === 0 ? 1 : 0));
+    if (integer(state, `weekend:enabled:${saturday}`, 0, 99) >= 15) {
+      return { date, due: false, reason: 'Quiet weekend (85% of weekends)' };
+    }
     const chosen = integer(state, `weekend:${saturday}`, 0, 1) === 0 ? 6 : 0;
     if (weekday !== chosen) return { date, due: false, reason: 'Other day selected for this weekend' };
-  } else if (integer(state, `skip:${date}`, 0, 99) < 15) {
-    return { date, due: false, reason: 'Unscheduled weekday' };
   }
   const windows = [[10 * 60, 13 * 60], [14 * 60, 18 * 60], [19 * 60, 21 * 60]];
   const window = windows[integer(state, `window:${date}`, 0, windows.length - 1)];
