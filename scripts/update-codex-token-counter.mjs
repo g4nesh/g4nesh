@@ -67,7 +67,6 @@ function renderSvg(payload, theme) {
   const total = compact(payload.totals.totalTokens);
   const exactTotal = integer(payload.totals.totalTokens);
   const costValue = money(payload.totals.totalCost);
-  const rate = money(payload.pricing.usdPerMillionTokens);
   const range = 'OpenAI account lifetime';
   const active = payload.summary.currentStreakDays == null ? 'n/a' : integer(payload.summary.currentStreakDays);
   const peak = payload.summary.peakDailyTokens == null ? 'n/a' : compact(payload.summary.peakDailyTokens);
@@ -95,7 +94,7 @@ function renderSvg(payload, theme) {
     ${metric('Peak day', peak, 120)}
     ${metric('Est. cost', costValue, 240)}
   </g>
-  <text x="310" y="156" fill="#374151" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Estimate: ${xml(rate)} / 1M tokens (historical average)</text>
+  <text x="310" y="156" fill="#374151" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Estimated API equivalent; not actual spend</text>
   <text x="310" y="176" fill="#9ca3af" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Updated ${xml(updated)}</text>
 </svg>`;
 }
@@ -224,7 +223,6 @@ function renderReadmeCounter(payload) {
   const rows = [
     ['lifetime tokens', `${integer(payload.totals.totalTokens)} (${compact(payload.totals.totalTokens)})`],
     ['est. API cost', money(payload.totals.totalCost)],
-    ['avg. cost / 1M', money(payload.pricing.usdPerMillionTokens)],
     ['current streak', payload.summary.currentStreakDays == null ? 'unavailable' : `${integer(payload.summary.currentStreakDays)} days`],
     ['daily history', range],
     ['history tokens', integer(payload.dailyCoverage.totalTokens)],
