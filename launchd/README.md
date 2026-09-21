@@ -40,11 +40,33 @@ This policy applies only to this profile counter. It does not change Portfolio,
 other repositories, manual commits, or GitHub Actions. Author information,
 commit messages, and real commit timestamps remain unchanged.
 
-The output uses cumulative machine snapshots. The existing GitHub data is the
-legacy baseline; `ganstlr-macbook-2026` is refreshed by subtracting its prior
-snapshot and adding its latest local snapshot. Repeated runs are therefore
-idempotent, and the public total cannot reset merely because this Mac does not
-contain the old Mac's private Codex session archive.
+## Account tokens and estimated cost
+
+The counter now calls the documented [`account/usage/read`](https://learn.chatgpt.com/docs/app-server#7-token-usage-chatgpt)
+method through `codex app-server`, using the existing ChatGPT login. It uses
+OpenAI's account lifetime token count across devices, replacing local ccusage
+logs and cumulative machine snapshots entirely. Each refresh replaces the
+previous account snapshot; running on another device does not add the same
+usage again. No session archives or authentication tokens are read or published.
+
+The headline is `summary.lifetimeTokens`. The graph sums only the returned
+`dailyUsageBuckets`; the service can return a limited history or null, and its
+bucket sum can differ from the lifetime summary. Both totals and the covered
+dates are disclosed. Missing tokens are never placed onto invented dates. If
+daily history is unavailable, the graph says so. Model, session, input, output,
+and cache breakdowns are unavailable from this endpoint and are not reported.
+An unavailable lifetime counter, invalid response, login error, or timeout
+stops generation before replacing the last successful public report.
+
+Cost is an **estimated API equivalent**, not a subscription charge or an
+OpenAI quote. `data/token-pricing.json` fixes the historical blended average at
+**$1.3515137053468262 per million tokens**, calculated from the previous public
+report: $17,673.6958676 / 13,076,963,850 tokens × 1,000,000. Each estimate is
+`account tokens / 1,000,000 × average`. The average inherits the old estimate's
+assumptions and is applied uniformly because OpenAI does not return the actual
+model, speed, or input/output/cache mix here. Edit `usdPerMillionTokens` in that
+file to choose a different average; changing it reprices all displayed tokens.
+The old merge utility remains only for its historical regression tests.
 
 ## Runtime
 
@@ -56,14 +78,28 @@ Tools:      /Users/ganstlr/.local/share/codex-usage-tools
 State/logs: /Users/ganstlr/.local/state/github-profile-token-counter
 ```
 
-The LaunchAgent supplies absolute paths for Node, Git, Python with Pillow, and
-the pinned `ccusage` 20.0.14 CLI. It does not depend on interactive shell
-configuration. GitHub authentication is provided by GitHub CLI's Git
+The LaunchAgent supplies absolute paths for Node, Git, and Python with Pillow.
+The updater also needs a current Codex app or CLI signed in to the intended
+ChatGPT account. It does not depend on interactive shell configuration. GitHub authentication is provided by GitHub CLI's Git
 credential helper.
 
 The tools directory currently points to the Codex-bundled Node, Git, and Python
 distributions. Recreate those links if the Codex runtime cache is removed or
 relocated.
+
+The reader checks `/Applications/ChatGPT.app/Contents/Resources/codex`, then
+`/Applications/Codex.app/Contents/Resources/codex`, then `codex` on PATH. Set
+`CODEX_BIN` to an absolute executable path if needed. `CODEX_HOME` is inherited.
+No API key is needed. On an older Codex build without `account/usage/read`,
+update Codex instead of falling back to local token logs.
+
+Existing installed plists may still contain CCUSAGE or machine-ID environment
+variables; the new updater ignores them. The wrapper fetches repository changes
+before generating, so an existing scheduled publisher adopts this reader on
+its next eligible run. The plist in this repository no longer sets those
+variables. Repository and runtime paths below describe the existing publishing
+Mac; adapt them if installing elsewhere. Do not initialize a second independent
+publisher schedule for the same repository.
 
 ## Safe manual test
 
@@ -71,7 +107,6 @@ The generator can be run without committing or pushing:
 
 ```zsh
 cd /Users/ganstlr/.local/share/github-profile-token-counter/g4nesh
-CCUSAGE_COMMAND="/Users/ganstlr/.local/share/codex-usage-tools/runtime/node/bin/node /Users/ganstlr/.local/share/codex-usage-tools/node_modules/ccusage/src/cli.js" \
 PYTHON_WITH_PIL="/Users/ganstlr/.local/share/codex-usage-tools/runtime/python/bin/python3" \
 PATH="/Users/ganstlr/.local/share/codex-usage-tools/runtime/bin/fallback:/Users/ganstlr/.local/share/codex-usage-tools/runtime/node/bin:/Users/ganstlr/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin" \
 /Users/ganstlr/.local/share/codex-usage-tools/runtime/node/bin/node \
@@ -113,6 +148,7 @@ Node.js 22 or newer, Git, and zsh already available, the equivalent checks are:
 node --check scripts/profile-publication-schedule.mjs
 zsh -n scripts/update-codex-token-counter.sh
 node scripts/verify-publication-schedule.mjs
+node scripts/verify-account-usage.mjs
 node scripts/verify-cumulative-usage.mjs
 node scripts/verify-codex-token-counter.mjs
 zsh scripts/verify-token-counter-git-sync.zsh
