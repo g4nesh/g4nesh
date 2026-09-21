@@ -24,18 +24,8 @@
     <string>/Users/ganstlr/.local/share/codex-usage-tools/runtime/bin/fallback/git</string>
     <key>PYTHON_WITH_PIL</key>
     <string>/Users/ganstlr/.local/share/codex-usage-tools/runtime/python/bin/python3</string>
-    <key>CCUSAGE_COMMAND</key>
-    <string>/Users/ganstlr/.local/share/codex-usage-tools/runtime/node/bin/node /Users/ganstlr/.local/share/codex-usage-tools/node_modules/ccusage/src/cli.js</string>
     <key>TZ</key>
     <string>America/Phoenix</string>
-    <key>TOKEN_COUNTER_START_DATE</key>
-    <string>2026-01-01</string>
-    <key>CODEX_USAGE_SPEED</key>
-    <string>fast</string>
-    <key>CCUSAGE_VERSION</key>
-    <string>20.0.14</string>
-    <key>CODEX_USAGE_MACHINE_ID</key>
-    <string>ganstlr-macbook-2026</string>
     <key>GIT_TERMINAL_PROMPT</key>
     <string>0</string>
   </dict>

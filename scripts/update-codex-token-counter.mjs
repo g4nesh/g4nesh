@@ -4,7 +4,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { mergeCumulativeUsage } from './merge-cumulative-usage.mjs';
+import { readAccountUsage, buildAccountPayload } from './codex-account-usage.mjs';
 import { verifyProfileTokenVisuals } from './token-visual-contract.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
@@ -16,25 +16,13 @@ const trendSvgPath = path.join(repoRoot, 'assets', 'codex-token-trend.svg');
 const asciiGifPath = path.join(repoRoot, 'assets', 'g4nesh-ascii.gif');
 const asciiSourceGifPath = path.join(repoRoot, 'assets', 'g4nesh-ascii-source.gif');
 const asciiRecolorScriptPath = path.join(scriptDir, 'recolor-ascii-gif.py');
-const codexHome = process.env.CODEX_HOME || path.join(os.homedir(), '.codex');
-const startDate = process.env.TOKEN_COUNTER_START_DATE || '2026-01-01';
 const timezone = process.env.TZ || 'America/Phoenix';
-const endDate = process.env.TOKEN_COUNTER_END_DATE || currentDate(timezone);
-const codexUsageSpeed = codexSpeedTier(process.env.CODEX_USAGE_SPEED || 'fast');
-const ccusageVersion = process.env.CCUSAGE_VERSION || '20.0.14';
-const machineId = process.env.CODEX_USAGE_MACHINE_ID || os.hostname();
+const endDate = currentDate(timezone);
 const noCommit = process.argv.includes('--no-commit');
 const noPush = process.argv.includes('--no-push');
-
-const ccusage = resolveCcusageCommand();
-const dailyRaw = runCcusage('daily');
-const sessionRaw = runCcusage('session');
-const localPayload = {
-  ...buildPayload(dailyRaw, sessionRaw),
-  theme: dailyTheme(endDate)
-};
-const previousPayload = readExistingPayload();
-const payload = mergeCumulativeUsage(previousPayload, localPayload, machineId);
+const pricing = JSON.parse(readFileSync(path.join(repoRoot, 'data', 'token-pricing.json'), 'utf8'));
+const usage = await readAccountUsage();
+const payload = { ...buildAccountPayload(usage, pricing), theme: dailyTheme(endDate) };
 
 mkdirSync(path.dirname(dataPath), { recursive: true });
 mkdirSync(path.dirname(svgPath), { recursive: true });
@@ -62,7 +50,7 @@ console.log(
   `Verified README token graph through ${visualContract.lastDailyDate} ` +
   `(${visualContract.days} days).`
 );
-console.log(`Cumulative machine: ${machineId}`);
+console.log(`Source: ${payload.source}`);
 console.log(`Range: ${payload.range.startDate} to ${payload.range.endDate}`);
 console.log(`Total tokens: ${payload.totals.totalTokens.toLocaleString('en-US')}`);
 console.log(`Estimated cost: $${payload.totals.totalCost.toFixed(2)}`);
@@ -72,150 +60,6 @@ if (!noCommit) {
   commitAndPush();
 }
 
-function runCcusage(report) {
-  const stdout = execFileSync(ccusage.command, [...ccusage.args, 'codex', report, '--json', '--speed', codexUsageSpeed], {
-    cwd: repoRoot,
-    encoding: 'utf8',
-    env: {
-      ...process.env,
-      CODEX_HOME: codexHome,
-      NO_COLOR: '1',
-      FORCE_COLOR: '0'
-    },
-    maxBuffer: 128 * 1024 * 1024
-  });
-  return JSON.parse(stdout);
-}
-
-function readExistingPayload() {
-  if (!existsSync(dataPath)) {
-    return null;
-  }
-
-  try {
-    return JSON.parse(readFileSync(dataPath, 'utf8'));
-  } catch (error) {
-    throw new Error(
-      `Unable to read cumulative usage baseline at ${dataPath}: ${error.message}`
-    );
-  }
-}
-
-function buildPayload(dailyRaw, sessionRaw) {
-  const daily = (dailyRaw.daily || [])
-    .map(normalizeDay)
-    .filter((day) => day.date >= startDate && day.date <= endDate)
-    .sort((a, b) => a.date.localeCompare(b.date));
-
-  const sessions = (sessionRaw.sessions || sessionRaw.session || [])
-    .map(normalizeSession)
-    .filter((session) => session.date >= startDate && session.date <= endDate)
-    .sort((a, b) => String(a.lastActivity || a.date).localeCompare(String(b.lastActivity || b.date)));
-
-  const models = modelTotals(daily);
-  const totals = {
-    totalTokens: daily.reduce((sum, day) => sum + day.totalTokens, 0),
-    totalCost: daily.reduce((sum, day) => sum + day.totalCost, 0),
-    inputTokens: daily.reduce((sum, day) => sum + day.inputTokens, 0),
-    outputTokens: daily.reduce((sum, day) => sum + day.outputTokens, 0),
-    cacheReadTokens: daily.reduce((sum, day) => sum + day.cacheReadTokens, 0),
-    cacheCreationTokens: daily.reduce((sum, day) => sum + day.cacheCreationTokens, 0),
-    reasoningOutputTokens: daily.reduce((sum, day) => sum + day.reasoningOutputTokens, 0),
-    activeDays: daily.filter((day) => day.totalTokens > 0).length,
-    sessions: sessions.length,
-    favoriteModel: models[0] || null
-  };
-
-  return {
-    generatedAt: new Date().toISOString(),
-    source: `ccusage codex daily/session --json --speed ${codexUsageSpeed}`,
-    pricing: {
-      codexSpeed: codexUsageSpeed,
-      ccusageVersion
-    },
-    scope: 'codex usage since 2026-01-01',
-    range: {
-      startDate,
-      endDate,
-      firstTrackedDay: daily[0]?.date || null,
-      lastTrackedDay: daily.at(-1)?.date || null
-    },
-    totals,
-    models,
-    daily,
-    sessions
-  };
-}
-
-function normalizeDay(row) {
-  const breakdowns = modelBreakdowns(row);
-  return {
-    date: row.date || row.period,
-    totalTokens: tokenTotal(row),
-    totalCost: cost(row),
-    inputTokens: Number(row.inputTokens || 0),
-    outputTokens: Number(row.outputTokens || 0),
-    cacheReadTokens: Number(row.cacheReadTokens || 0),
-    cacheCreationTokens: Number(row.cacheCreationTokens || 0),
-    reasoningOutputTokens: Number(row.reasoningOutputTokens || 0),
-    modelsUsed: row.modelsUsed || Object.keys(row.models || {}),
-    topModel: topModel(breakdowns, Object.keys(row.models || {})).name,
-    modelBreakdowns: breakdowns
-  };
-}
-
-function normalizeSession(row, index) {
-  const breakdowns = modelBreakdowns(row);
-  const date = dateFromPeriod(row.period || row.sessionId || row.directory, row.lastActivity || row.metadata?.lastActivity || row.startTime);
-  return {
-    index: index + 1,
-    sessionId: row.sessionId || row.period || row.sessionFile || null,
-    date,
-    lastActivity: row.lastActivity || row.metadata?.lastActivity || row.startTime || null,
-    totalTokens: tokenTotal(row),
-    totalCost: cost(row),
-    inputTokens: Number(row.inputTokens || 0),
-    outputTokens: Number(row.outputTokens || 0),
-    cacheReadTokens: Number(row.cacheReadTokens || 0),
-    cacheCreationTokens: Number(row.cacheCreationTokens || 0),
-    reasoningOutputTokens: Number(row.reasoningOutputTokens || 0),
-    modelsUsed: row.modelsUsed || Object.keys(row.models || {}),
-    topModel: topModel(breakdowns, Object.keys(row.models || {})).name,
-    agent: row.agent || 'codex'
-  };
-}
-
-function modelTotals(days) {
-  const modelMap = new Map();
-
-  for (const day of days) {
-    for (const breakdown of day.modelBreakdowns || []) {
-      const name = breakdown.modelName || 'unknown';
-      const previous = modelMap.get(name) || {
-        name,
-        totalTokens: 0,
-        totalCost: 0,
-        inputTokens: 0,
-        outputTokens: 0,
-        cacheReadTokens: 0,
-        cacheCreationTokens: 0,
-        reasoningOutputTokens: 0
-      };
-
-      previous.inputTokens += Number(breakdown.inputTokens || 0);
-      previous.outputTokens += Number(breakdown.outputTokens || 0);
-      previous.cacheReadTokens += Number(breakdown.cacheReadTokens || 0);
-      previous.cacheCreationTokens += Number(breakdown.cacheCreationTokens || 0);
-      previous.reasoningOutputTokens += Number(breakdown.reasoningOutputTokens || 0);
-      previous.totalCost += Number(breakdown.cost || 0);
-      previous.totalTokens += tokenTotal(breakdown);
-      modelMap.set(name, previous);
-    }
-  }
-
-  return [...modelMap.values()].sort((a, b) => b.totalTokens - a.totalTokens);
-}
-
 function renderSvg(payload, theme) {
   const width = 720;
   const height = 190;
@@ -223,13 +67,13 @@ function renderSvg(payload, theme) {
   const total = compact(payload.totals.totalTokens);
   const exactTotal = integer(payload.totals.totalTokens);
   const costValue = money(payload.totals.totalCost);
-  const favorite = payload.totals.favoriteModel?.name || 'none yet';
-  const range = `${displayDate(payload.range.startDate)} - ${displayDate(payload.range.endDate)}`;
-  const active = integer(payload.totals.activeDays);
-  const sessions = integer(payload.totals.sessions);
+  const rate = money(payload.pricing.usdPerMillionTokens);
+  const range = 'OpenAI account lifetime';
+  const active = payload.summary.currentStreakDays == null ? 'n/a' : integer(payload.summary.currentStreakDays);
+  const peak = payload.summary.peakDailyTokens == null ? 'n/a' : compact(payload.summary.peakDailyTokens);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
-  <title id="title">Tokenmaxxing stats since January 1, 2026</title>
+  <title id="title">Tokenmaxxing stats — OpenAI account lifetime</title>
   <desc id="desc">${xml(`${exactTotal} Codex tokens tracked from ${range}. Updated ${updated}.`)}</desc>
   <defs>
     <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
@@ -243,15 +87,15 @@ function renderSvg(payload, theme) {
   <rect width="${width}" height="${height}" rx="16" fill="#ffffff" filter="url(#shadow)"/>
   <rect x="0" y="0" width="8" height="${height}" rx="4" fill="url(#accent)"/>
   <text x="32" y="40" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="18" font-weight="700">Tokenmaxxing stats</text>
-  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Tracked with ccusage from ${xml(range)}; refreshed periodically when available.</text>
+  <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">OpenAI account lifetime tokens across devices; refreshed periodically.</text>
   <text x="32" y="120" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="44" font-weight="800">${xml(total)}</text>
   <text x="32" y="144" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">${xml(exactTotal)} total tokens</text>
   <g transform="translate(310 96)">
-    ${metric('Active days', active, 0)}
-    ${metric('Sessions', sessions, 120)}
+    ${metric('Streak days', active, 0)}
+    ${metric('Peak day', peak, 120)}
     ${metric('Est. cost', costValue, 240)}
   </g>
-  <text x="310" y="156" fill="#374151" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Top model: ${xml(favorite)}</text>
+  <text x="310" y="156" fill="#374151" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Estimate: ${xml(rate)} / 1M tokens (historical average)</text>
   <text x="310" y="176" fill="#9ca3af" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Updated ${xml(updated)}</text>
 </svg>`;
 }
@@ -267,7 +111,7 @@ function renderTrendSvg(payload, theme) {
   const width = 380;
   const height = 226;
   const pad = { top: 34, right: 18, bottom: 36, left: 34 };
-  const days = payload.daily.filter((day) => day.totalTokens > 0);
+  const days = payload.daily;
   let runningTotal = 0;
   const series = days.map((day) => {
     runningTotal += day.totalTokens;
@@ -294,11 +138,11 @@ function renderTrendSvg(payload, theme) {
     .join('\n    ');
   const start = days[0]?.date ? displayShortDate(days[0].date) : 'n/a';
   const end = days.at(-1)?.date ? displayShortDate(days.at(-1).date) : 'n/a';
-  const total = compact(max);
+  const total = compact(runningTotal);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
   <title id="title">Codex tokens over time</title>
-  <desc id="desc">${xml(`Line graph of cumulative Codex tokens from ${start} to ${end}, ending at ${total}.`)}</desc>
+  <desc id="desc">${xml(`Line graph of returned daily Codex tokens from ${start} to ${end}, ending at ${total}.`)}</desc>
   <defs>
     <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
       <stop offset="0" stop-color="${xml(theme.dark)}"/>
@@ -315,14 +159,14 @@ function renderTrendSvg(payload, theme) {
   </defs>
   <rect width="${width}" height="${height}" rx="8" fill="#0d1117"/>
   <rect x=".5" y=".5" width="${width - 1}" height="${height - 1}" rx="8" fill="none" stroke="#30363d"/>
-  <text x="${pad.left}" y="22" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13" font-weight="650">tokens over time</text>
+  <text x="${pad.left}" y="22" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13" font-weight="650">returned daily history</text>
   <text x="${width - pad.right}" y="22" text-anchor="end" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="11">${xml(total)}</text>
   <g>
     ${grid}
     <line x1="${pad.left}" y1="${baseY}" x2="${width - pad.right}" y2="${baseY}" stroke="#30363d" stroke-width="1"/>
   </g>
   <g clip-path="url(#plot)">
-    ${area ? `<path d="${area}" fill="url(#area)"/>` : ''}
+${days.length === 0 ? '    <text x="190" y="116" text-anchor="middle" fill="#8b949e" font-size="12">Daily history unavailable</text>\n' : ''}    ${area ? `<path d="${area}" fill="url(#area)"/>` : ''}
     ${line ? `<path d="${line}" fill="none" stroke="url(#line)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>` : ''}
     ${points[0] ? `<circle cx="${points[0].x.toFixed(1)}" cy="${points[0].y.toFixed(1)}" r="2.5" fill="${xml(theme.dark)}"/>` : ''}
     ${points.at(-1) ? `<circle cx="${points.at(-1).x.toFixed(1)}" cy="${points.at(-1).y.toFixed(1)}" r="2.8" fill="${xml(theme.light)}"/>` : ''}
@@ -376,15 +220,14 @@ function updateReadme(current, payload) {
 
 function renderReadmeCounter(payload) {
   const updated = formatTimestamp(payload.generatedAt, timezone);
-  const range = `${displayDate(payload.range.startDate)} -> ${displayDate(payload.range.endDate)}`;
-  const favorite = payload.totals.favoriteModel?.name || 'unknown';
+  const range = payload.daily.length ? `${displayDate(payload.range.startDate)} -> ${displayDate(payload.range.endDate)}` : 'unavailable';
   const rows = [
-    ['tokens', `${integer(payload.totals.totalTokens)} (${compact(payload.totals.totalTokens)})`],
-    ['cost', money(payload.totals.totalCost)],
-    ['active days', integer(payload.totals.activeDays)],
-    ['sessions', integer(payload.totals.sessions)],
-    ['top model', favorite],
-    ['range', range],
+    ['lifetime tokens', `${integer(payload.totals.totalTokens)} (${compact(payload.totals.totalTokens)})`],
+    ['est. API cost', money(payload.totals.totalCost)],
+    ['avg. cost / 1M', money(payload.pricing.usdPerMillionTokens)],
+    ['current streak', payload.summary.currentStreakDays == null ? 'unavailable' : `${integer(payload.summary.currentStreakDays)} days`],
+    ['daily history', range],
+    ['history tokens', integer(payload.dailyCoverage.totalTokens)],
     ['updated', updated]
   ];
   const body = rows
@@ -400,7 +243,7 @@ function renderReadmeCounter(payload) {
     })
     .join('\n');
 
-  return `#### my yearly codex usage
+  return `#### my codex usage across devices
 
 <table width="100%">
   <thead>
@@ -415,7 +258,7 @@ ${body}
   </tbody>
 </table>
 
-<sub>updates periodically when this Mac is available via ccusage; graph and banner colors change with each refresh</sub>`;
+<sub>OpenAI account lifetime counter; updates periodically when this Mac is available. Cost is an estimate using a fixed historical average, not a bill. The graph covers only returned daily history (${integer(payload.dailyCoverage.totalTokens)} tokens), which may differ from lifetime usage. <a href="./launchd/README.md#account-tokens-and-estimated-cost">Method and pricing</a>.</sub>`;
 }
 
 function commitAndPush() {
@@ -494,57 +337,6 @@ function resolvePythonWithPillow() {
   }
 
   throw new Error('Could not find a Python 3 executable with Pillow installed. Set PYTHON_WITH_PIL to one before running the updater.');
-}
-
-function modelBreakdowns(row) {
-  if (Array.isArray(row.modelBreakdowns)) {
-    return row.modelBreakdowns;
-  }
-
-  const entries = Object.entries(row.models || {});
-  return entries.map(([modelName, usage]) => ({
-    modelName,
-    cost: usage.cost || usage.costUSD || (entries.length === 1 ? cost(row) : 0),
-    inputTokens: usage.inputTokens,
-    outputTokens: usage.outputTokens,
-    cacheReadTokens: usage.cacheReadTokens,
-    cacheCreationTokens: usage.cacheCreationTokens,
-    reasoningOutputTokens: usage.reasoningOutputTokens,
-    totalTokens: usage.totalTokens
-  }));
-}
-
-function topModel(breakdowns = [], fallback = []) {
-  let best = null;
-
-  for (const breakdown of breakdowns) {
-    const total = tokenTotal(breakdown);
-    if (!best || total > best.tokens) {
-      best = {
-        name: breakdown.modelName || 'unknown',
-        tokens: total
-      };
-    }
-  }
-
-  return best || { name: fallback[0] || 'unknown', tokens: 0 };
-}
-
-function tokenTotal(row) {
-  return Number(row.totalTokens || 0);
-}
-
-function cost(row) {
-  return Number(row.totalCost || row.costUSD || row.cost || 0);
-}
-
-function dateFromPeriod(period, lastActivity) {
-  if (lastActivity) {
-    return String(lastActivity).slice(0, 10);
-  }
-
-  const match = String(period || '').match(/(20\d{2})[/-](\d{2})[/-](\d{2})/);
-  return match ? `${match[1]}-${match[2]}-${match[3]}` : '';
 }
 
 function currentDate(targetTimezone) {
@@ -697,92 +489,4 @@ function md(value) {
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function resolveCcusageCommand() {
-  if (process.env.CCUSAGE_COMMAND) {
-    return splitCommand(process.env.CCUSAGE_COMMAND);
-  }
-
-  const cachedCliCandidates = [
-    path.join(os.homedir(), '.local', 'share', 'codex-usage-tools', 'node_modules', 'ccusage', 'src', 'cli.js'),
-    path.join(os.homedir(), '.local', 'share', 'codex-usage-tools', 'node_modules', 'ccusage', 'dist', 'cli.js')
-  ];
-  const cachedCli = cachedCliCandidates.find((candidate) => existsSync(candidate));
-  if (cachedCli) {
-    return {
-      command: process.execPath,
-      args: [cachedCli]
-    };
-  }
-
-  return {
-    command: 'npx',
-    args: ['--yes', `ccusage@${ccusageVersion}`]
-  };
-}
-
-function codexSpeedTier(value) {
-  if (['auto', 'standard', 'fast'].includes(value)) {
-    return value;
-  }
-
-  throw new Error(`Invalid CODEX_USAGE_SPEED "${value}". Expected auto, standard, or fast.`);
-}
-
-function splitCommand(commandText) {
-  const parts = [];
-  let current = '';
-  let quote = null;
-  let escaping = false;
-
-  for (const char of commandText.trim()) {
-    if (escaping) {
-      current += char;
-      escaping = false;
-      continue;
-    }
-
-    if (char === '\\') {
-      escaping = true;
-      continue;
-    }
-
-    if (quote) {
-      if (char === quote) {
-        quote = null;
-      } else {
-        current += char;
-      }
-      continue;
-    }
-
-    if (char === '"' || char === "'") {
-      quote = char;
-      continue;
-    }
-
-    if (/\s/.test(char)) {
-      if (current) {
-        parts.push(current);
-        current = '';
-      }
-      continue;
-    }
-
-    current += char;
-  }
-
-  if (current) {
-    parts.push(current);
-  }
-
-  if (quote || parts.length === 0) {
-    throw new Error('Invalid CCUSAGE_COMMAND.');
-  }
-
-  return {
-    command: parts[0],
-    args: parts.slice(1)
-  };
 }

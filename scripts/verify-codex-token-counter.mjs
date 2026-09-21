@@ -21,13 +21,17 @@ const visualContract = verifyProfileTokenVisuals({ payload: data, readme, counte
 assert(readme.includes('<!-- codex-token-counter:start -->'));
 assert(readme.includes('<!-- codex-token-counter:end -->'));
 assert(readme.includes(data.totals.totalTokens.toLocaleString('en-US')));
-assert(readme.includes(data.totals.activeDays.toLocaleString('en-US')));
-assert(readme.includes(data.totals.sessions.toLocaleString('en-US')));
-assert(readme.includes(data.totals.favoriteModel?.name || 'unknown'));
+assert.equal(data.source, 'OpenAI Codex account/usage/read');
+assert.equal(data.scope, 'account-lifetime');
+assert(!('cumulative' in data));
+assert(!('sessions' in data.totals));
+assert(!('favoriteModel' in data.totals));
+assert(readme.includes('est. API cost'));
+assert(readme.includes('not a bill'));
 assert(readme.includes('updates periodically when this Mac is available'));
 
-assert.equal(data.range.endDate, phoenixDate(new Date(data.generatedAt)));
-assert(visualContract.lastDailyDate <= data.range.endDate);
+assert.equal(data.range.endDate, data.daily.at(-1)?.date || null);
+assert(data.daily.length === 0 || visualContract.lastDailyDate <= data.range.endDate);
 assert(data.totals.totalTokens > 0);
 assert(data.totals.totalCost > 0);
 
@@ -66,19 +70,9 @@ assert(plist.includes('/scripts/update-codex-token-counter.sh'));
 assert(plist.includes('/Users/ganstlr/.local/share/codex-usage-tools/runtime/node/bin/node'));
 assert(plist.includes('/Users/ganstlr/.local/share/codex-usage-tools/runtime/bin/fallback/git'));
 assert(plist.includes('/Users/ganstlr/.local/share/codex-usage-tools/runtime/python/bin/python3'));
-assert(plist.includes('<key>CODEX_USAGE_MACHINE_ID</key>\n    <string>ganstlr-macbook-2026</string>'));
+assert(!plist.includes('CCUSAGE_COMMAND'));
+assert(!plist.includes('CODEX_USAGE_MACHINE_ID'));
 assert(!plist.includes('/Users/ganeshtalluri/'));
 assert(launcher.includes('TOOL_ROOT="${CODEX_USAGE_TOOL_ROOT:-$HOME/.local/share/codex-usage-tools}"'));
 
 console.log(`Verified scheduled publication and synchronized README graph through ${visualContract.lastDailyDate}: ${data.totals.totalTokens.toLocaleString('en-US')} tokens.`);
-
-function phoenixDate(date) {
-  const parts = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/Phoenix',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  }).formatToParts(date);
-  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
-  return `${values.year}-${values.month}-${values.day}`;
-}

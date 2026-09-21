@@ -10,7 +10,7 @@ export function verifyProfileTokenVisuals({
 }) {
   ensure(payload && typeof payload === 'object', 'Token usage payload is missing.');
   ensure(Number.isFinite(Date.parse(payload.generatedAt)), 'Token usage generatedAt is invalid.');
-  ensure(Array.isArray(payload.daily) && payload.daily.length > 0, 'Token usage has no trend data.');
+  ensure(Array.isArray(payload.daily), 'Token usage has no trend data.');
 
   const dates = payload.daily.map((day) => day.date);
   ensure(dates.every(Boolean), 'Every trend row must have a date.');
@@ -26,17 +26,20 @@ export function verifyProfileTokenVisuals({
 
   const dailyTotal = payload.daily.reduce((sum, day) => sum + day.totalTokens, 0);
   ensure(
-    dailyTotal === payload.totals?.totalTokens,
-    `Trend total ${dailyTotal} does not match headline total ${payload.totals?.totalTokens}.`
+    dailyTotal === payload.dailyCoverage?.totalTokens,
+    `Trend total ${dailyTotal} does not match daily coverage ${payload.dailyCoverage?.totalTokens}.`
   );
 
+  ensure(payload.scope === 'account-lifetime', 'Expected account lifetime usage.');
+  ensure(Number.isSafeInteger(payload.totals?.totalTokens) && payload.totals.totalTokens >= 0, 'Invalid lifetime total.');
+  ensure(payload.totals.totalCost === payload.totals.totalTokens / 1e6 * payload.pricing.usdPerMillionTokens, 'Cost must use the disclosed average.');
   const lastDailyDate = dates.at(-1);
   ensure(
-    payload.range?.endDate && lastDailyDate <= payload.range.endDate,
+    dates.length === 0 || (payload.range?.endDate && lastDailyDate <= payload.range.endDate),
     'Trend data extends beyond the published range.'
   );
 
-  const exactTotal = new Intl.NumberFormat('en-US').format(dailyTotal);
+  const exactTotal = new Intl.NumberFormat('en-US').format(payload.totals.totalTokens);
   const compactTotal = new Intl.NumberFormat('en-US', {
     notation: 'compact',
     maximumFractionDigits: 2
@@ -69,7 +72,7 @@ export function verifyProfileTokenVisuals({
   return {
     days: payload.daily.length,
     lastDailyDate,
-    totalTokens: dailyTotal
+    totalTokens: payload.totals.totalTokens
   };
 }
 
@@ -80,6 +83,7 @@ function ensure(condition, message) {
 }
 
 function displayShortDate(value) {
+  if (!value) return 'n/a';
   const [year, month, day] = value.split('-').map(Number);
   return new Intl.DateTimeFormat('en-US', {
     month: 'short',

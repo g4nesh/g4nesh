@@ -1,0 +1,11 @@
+{
+  "usdPerMillionTokens": 1.3515137053468262,
+  "method": "Fixed historical blended average; not an OpenAI published rate or actual subscription bill.",
+  "baseline": {
+    "generatedAt": "2026-09-18T20:13:48.007Z",
+    "totalTokens": 13076963850,
+    "estimatedCostUSD": 17673.6958676,
+    "source": "Previously published profile estimate (ccusage, fast speed)"
+  },
+  "note": "No input/output/cache, model, or speed breakdown is returned by account/usage/read. This historical average is an assumption applied uniformly to all account tokens. Edit usdPerMillionTokens to change it."
+}

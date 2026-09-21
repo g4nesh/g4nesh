@@ -1,6 +1,6 @@
 # GitHub profile repository
 
-The token-counter LaunchAgent publishes cumulative usage from this Mac.
+The token-counter LaunchAgent publishes OpenAI account usage across devices.
 Keep its persistent publication policy scoped to this repository; do not
 change Portfolio or other publishers as a side effect.
 
