@@ -8,6 +8,7 @@ COPY . .
 RUN node --check scripts/profile-publication-schedule.mjs \
     && zsh -n scripts/update-codex-token-counter.sh \
     && node scripts/verify-publication-schedule.mjs \
+    && node scripts/verify-account-usage.mjs
     && node scripts/verify-cumulative-usage.mjs \
     && node scripts/verify-codex-token-counter.mjs \
     && zsh scripts/verify-token-counter-git-sync.zsh

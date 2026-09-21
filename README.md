@@ -7,7 +7,7 @@ hi! i'm ganesh and below you can find most of the projects i've worked on throug
 for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
 
 <!-- codex-token-counter:start -->
-#### my yearly codex usage
+#### my codex usage across devices
 
 <table width="100%">
   <thead>
@@ -19,36 +19,36 @@ for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
   </thead>
   <tbody>
     <tr>
-      <td width="18%">tokens</td>
-      <td width="36%">13,076,963,850 (13.08B)</td>
+      <td width="18%">lifetime tokens</td>
+      <td width="36%">25,334,101,758 (25.33B)</td>
       <td rowspan="7" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>
     </tr>
     <tr>
-      <td>cost</td>
-      <td>$17,673.70</td>
+      <td>est. API cost</td>
+      <td>$34,239.39</td>
     </tr>
     <tr>
-      <td>active days</td>
-      <td>168</td>
+      <td>avg. cost / 1M</td>
+      <td>$1.35</td>
     </tr>
     <tr>
-      <td>sessions</td>
-      <td>1,320</td>
+      <td>current streak</td>
+      <td>81 days</td>
     </tr>
     <tr>
-      <td>top model</td>
-      <td>gpt-5.6-sol</td>
+      <td>daily history</td>
+      <td>Sep 21, 2025 -&gt; Sep 20, 2026</td>
     </tr>
     <tr>
-      <td>range</td>
-      <td>Jan 1, 2026 -&gt; Sep 18, 2026</td>
+      <td>history tokens</td>
+      <td>25,328,387,425</td>
     </tr>
     <tr>
       <td>updated</td>
-      <td>Sep 18, 2026, 1:13 PM MST</td>
+      <td>Sep 20, 2026, 5:21 PM MST</td>
     </tr>
   </tbody>
 </table>
 
-<sub>updates periodically when this Mac is available via ccusage; graph and banner colors change with each refresh</sub>
+<sub>OpenAI account lifetime counter; updates periodically when this Mac is available. Cost is an estimate using a fixed historical average, not a bill. The graph covers only returned daily history (25,328,387,425 tokens), which may differ from lifetime usage. <a href="./launchd/README.md#account-tokens-and-estimated-cost">Method and pricing</a>.</sub>
 <!-- codex-token-counter:end -->
