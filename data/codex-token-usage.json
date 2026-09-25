@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T01:05:13.295Z",
+  "generatedAt": "2026-09-25T02:25:35.529Z",
   "source": "OpenAI Codex account/usage/read",
   "scope": "account-lifetime",
   "pricing": {
@@ -16,32 +16,27 @@
     "formula": "tokens / 1,000,000 × usdPerMillionTokens"
   },
   "range": {
-    "startDate": "2025-09-23",
-    "endDate": "2026-09-23"
+    "startDate": "2025-09-25",
+    "endDate": "2026-09-24"
   },
   "totals": {
-    "totalTokens": 26109883228,
-    "totalCost": 35287.86502764723
+    "totalTokens": 26239007757,
+    "totalCost": 35462.378598287185
   },
   "summary": {
-    "lifetimeTokens": 26109883228,
+    "lifetimeTokens": 26239007757,
     "peakDailyTokens": 985502645,
     "longestRunningTurnSec": 306473,
-    "currentStreakDays": 84,
-    "longestStreakDays": 84
+    "currentStreakDays": 85,
+    "longestStreakDays": 85
   },
   "dailyCoverage": {
     "available": true,
-    "totalTokens": 26101124048,
-    "lifetimeMinusDailyTokens": 8759180,
+    "totalTokens": 26216213981,
+    "lifetimeMinusDailyTokens": 22793776,
     "note": "Daily buckets are the history returned by OpenAI and can differ from the lifetime counter. No missing tokens are assigned to invented dates."
   },
   "daily": [
-    {
-      "date": "2025-09-23",
-      "totalTokens": 14034596,
-      "totalCost": 18.967948843005747
-    },
     {
       "date": "2025-09-25",
       "totalTokens": 2275306,
@@ -1099,18 +1094,23 @@
     },
     {
       "date": "2026-09-23",
-      "totalTokens": 218462254,
-      "totalCost": 295.2547303819595
+      "totalTokens": 242546390,
+      "totalCost": 327.8047702673964
+    },
+    {
+      "date": "2026-09-24",
+      "totalTokens": 105040393,
+      "totalCost": 141.96353075451682
     }
   ],
   "theme": {
-    "date": "2026-09-23",
-    "name": "blue 250",
-    "hue": 250,
-    "saturation": 79,
-    "lightness": 59,
-    "hex": "#5f44e9",
-    "light": "#a89aef",
-    "dark": "#2c0ec4"
+    "date": "2026-09-24",
+    "name": "blue 197",
+    "hue": 197,
+    "saturation": 82,
+    "lightness": 56,
+    "hex": "#33b7eb",
+    "light": "#8ad3ef",
+    "dark": "#0a87b8"
   }
 }
