@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T01:02:24.599Z",
+  "generatedAt": "2026-09-27T01:03:15.429Z",
   "source": "OpenAI Codex account/usage/read",
   "scope": "account-lifetime",
   "pricing": {
@@ -16,32 +16,27 @@
     "formula": "tokens / 1,000,000 × usdPerMillionTokens"
   },
   "range": {
-    "startDate": "2025-09-25",
-    "endDate": "2026-09-25"
+    "startDate": "2025-10-01",
+    "endDate": "2026-09-26"
   },
   "totals": {
-    "totalTokens": 26448033339,
-    "totalCost": 35744.87953712828
+    "totalTokens": 27079419660,
+    "totalCost": 36598.20680332829
   },
   "summary": {
-    "lifetimeTokens": 26448033339,
+    "lifetimeTokens": 27079419660,
     "peakDailyTokens": 985502645,
     "longestRunningTurnSec": 306473,
-    "currentStreakDays": 86,
-    "longestStreakDays": 86
+    "currentStreakDays": 87,
+    "longestStreakDays": 87
   },
   "dailyCoverage": {
     "available": true,
-    "totalTokens": 26425239563,
-    "lifetimeMinusDailyTokens": 22793776,
+    "totalTokens": 27054350578,
+    "lifetimeMinusDailyTokens": 25069082,
     "note": "Daily buckets are the history returned by OpenAI and can differ from the lifetime counter. No missing tokens are assigned to invented dates."
   },
   "daily": [
-    {
-      "date": "2025-09-25",
-      "totalTokens": 2275306,
-      "totalCost": 3.075107242857866
-    },
     {
       "date": "2025-10-01",
       "totalTokens": 549718,
@@ -1104,18 +1099,23 @@
     },
     {
       "date": "2026-09-25",
-      "totalTokens": 154493346,
-      "totalCost": 208.79987450388927
+      "totalTokens": 199737322,
+      "totalCost": 269.9477281522722
+    },
+    {
+      "date": "2026-09-26",
+      "totalTokens": 586142345,
+      "totalCost": 792.1794125516277
     }
   ],
   "theme": {
-    "date": "2026-09-25",
-    "name": "green 135",
-    "hue": 135,
-    "saturation": 85,
-    "lightness": 60,
-    "hex": "#42f06e",
-    "light": "#9bf3b1",
-    "dark": "#09ce3a"
+    "date": "2026-09-26",
+    "name": "green 82",
+    "hue": 82,
+    "saturation": 89,
+    "lightness": 57,
+    "hex": "#abf330",
+    "light": "#cdf48a",
+    "dark": "#7cbf08"
   }
 }
