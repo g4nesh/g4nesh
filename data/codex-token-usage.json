@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T01:05:30.513Z",
+  "generatedAt": "2026-10-09T01:40:06.951Z",
   "source": "OpenAI Codex account/usage/read",
   "scope": "account-lifetime",
   "pricing": {
@@ -17,22 +17,22 @@
   },
   "range": {
     "startDate": "2025-10-14",
-    "endDate": "2026-10-07"
+    "endDate": "2026-10-08"
   },
   "totals": {
-    "totalTokens": 30298036723,
-    "totalCost": 40948.211876235946
+    "totalTokens": 30653956594,
+    "totalCost": 41429.242459897716
   },
   "summary": {
-    "lifetimeTokens": 30298036723,
+    "lifetimeTokens": 30653956594,
     "peakDailyTokens": 985502645,
     "longestRunningTurnSec": 397549,
-    "currentStreakDays": 98,
-    "longestStreakDays": 98
+    "currentStreakDays": 99,
+    "longestStreakDays": 99
   },
   "dailyCoverage": {
     "available": true,
-    "totalTokens": 30268142981,
+    "totalTokens": 30624062852,
     "lifetimeMinusDailyTokens": 29893742,
     "note": "Daily buckets are the history returned by OpenAI and can differ from the lifetime counter. No missing tokens are assigned to invented dates."
   },
@@ -1149,18 +1149,23 @@
     },
     {
       "date": "2026-10-07",
-      "totalTokens": 104077481,
-      "totalCost": 140.66214198947392
+      "totalTokens": 235146390,
+      "totalCost": 317.80356884782987
+    },
+    {
+      "date": "2026-10-08",
+      "totalTokens": 224850962,
+      "totalCost": 303.8891568034184
     }
   ],
   "theme": {
-    "date": "2026-10-07",
-    "name": "blue 234",
-    "hue": 234,
-    "saturation": 76,
-    "lightness": 53,
-    "hex": "#2c3ee2",
-    "light": "#818ce9",
-    "dark": "#0e1da4"
+    "date": "2026-10-08",
+    "name": "blue 181",
+    "hue": 181,
+    "saturation": 79,
+    "lightness": 59,
+    "hex": "#44e6e9",
+    "light": "#9aeeef",
+    "dark": "#0ec0c4"
   }
 }
