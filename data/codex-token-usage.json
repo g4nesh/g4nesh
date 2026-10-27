@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T01:40:06.951Z",
+  "generatedAt": "2026-10-27T22:23:56.996Z",
   "source": "OpenAI Codex account/usage/read",
   "scope": "account-lifetime",
   "pricing": {
@@ -16,37 +16,27 @@
     "formula": "tokens / 1,000,000 × usdPerMillionTokens"
   },
   "range": {
-    "startDate": "2025-10-14",
-    "endDate": "2026-10-08"
+    "startDate": "2025-10-28",
+    "endDate": "2026-10-27"
   },
   "totals": {
-    "totalTokens": 30653956594,
-    "totalCost": 41429.242459897716
+    "totalTokens": 42677682648,
+    "totalCost": 57679.47301121443
   },
   "summary": {
-    "lifetimeTokens": 30653956594,
-    "peakDailyTokens": 985502645,
+    "lifetimeTokens": 42677682648,
+    "peakDailyTokens": 2404802074,
     "longestRunningTurnSec": 397549,
-    "currentStreakDays": 99,
-    "longestStreakDays": 99
+    "currentStreakDays": 118,
+    "longestStreakDays": 118
   },
   "dailyCoverage": {
     "available": true,
-    "totalTokens": 30624062852,
-    "lifetimeMinusDailyTokens": 29893742,
+    "totalTokens": 42677682648,
+    "lifetimeMinusDailyTokens": 0,
     "note": "Daily buckets are the history returned by OpenAI and can differ from the lifetime counter. No missing tokens are assigned to invented dates."
   },
   "daily": [
-    {
-      "date": "2025-10-14",
-      "totalTokens": 12357005,
-      "totalCost": 16.700661614539257
-    },
-    {
-      "date": "2025-10-16",
-      "totalTokens": 744262,
-      "totalCost": 1.0058802933688396
-    },
     {
       "date": "2025-10-28",
       "totalTokens": 7068722,
@@ -1154,18 +1144,113 @@
     },
     {
       "date": "2026-10-08",
-      "totalTokens": 224850962,
-      "totalCost": 303.8891568034184
+      "totalTokens": 410533688,
+      "totalCost": 554.8419058385779
+    },
+    {
+      "date": "2026-10-09",
+      "totalTokens": 240540918,
+      "totalCost": 325.0943473737071
+    },
+    {
+      "date": "2026-10-10",
+      "totalTokens": 283771822,
+      "totalCost": 383.52150662424003
+    },
+    {
+      "date": "2026-10-11",
+      "totalTokens": 225918542,
+      "totalCost": 305.3320058049726
+    },
+    {
+      "date": "2026-10-12",
+      "totalTokens": 285886510,
+      "totalCost": 386.3795364387725
+    },
+    {
+      "date": "2026-10-13",
+      "totalTokens": 340661970,
+      "totalCost": 460.40932134544937
+    },
+    {
+      "date": "2026-10-14",
+      "totalTokens": 371334635,
+      "totalCost": 501.86384847246126
+    },
+    {
+      "date": "2026-10-15",
+      "totalTokens": 342542028,
+      "totalCost": 462.95024549929633
+    },
+    {
+      "date": "2026-10-16",
+      "totalTokens": 395296716,
+      "totalCost": 534.2489293525921
+    },
+    {
+      "date": "2026-10-17",
+      "totalTokens": 330206022,
+      "totalCost": 446.27796432105566
+    },
+    {
+      "date": "2026-10-18",
+      "totalTokens": 231477780,
+      "totalCost": 312.8453921532575
+    },
+    {
+      "date": "2026-10-19",
+      "totalTokens": 472991843,
+      "totalCost": 639.2549583317543
+    },
+    {
+      "date": "2026-10-20",
+      "totalTokens": 1830226117,
+      "totalCost": 2473.575681009204
+    },
+    {
+      "date": "2026-10-21",
+      "totalTokens": 2404802074,
+      "totalCost": 3250.122961657473
+    },
+    {
+      "date": "2026-10-22",
+      "totalTokens": 176404763,
+      "totalCost": 238.41345488295872
+    },
+    {
+      "date": "2026-10-23",
+      "totalTokens": 316461880,
+      "totalCost": 427.7025680398227
+    },
+    {
+      "date": "2026-10-24",
+      "totalTokens": 904219651,
+      "totalCost": 1222.0652509704241
+    },
+    {
+      "date": "2026-10-25",
+      "totalTokens": 2018800804,
+      "totalCost": 2728.436954971192
+    },
+    {
+      "date": "2026-10-26",
+      "totalTokens": 609744645,
+      "totalCost": 824.0782444793351
+    },
+    {
+      "date": "2026-10-27",
+      "totalTokens": 99749617,
+      "totalCost": 134.81297447859677
     }
   ],
   "theme": {
-    "date": "2026-10-08",
-    "name": "blue 181",
-    "hue": 181,
-    "saturation": 79,
-    "lightness": 59,
-    "hex": "#44e6e9",
-    "light": "#9aeeef",
-    "dark": "#0ec0c4"
+    "date": "2026-10-27",
+    "name": "green 97",
+    "hue": 97,
+    "saturation": 87,
+    "lightness": 55,
+    "hex": "#75f028",
+    "light": "#adf282",
+    "dark": "#4ab508"
   }
 }
