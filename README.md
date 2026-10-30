@@ -20,31 +20,31 @@ for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
   <tbody>
     <tr>
       <td width="18%">lifetime tokens</td>
-      <td width="36%">42,716,927,653 (42.72B)</td>
+      <td width="36%">43,512,111,922 (43.51B)</td>
       <td rowspan="6" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>
     </tr>
     <tr>
       <td>est. API cost</td>
-      <td>$57,732.51</td>
+      <td>$58,807.22</td>
     </tr>
     <tr>
       <td>current streak</td>
-      <td>118 days</td>
+      <td>120 days</td>
     </tr>
     <tr>
       <td>daily history</td>
-      <td>Oct 28, 2025 -&gt; Oct 27, 2026</td>
+      <td>Oct 30, 2025 -&gt; Oct 29, 2026</td>
     </tr>
     <tr>
       <td>history tokens</td>
-      <td>42,716,927,653</td>
+      <td>43,512,111,922</td>
     </tr>
     <tr>
       <td>updated</td>
-      <td>Oct 28, 2026, 6:07 PM MST</td>
+      <td>Oct 29, 2026, 9:22 PM MST</td>
     </tr>
   </tbody>
 </table>
 
-<sub>OpenAI account lifetime counter; updates periodically when this Mac is available. Cost is an estimate using a fixed historical average, not a bill. The graph covers only returned daily history (42,716,927,653 tokens), which may differ from lifetime usage. <a href="./launchd/README.md#account-tokens-and-estimated-cost">Method and pricing</a>.</sub>
+<sub>OpenAI account lifetime counter; updates periodically when this Mac is available. Cost is an estimate using a fixed historical average, not a bill. The graph covers only returned daily history (43,512,111,922 tokens), which may differ from lifetime usage. <a href="./launchd/README.md#account-tokens-and-estimated-cost">Method and pricing</a>.</sub>
 <!-- codex-token-counter:end -->
