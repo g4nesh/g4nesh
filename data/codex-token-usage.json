@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T04:22:45.948Z",
+  "generatedAt": "2026-10-31T01:03:41.955Z",
   "source": "OpenAI Codex account/usage/read",
   "scope": "account-lifetime",
   "pricing": {
@@ -16,32 +16,27 @@
     "formula": "tokens / 1,000,000 × usdPerMillionTokens"
   },
   "range": {
-    "startDate": "2025-10-30",
-    "endDate": "2026-10-29"
+    "startDate": "2025-11-08",
+    "endDate": "2026-10-30"
   },
   "totals": {
-    "totalTokens": 43512111922,
-    "totalCost": 58807.21561116803
+    "totalTokens": 42538000824,
+    "totalCost": 57490.69111169059
   },
   "summary": {
-    "lifetimeTokens": 43512111922,
-    "peakDailyTokens": 2404802074,
+    "lifetimeTokens": 42538000824,
+    "peakDailyTokens": 2363859220,
     "longestRunningTurnSec": 397549,
-    "currentStreakDays": 120,
-    "longestStreakDays": 120
+    "currentStreakDays": 121,
+    "longestStreakDays": 121
   },
   "dailyCoverage": {
     "available": true,
-    "totalTokens": 43512111922,
+    "totalTokens": 42538000824,
     "lifetimeMinusDailyTokens": 0,
     "note": "Daily buckets are the history returned by OpenAI and can differ from the lifetime counter. No missing tokens are assigned to invented dates."
   },
   "daily": [
-    {
-      "date": "2025-10-30",
-      "totalTokens": 13269698,
-      "totalCost": 17.93417871281337
-    },
     {
       "date": "2025-11-08",
       "totalTokens": 10281616,
@@ -1094,163 +1089,168 @@
     },
     {
       "date": "2026-09-30",
-      "totalTokens": 186248479,
-      "totalCost": 251.71737196850057
+      "totalTokens": 163025209,
+      "totalCost": 220.33080428053074
     },
     {
       "date": "2026-10-01",
-      "totalTokens": 224743523,
-      "totalCost": 303.74395152242965
+      "totalTokens": 193819991,
+      "totalCost": 261.9503742066985
     },
     {
       "date": "2026-10-02",
-      "totalTokens": 204025364,
-      "totalCost": 275.74307568437496
+      "totalTokens": 170557983,
+      "totalCost": 230.511451580811
     },
     {
       "date": "2026-10-03",
-      "totalTokens": 318418287,
-      "totalCost": 430.3466789135592
+      "totalTokens": 294659419,
+      "totalCost": 398.23624318803303
     },
     {
       "date": "2026-10-04",
-      "totalTokens": 266247265,
-      "totalCost": 359.8368276586084
+      "totalTokens": 249487318,
+      "totalCost": 337.18552958722194
     },
     {
       "date": "2026-10-05",
-      "totalTokens": 302499384,
-      "totalCost": 408.8320633349725
+      "totalTokens": 275255115,
+      "totalCost": 372.01106038931675
     },
     {
       "date": "2026-10-06",
-      "totalTokens": 419965099,
-      "totalCost": 567.5885870658367
+      "totalTokens": 394211801,
+      "totalCost": 532.7826518609556
     },
     {
       "date": "2026-10-07",
-      "totalTokens": 235146390,
-      "totalCost": 317.80356884782987
+      "totalTokens": 210564906,
+      "totalCost": 284.5813563240662
     },
     {
       "date": "2026-10-08",
-      "totalTokens": 410533688,
-      "totalCost": 554.8419058385779
+      "totalTokens": 371811918,
+      "totalCost": 502.5089029882903
     },
     {
       "date": "2026-10-09",
-      "totalTokens": 240540918,
-      "totalCost": 325.0943473737071
+      "totalTokens": 214244564,
+      "totalCost": 289.55446454205526
     },
     {
       "date": "2026-10-10",
-      "totalTokens": 283771822,
-      "totalCost": 383.52150662424003
+      "totalTokens": 229000213,
+      "totalCost": 309.49692639684247
     },
     {
       "date": "2026-10-11",
-      "totalTokens": 225918542,
-      "totalCost": 305.3320058049726
+      "totalTokens": 179384519,
+      "totalCost": 242.44063595554817
     },
     {
       "date": "2026-10-12",
-      "totalTokens": 285886510,
-      "totalCost": 386.3795364387725
+      "totalTokens": 246296161,
+      "totalCost": 332.8726371658085
     },
     {
       "date": "2026-10-13",
-      "totalTokens": 340661970,
-      "totalCost": 460.40932134544937
+      "totalTokens": 297662488,
+      "totalCost": 402.2949320996352
     },
     {
       "date": "2026-10-14",
-      "totalTokens": 371334635,
-      "totalCost": 501.86384847246126
+      "totalTokens": 327407622,
+      "totalCost": 442.4958883680131
     },
     {
       "date": "2026-10-15",
-      "totalTokens": 342542028,
-      "totalCost": 462.95024549929633
+      "totalTokens": 307297408,
+      "totalCost": 415.31665852955547
     },
     {
       "date": "2026-10-16",
-      "totalTokens": 395296716,
-      "totalCost": 534.2489293525921
+      "totalTokens": 372184331,
+      "totalCost": 503.0122242618396
     },
     {
       "date": "2026-10-17",
-      "totalTokens": 330206022,
-      "totalCost": 446.27796432105566
+      "totalTokens": 318589506,
+      "totalCost": 430.5780837386749
     },
     {
       "date": "2026-10-18",
-      "totalTokens": 231477780,
-      "totalCost": 312.8453921532575
+      "totalTokens": 173089251,
+      "totalCost": 233.93249497471683
     },
     {
       "date": "2026-10-19",
-      "totalTokens": 472991843,
-      "totalCost": 639.2549583317543
+      "totalTokens": 426104110,
+      "totalCost": 575.8855445696116
     },
     {
       "date": "2026-10-20",
-      "totalTokens": 1830226117,
-      "totalCost": 2473.575681009204
+      "totalTokens": 1774892605,
+      "totalCost": 2398.7916811762307
     },
     {
       "date": "2026-10-21",
-      "totalTokens": 2404802074,
-      "totalCost": 3250.122961657473
+      "totalTokens": 2363859220,
+      "totalCost": 3194.7881333404584
     },
     {
       "date": "2026-10-22",
-      "totalTokens": 176404763,
-      "totalCost": 238.41345488295872
+      "totalTokens": 143387332,
+      "totalCost": 193.78994437111552
     },
     {
       "date": "2026-10-23",
-      "totalTokens": 316461880,
-      "totalCost": 427.7025680398227
+      "totalTokens": 295948359,
+      "totalCost": 399.9782632634027
     },
     {
       "date": "2026-10-24",
-      "totalTokens": 904219651,
-      "totalCost": 1222.0652509704241
+      "totalTokens": 879150404,
+      "totalCost": 1188.1838200671991
     },
     {
       "date": "2026-10-25",
-      "totalTokens": 2018800804,
-      "totalCost": 2728.436954971192
+      "totalTokens": 1986110246,
+      "totalCost": 2684.2552177987563
     },
     {
       "date": "2026-10-26",
-      "totalTokens": 609744645,
-      "totalCost": 824.0782444793351
+      "totalTokens": 580041490,
+      "totalCost": 783.934023404794
     },
     {
       "date": "2026-10-27",
-      "totalTokens": 360405816,
-      "totalCost": 487.0933998107065
+      "totalTokens": 295272940,
+      "totalCost": 399.06542522805114
     },
     {
       "date": "2026-10-28",
-      "totalTokens": 410172879,
-      "totalCost": 554.3542675300655
+      "totalTokens": 345973448,
+      "totalCost": 467.58785665809756
     },
     {
       "date": "2026-10-29",
-      "totalTokens": 181267034,
-      "totalCost": 244.98488077856913
+      "totalTokens": 211048591,
+      "totalCost": 285.23506323063685
+    },
+    {
+      "date": "2026-10-30",
+      "totalTokens": 49782060,
+      "totalCost": 67.28113637039803
     }
   ],
   "theme": {
-    "date": "2026-10-29",
-    "name": "blue 204",
-    "hue": 204,
-    "saturation": 79,
-    "lightness": 53,
-    "hex": "#289ae6",
-    "light": "#7fc0eb",
-    "dark": "#0c69a7"
+    "date": "2026-10-30",
+    "name": "amber 44",
+    "hue": 44,
+    "saturation": 85,
+    "lightness": 55,
+    "hex": "#eeba2b",
+    "light": "#f1d484",
+    "dark": "#b58708"
   }
 }
