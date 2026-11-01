@@ -254,9 +254,7 @@ function renderReadmeCounter(payload) {
   <tbody>
 ${body}
   </tbody>
-</table>
-
-<sub>OpenAI account lifetime counter; updates periodically when this Mac is available. Cost is an estimate using a fixed historical average, not a bill. The graph covers only returned daily history (${integer(payload.dailyCoverage.totalTokens)} tokens), which may differ from lifetime usage. <a href="./launchd/README.md#account-tokens-and-estimated-cost">Method and pricing</a>.</sub>`;
+</table>`;
 }
 
 function commitAndPush() {

@@ -27,8 +27,6 @@ assert(!('cumulative' in data));
 assert(!('sessions' in data.totals));
 assert(!('favoriteModel' in data.totals));
 assert(readme.includes('est. API cost'));
-assert(readme.includes('not a bill'));
-assert(readme.includes('updates periodically when this Mac is available'));
 
 assert.equal(data.range.endDate, data.daily.at(-1)?.date || null);
 assert(data.daily.length === 0 || visualContract.lastDailyDate <= data.range.endDate);
