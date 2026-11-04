@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T00:58:00.745Z",
+  "generatedAt": "2026-11-04T01:00:03.965Z",
   "source": "OpenAI Codex account/usage/read",
   "scope": "account-lifetime",
   "pricing": {
@@ -1259,13 +1259,13 @@
     }
   ],
   "theme": {
-    "date": "2026-11-02",
-    "name": "blue 236",
-    "hue": 236,
-    "saturation": 88,
-    "lightness": 60,
-    "hex": "#3f4bf3",
-    "light": "#999ff5",
-    "dark": "#0916ce"
+    "date": "2026-11-03",
+    "name": "amber 57",
+    "hue": 57,
+    "saturation": 84,
+    "lightness": 56,
+    "hex": "#ede431",
+    "light": "#f0eb89",
+    "dark": "#bab108"
   }
 }
