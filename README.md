@@ -20,28 +20,28 @@ for my full profile, visit [ganeshtalluri.com](https://ganeshtalluri.com/)
   <tbody>
     <tr>
       <td width="18%">lifetime tokens</td>
-      <td width="36%">40,246,999,600 (40.25B)</td>
+      <td width="36%">40,476,442,085 (40.48B)</td>
       <td rowspan="6" width="46%" valign="middle" align="right"><img src="./assets/codex-token-trend.svg" alt="Codex tokens over time" width="500"></td>
     </tr>
     <tr>
       <td>est. API cost</td>
-      <td>$54,394.37</td>
+      <td>$54,704.47</td>
     </tr>
     <tr>
       <td>current streak</td>
-      <td>127 days</td>
+      <td>129 days</td>
     </tr>
     <tr>
       <td>daily history</td>
-      <td>Nov 8, 2025 -&gt; Nov 5, 2026</td>
+      <td>Nov 8, 2025 -&gt; Nov 7, 2026</td>
     </tr>
     <tr>
       <td>history tokens</td>
-      <td>40,246,999,600</td>
+      <td>40,476,442,085</td>
     </tr>
     <tr>
       <td>updated</td>
-      <td>Nov 6, 2026, 6:20 AM MST</td>
+      <td>Nov 7, 2026, 11:20 PM MST</td>
     </tr>
   </tbody>
 </table>
