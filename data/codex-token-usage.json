@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T06:20:14.479Z",
+  "generatedAt": "2026-11-09T01:00:36.659Z",
   "source": "OpenAI Codex account/usage/read",
   "scope": "account-lifetime",
   "pricing": {
@@ -16,32 +16,27 @@
     "formula": "tokens / 1,000,000 × usdPerMillionTokens"
   },
   "range": {
-    "startDate": "2025-11-08",
-    "endDate": "2026-11-07"
+    "startDate": "2025-11-17",
+    "endDate": "2026-11-08"
   },
   "totals": {
-    "totalTokens": 40476442085,
-    "totalCost": 54704.46622155457
+    "totalTokens": 40510197363,
+    "totalCost": 54750.08694239936
   },
   "summary": {
-    "lifetimeTokens": 40476442085,
+    "lifetimeTokens": 40510197363,
     "peakDailyTokens": 2329066646,
     "longestRunningTurnSec": 397549,
-    "currentStreakDays": 129,
-    "longestStreakDays": 129
+    "currentStreakDays": 130,
+    "longestStreakDays": 130
   },
   "dailyCoverage": {
     "available": true,
-    "totalTokens": 40476442085,
+    "totalTokens": 40510197363,
     "lifetimeMinusDailyTokens": 0,
     "note": "Daily buckets are the history returned by OpenAI and can differ from the lifetime counter. No missing tokens are assigned to invented dates."
   },
   "daily": [
-    {
-      "date": "2025-11-08",
-      "totalTokens": 10281616,
-      "totalCost": 13.895744937113214
-    },
     {
       "date": "2025-11-17",
       "totalTokens": 129611,
@@ -1279,18 +1274,23 @@
     },
     {
       "date": "2026-11-07",
-      "totalTokens": 52950650,
-      "totalCost": 71.56352918202293
+      "totalTokens": 69518541,
+      "totalCost": 93.95526093721526
+    },
+    {
+      "date": "2026-11-08",
+      "totalTokens": 27469003,
+      "totalCost": 37.124734026713085
     }
   ],
   "theme": {
-    "date": "2026-11-07",
-    "name": "amber 55",
-    "hue": 55,
-    "saturation": 84,
-    "lightness": 58,
-    "hex": "#eedf3a",
-    "light": "#f2ea92",
-    "dark": "#c4b408"
+    "date": "2026-11-08",
+    "name": "green 125",
+    "hue": 125,
+    "saturation": 81,
+    "lightness": 57,
+    "hex": "#39ea47",
+    "light": "#8fef97",
+    "dark": "#0bbc1a"
   }
 }
