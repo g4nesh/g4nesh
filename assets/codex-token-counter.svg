@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="190" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
   <title id="title">Tokenmaxxing stats — OpenAI account lifetime</title>
-  <desc id="desc">42,028,069,557 Codex tokens tracked from OpenAI account lifetime. Updated Nov 18, 2026, 6:02 PM MST.</desc>
+  <desc id="desc">42,213,144,849 Codex tokens tracked from OpenAI account lifetime. Updated Nov 19, 2026, 6:01 PM MST.</desc>
   <defs>
     <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#8ca5f3"/>
-      <stop offset="100%" stop-color="#3262f1"/>
+      <stop offset="0%" stop-color="#7ce9ca"/>
+      <stop offset="100%" stop-color="#26e3ad"/>
     </linearGradient>
     <filter id="shadow" x="-5%" y="-10%" width="110%" height="120%">
       <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.14"/>
@@ -14,11 +14,11 @@
   <rect x="0" y="0" width="8" height="190" rx="4" fill="url(#accent)"/>
   <text x="32" y="40" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="18" font-weight="700">Tokenmaxxing stats</text>
   <text x="32" y="66" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">OpenAI account lifetime tokens across devices; refreshed periodically.</text>
-  <text x="32" y="120" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="44" font-weight="800">42.03B</text>
-  <text x="32" y="144" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">42,028,069,557 total tokens</text>
+  <text x="32" y="120" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="44" font-weight="800">42.21B</text>
+  <text x="32" y="144" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">42,213,144,849 total tokens</text>
   <g transform="translate(310 96)">
     <g transform="translate(0 0)">
-      <text x="0" y="0" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="22" font-weight="750">140</text>
+      <text x="0" y="0" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="22" font-weight="750">141</text>
       <text x="0" y="22" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Streak days</text>
     </g>
     <g transform="translate(120 0)">
@@ -26,10 +26,10 @@
       <text x="0" y="22" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Peak day</text>
     </g>
     <g transform="translate(240 0)">
-      <text x="0" y="0" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="22" font-weight="750">$56,801.51</text>
+      <text x="0" y="0" fill="#111827" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="22" font-weight="750">$57,051.64</text>
       <text x="0" y="22" fill="#6b7280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Est. cost</text>
     </g>
   </g>
   <text x="310" y="156" fill="#374151" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="13">Estimated API equivalent; not actual spend</text>
-  <text x="310" y="176" fill="#9ca3af" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Updated Nov 18, 2026, 6:02 PM MST</text>
+  <text x="310" y="176" fill="#9ca3af" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Arial,sans-serif" font-size="12">Updated Nov 19, 2026, 6:01 PM MST</text>
 </svg>
